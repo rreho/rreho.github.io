@@ -20,6 +20,7 @@ h3 {
     font-size: 1em;
     padding-bottom: 1em;
 }
+
 main { 
     display: grid;
     grid-template-columns: 40% 60%;
@@ -29,6 +30,7 @@ header {
     text-align: center;
     margin: auto 2em;
 }
+
 section {
     margin: auto 1em 4em 2em;
 }
