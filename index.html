@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 	<head>
 		<link href="style.css" rel="stylesheet">
 		<title>Riccardo Reho resume</title>
@@ -10,9 +10,10 @@
 			<!-- resume header with your name and title -->
 			<h1>RICCARDO REHO</h1>
 			<hr>
-			Theoretical physicist in Materials Science
+			<b>Theoretical physicist in Materials Science</b>
 			<hr>
 		</header>
+        <img src="images/RR-image.jpg" alt="Profile Picture" id="profilePic">     
 		<main>
 			<article id="mainLeft">
 				<section>
@@ -34,7 +35,8 @@
 				<section>
 					<h2>SKILLS</h2>
 					<!-- your skills -->
-                    <p>Fortran, Python, GitHub, VS Code</p>                    
+                    <p> Fortran, Python, GitHub, VS Code</p> 
+                    <p> Quantum Espresso, Aiida, Yambo, SIESTA</p>                   
 				</section>
 				<section>
 					<h2>EDUCATION</h2>
@@ -59,10 +61,15 @@
                     </p>
                     <p>
                         2014-2017
-                    </p>                                                            
+                    </p>  
+                    <h2>Languages</h2>
+                    <p>English</p>
+                    <p>Italian</p>
+                    <p>Spanish (Beginner) </p>                                                          
 				</section>            
 			</article>
 			<article id="mainRight">
+				<!-- Nav -->             
 				<section>
 					<h2>ABOUT</h2>
 					<!-- about you -->
@@ -87,8 +94,54 @@
                                 Many Body Perturbation Theory methods </li>
                             <li>Theoretical Spectroscopy study on the optical properties of 2D Materials</li>
                             <li>Teaching experience</li>
-                    </ul>                    
-				</section>
+                    </ul>
+                    <h2>Active Projects</h2>
+                    <ul>
+                        <li>Developer in Yambo: Photoluminescence and Real-Time Dynamics</li>
+                        <li>Bogoliubov-deGennes formalism for quantum transport in SIESTA </li>
+                        <li>Developer Yambopy with a focus on maximally localized exciton Wannier functions</li>
+                </ul>     
+                <h2>Research Overview</h2>
+                <p> I specialize in formulating and developing theoretical frameworks 
+                    to elucidate quantum phenomena in materials, including superconductivity 
+                    and light-matter interaction. 
+                    Regarding Theoretical spectroscopy, I focus on examining the 
+                    optical properties of two-dimensional (2D) multilayer structures 
+                    formed by Transition Metal Dichalcogenides (TMDs) 
+                    and topological insulators like Bi2Se3.
+                    These multilayer 2D structures enhance the Coulomb interaction 
+                    between charge carriers leading to strongly bound electron-hole 
+                    (exciton) pairs. The physics of these excitons are both 
+                    of fundamental interest and of crucial importance for engineering 
+                    and exploiting the properties of these materials in potential applications
+                    , for example, in photovoltaic devices where the silicon era has reached 
+                    its efficiency limit. My research revealed a pronounced excitonic shift 
+                    due to twisting and strain for MoS2/WS2 and MoSe2/WSe2 heterostructures. 
+                    For the analysis of the optical spectra of these systems I implemented a 
+                    method for computing the Photoluminescence (PL) spectra using the YAMBO 
+                    code.
+                    Moreover, we have discovered that the higher-energy surface excitations 
+                    in a 6 Quintuple Layer of Bi2Se3 are distinctive, preserving the 
+                    polarization of incident light, which results in the creation of 
+                    chiral excitons.
+                    
+                    In the realm of superconductivity, I investigate both conventional 
+                    superconductors, which are described by the Bardeen-Cooper-Schrieffer
+                    (BCS) theory and function at extremely low temperatures, 
+                    and unconventional superconductors, which exhibit high-temperature superconductivity
+                    from non-electron-phonon mechanisms. In the Quantum Materials by Design group 
+                    we combined Bogoliubov-de-Gennes and Density Functional Theory (DFT) in a 
+                    unified approach, Superconducting Density Functional Theory (SCDFT), 
+                    and extended it to unconventional superconductors.
+                    We implemented and optimized a novel approach in the SIESTA code.
+                    I’ve applied this method to study complex heterostructures like PbTe/Pb,
+                    contributing evidence for induced superconductivity through proximity effects.</p>                                   
+                    <nav id="nav">
+                        <ul class="links">
+                            <li class="active"><a href="talks.html">List of talks</a></li>
+                            </ul>
+                    </nav>   
+                </section>
 			</article>
 		</main>
 	</body>
