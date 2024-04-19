@@ -1,18 +1,35 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 15px;
-    max-width: 960px;
     margin: auto;
+    overflow-x: hidden;
+    box-sizing: border-box; 
+}
+#header {
+    background-image: url('images/puzzle.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    width: 100vw; 
+}
+/* Text style to ensure visibility over the background */
+#header h1, #header b {
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent overlay for text */
+    display: inline-block; /* Makes the background fit the text */
+    padding: 5px 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners for aesthetic */
 }
 #profilePic {
-    position: absolute;   /* This positions the image relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). */
-    top: 15;               /* Top edge is 0 pixels from the top of the screen */
-    left: 20;              /* Left edge is 0 pixels from the left of the screen */
-    width: 180px;         /* Set the width of the image */
-    height: 180px;        /* Set the height of the image */
-    border-radius: 50%;   /* Makes the image circular */
-    border: 2px solid #000; /* Optional: adds a black border around the image */
-    box-shadow: 0 0 8px #000; /* Optional: adds a subtle shadow to the image */
+    position: absolute;
+    top: 40px;  /* 'px' is necessary for these values to work */
+    left: 25px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    box-shadow: 0 0 8px #000;
 }
 h1 {
     font-size: 2em;
@@ -34,7 +51,7 @@ h3 {
 
 main { 
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 30% 60%;
     margin-top: 3em;
 }
 header {
@@ -67,4 +84,42 @@ h1, h2, h3 {
 }
 #mainLeft {
     border-right: 1px solid lightgray;
+}
+/* CSS for right aligning images under SKILLS section */
+.skills-images a,
+.skills-images a:visited, /* Adds rules for visited links */
+.skills-images a:hover,   /* Adds rules for when the mouse hovers over the link */
+.skills-images a:active { /* Adds rules for when the link is being clicked */
+    text-decoration: none;  /* Removes the underline */
+    outline: none;          /* Removes focus outline that might also be visible */
+    display: inline-block;  /* Aligns better with images, ensuring no extra line appears */
+    vertical-align: middle; /* Aligns images vertically to avoid spacing issues */
+    margin: 0;              /* Remove margins to reduce any unwanted space */
+    padding: 0;             /* Remove padding to reduce any unwanted space */
+    color: inherit;         /* Optional: ensures text (if any) inside the <a> tag does not change color */
+}
+.skills-images {
+    text-align: left;
+    margin-top: 1px;
+}
+/* Individual image styles */
+.img-QElogo {
+    width: 150px;  /* Example width, adjust as needed */
+    height: auto;
+}
+.img-yambologo {
+    width: 150px;  /* Example width, adjust as needed */
+    height: auto;
+
+}
+.img-yambopylogo {
+    width: 200px;  /* Example width, adjust as needed */
+    height: auto;
+    margin-left: -25px;    
+}
+.img-siestalogo {
+    width: 150px;  /* Example width, adjust as needed */
+    height: auto;
+    text-align: left;
+    margin-left: -20px;
 }
