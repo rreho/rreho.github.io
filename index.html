@@ -5,188 +5,143 @@
 	<head>
         <meta charset="UTF-8">        
         <meta http-equiv="X-UA-Compatible" content="IE-edge">
-		<link href="style.css" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link href="style.css" rel="stylesheet">
 		<title>Riccardo Reho resume</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">        
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link href="style.css" rel="stylesheet">        
     </head>
-
 	<body>
-		<header id="header">
-			<!-- resume header with your name and title -->
-			<h1>RICCARDO REHO</h1>
-			<hr>
-			<b>Theoretical physicist in Materials Science</b>
-			<hr>
+        <header class="text-center p-3">
             <div class="container">
-                <div class="nav">
-                    <ul>
-                        <li> 
-                            <nav id="nav">
-                                <a href="index.html">Home</a>
-                        </nav> </li>
-                        <li> 
-                            <nav id="nav">
-                                <a href="talks.html">Talks</a>
-                            </nav> </li>
-                        <li>
-                            <nav id="nav">
-                                <a href="publications.html">Publications</a>
-                            </nav> </li>                            
-                        <li>
-                            <nav id="nav">
-                                <a href="aboutme.html">About me</a>
-                            </nav> </li>                                                    
-                    </ul>
+                <div class="row align-items-center">
+                    <div class="col-md-2">
+                        <img src="images/RR-image.jpg" alt="Profile Picture" id="profilePic" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-10">
+                        <div class="name-title-box">
+                            <b>RICCARDO REHO</b><br>
+                            <b>Theoretical physicist in Materials Science</b>
+                        </div>
+                    </div>
                 </div>
             </div>
-		</header>   
-        <img src="images/RR-image.jpg" alt="Profile Picture" id="profilePic">     
-		<main>
-			<article id="mainLeft">
-				<section>
+            <hr>
+        </header>        
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="talks.html">Talks</a></li>
+                            <li class="nav-item"><a class="nav-link" href="publications.html">Publications</a></li>
+                            <li class="nav-item"><a class="nav-link" href="aboutme.html">About me</a></li>                                                
+                        </ul>
+                    </div>
+                </div>
+            </nav>  
+        <div class="container mt-4">    
+            <div class="row">
+                <div class="col-md-4">    
+                    <div class="contact-info">
 					<h2>CONTACT</h2>
 					<!-- contact info including social media -->
-                    <p>
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:r.reho@uu.nl">r.reho@uu.nl</a>
-                        <p>
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <a href="https://github.com/rreho">rreho</a>
-                        </p>
-                        <p>
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            <a href="https://www.linkedin.com/in/riccardo-reho-997888245/">Riccardo Reho</a>
-                        </p>                        
-                    </p>                    
-				</section>
-				<section>
-					<h2>SKILLS</h2>
-					<!-- your skills -->
-                    <p> Fortran, Python, GitHub, VS Code</p> 
-                    <p> Quantum Espresso, Aiida, Yambo, SIESTA</p>
+                    <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:r.reho@uu.nl">r.reho@uu.nl</a></p>
+                    <p><i class="fab fa-github" aria-hidden="true"></i> <a href="https://github.com/rreho">rreho</a></p>
+                    <p><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/riccardo-reho-997888245/">Riccardo Reho</a></p>                
+                </div>
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <p>Fortran, Python, GitHub, VS Code</p>
+                    <p>Quantum Espresso, Aiida, Yambo, SIESTA</p>
                     <div class="skills-images">
-                        <!-- Example images below the SKILLS section, aligned right -->
-                        <a href="https://www.quantum-espresso.org/" target="_blank">
-                            <img src="images/Quantum_Espresso_Logo.png" alt="QElogo" class=img-QElogo>
-                        </a>
-                        <a href="http://www.yambo-code.org/" target="_blank">
-                            <img src="images/yambo_logo_overlay.svg" alt="yambologo" class=img-yambologo>
-                        </a>
-                        <a href="https://github.com/rreho/yambopy" target="_blank">
-                            <img src="images/yambopylog.png" alt="yambopylogo" class=img-yambopylogo>
-                        </a>
-                        <a href="https://siesta-project.org/siesta/">
-                            <img src="images/SIESTA_logo_TM.png" alt="siestalogo" class=img-siestalogo>
-                        </a>
-                        
-                    </div>                                       
-				</section>
-				<section>
-					<h2>EDUCATION</h2>
-					<!-- your education -->
-                    <h3>PhD Candidate</h3>
-                    <p>
-                        Utrecht University
-                    </p>
-                    <p>
-                        2020-2025
-                    </p>     
-                    <h3>Master Degree Theoretical Physics</h3>
-                    <p>
-                        Università di Bologna
-                    </p>
-                    <p>
-                        2017-2019
-                    </p>     
-                    <h3>Bachelor Physics</h3>
-                    <p>
-                        Università di Bologna
-                    </p>
-                    <p>
-                        2014-2017
-                    </p>  
-                    <h2>Languages</h2>
-                    <p>English</p>
-                    <p>Italian</p>
-                    <p>Spanish (Beginner) </p>
-                    <nav id="nav">
-                        <a href="talks.html"><h2>Talks</h2></a>
-                        </nav>                                                                                 
-				</section>            
-			</article>
-			<article id="mainRight">
-				<!-- Nav -->             
-				<section>
-					<h2>ABOUT</h2>
-					<!-- about you -->
-                    <p>                   I am a computational physicist, my research focuses on ab initio many body 
+                        <a href="https://www.quantum-espresso.org/" target="_blank"><img src="images/Quantum_Espresso_Logo.png" alt="QElogo" class="img-fluid"></a>
+                        <a href="http://www.yambo-code.org/" target="_blank"><img src="images/yambo_logo_overlay.svg" alt="yambologo" class="img-fluid"></a>
+                        <a href="https://github.com/rreho/yambopy" target="_blank"><img src="images/yambopylog.png" alt="yambopylogo" class="img-fluid"></a>
+                        <a href="https://siesta-project.org/siesta/"><img src="images/SIESTA_logo_TM.png" alt="siestalogo" class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>   
+            <div class="col-md-8">  
+                <section>
+                    <h2>About</h2>
+                    <p> I am a computational physicist, my research focuses on ab initio many body 
                         perturbation theory method to compute the electronic and optical properties of
                         semiconductors. I use Density Functional Theory (DFT) and my research projects
-                        relates to superconductivity, topology and optics of van der Waals (vdW) materials.</p>                    
-				</section>
-				<section>
-					<h2>WORK EXPERIENCE</h2>
-					<!-- your work experience -->
-                    <h3>PhD Candidate</h3>
-                    <p>
-                            Utrecht University | 2020 - 2025
-                    </p>
-                    <p>
-                            Working as a computational physicist in ab-initio calculations for materials science based on DFT
-                    </p>
-                    <ul>
-                            <li>Developed Superconducting Density Functional Theory in SIESTA</li>
-                            <li>Worked in the implementation of Photoluminesnce in the Yambo code via Non equilibrium
-                                Many Body Perturbation Theory methods </li>
-                            <li>Theoretical Spectroscopy study on the optical properties of 2D Materials</li>
-                            <li>Teaching experience</li>
-                    </ul>
-                    <h2>Active Projects</h2>
-                    <ul>
-                        <li>Developer in Yambo: Photoluminescence and Real-Time Dynamics</li>
-                        <li>Bogoliubov-deGennes formalism for quantum transport in SIESTA </li>
-                        <li>Developer Yambopy with a focus on maximally localized exciton Wannier functions</li>
-                </ul>     
-                <h2>Research Overview</h2>
-                <p> I specialize in formulating and developing theoretical frameworks 
-                    to elucidate quantum phenomena in materials, including superconductivity 
-                    and light-matter interaction. 
-                    Regarding Theoretical spectroscopy, I focus on examining the 
-                    optical properties of two-dimensional (2D) multilayer structures 
-                    formed by Transition Metal Dichalcogenides (TMDs) 
-                    and topological insulators like Bi<sub>2</sub>Se<sub>3</sub>.
-                    These multilayer 2D structures enhance the Coulomb interaction 
-                    between charge carriers leading to strongly bound electron-hole 
-                    (exciton) pairs. The physics of these excitons are both 
-                    of fundamental interest and of crucial importance for engineering 
-                    and exploiting the properties of these materials in potential 
-                    applications
-                    , for example, in photovoltaic devices where the silicon era has reached 
-                    its efficiency limit. My research revealed a pronounced excitonic shift 
-                    due to twisting and strain for MoS<sub>2</sub>/WS<sub>2</sub> and MoSe<sub>2</sub>/WSe<sub>2</sub> heterostructures. 
-                    For the analysis of the optical spectra of these systems I implemented a 
-                    method for computing the Photoluminescence (PL) spectra using the YAMBO 
-                    code.
-                    Moreover, we have discovered that the higher-energy surface excitations 
-                    in a 6 Quintuple Layer of Bi2Se3 are distinctive, preserving the 
-                    polarization of incident light, which results in the creation of 
-                    chiral excitons.
-                    
-                    In the realm of superconductivity, I investigate both conventional 
-                    superconductors, which are described by the Bardeen-Cooper-Schrieffer
-                    (BCS) theory and function at extremely low temperatures, 
-                    and unconventional superconductors, which exhibit high-temperature superconductivity
-                    from non-electron-phonon mechanisms. In the Quantum Materials by Design group 
-                    we combined Bogoliubov-de-Gennes and Density Functional Theory (DFT) in a 
-                    unified approach, Superconducting Density Functional Theory (SCDFT), 
-                    and extended it to unconventional superconductors.
-                    We implemented and optimized a novel approach in the SIESTA code.
-                    I’ve applied this method to study complex heterostructures like PbTe/Pb,
-                    contributing evidence for induced superconductivity through proximity effects.</p>                                   
+                        relates to superconductivity, topology and optics of van der Waals (vdW) materials.</p>
                 </section>
-			</article>
-		</main>
-	</body>
-</html>
+                <section>
+                    <h2>Education</h2>
+                    <p><strong>PhD Candidate:</strong> Utrecht University, 2020-2025</p>
+                    <p><strong>Master Degree Theoretical Physics:</strong> Università di Bologna, 2017-2019</p>
+                    <p><strong>Bachelor Physics:</strong> Università di Bologna, 2014-2017</p>
+                </section>
+                <section>
+                    <h2>Work Experience</h2>
+                    <p><strong>PhD Candidate:</strong> Utrecht University, 2020-2025</p>
+                    <p>
+                        Working as a computational physicist in ab-initio calculations for materials science based on DFT
+                    </p>                    
+                    <ul>
+                        <li>Developed Superconducting Density Functional Theory in SIESTA</li>
+                        <li>Worked in the implementation of Photoluminesnce in the Yambo code via Non equilibrium
+                            Many Body Perturbation Theory methods </li>
+                        <li>Theoretical Spectroscopy study on the optical properties of 2D Materials</li>
+                        <li>Teaching experience</li>
+                </ul>
+                <h2>Active Projects</h2>
+                <ul>
+                    <li>Developer in Yambo: Photoluminescence and Real-Time Dynamics</li>
+                    <li>Bogoliubov-deGennes formalism for quantum transport in SIESTA </li>
+                    <li>Developer Yambopy with a focus on maximally localized exciton Wannier functions</li>
+            </ul>     
+            <h2>Research Overview</h2>
+            <p> I specialize in formulating and developing theoretical frameworks 
+                to elucidate quantum phenomena in materials, including superconductivity 
+                and light-matter interaction. 
+                Regarding Theoretical spectroscopy, I focus on examining the 
+                optical properties of two-dimensional (2D) multilayer structures 
+                formed by Transition Metal Dichalcogenides (TMDs) 
+                and topological insulators like Bi<sub>2</sub>Se<sub>3</sub>.
+                These multilayer 2D structures enhance the Coulomb interaction 
+                between charge carriers leading to strongly bound electron-hole 
+                (exciton) pairs. The physics of these excitons are both 
+                of fundamental interest and of crucial importance for engineering 
+                and exploiting the properties of these materials in potential 
+                applications
+                , for example, in photovoltaic devices where the silicon era has reached 
+                its efficiency limit. My research revealed a pronounced excitonic shift 
+                due to twisting and strain for MoS<sub>2</sub>/WS<sub>2</sub> and MoSe<sub>2</sub>/WSe<sub>2</sub> heterostructures. 
+                For the analysis of the optical spectra of these systems I implemented a 
+                method for computing the Photoluminescence (PL) spectra using the YAMBO 
+                code.
+                Moreover, we have discovered that the higher-energy surface excitations 
+                in a 6 Quintuple Layer of Bi2Se3 are distinctive, preserving the 
+                polarization of incident light, which results in the creation of 
+                chiral excitons.
+                
+                In the realm of superconductivity, I investigate both conventional 
+                superconductors, which are described by the Bardeen-Cooper-Schrieffer
+                (BCS) theory and function at extremely low temperatures, 
+                and unconventional superconductors, which exhibit high-temperature superconductivity
+                from non-electron-phonon mechanisms. In the Quantum Materials by Design group 
+                we combined Bogoliubov-de-Gennes and Density Functional Theory (DFT) in a 
+                unified approach, Superconducting Density Functional Theory (SCDFT), 
+                and extended it to unconventional superconductors.
+                We implemented and optimized a novel approach in the SIESTA code.
+                I’ve applied this method to study complex heterostructures like PbTe/Pb,
+                contributing evidence for induced superconductivity through proximity effects.</p> 
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>                                                   
