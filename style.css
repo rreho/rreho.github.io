@@ -134,15 +134,25 @@ main {
 }
 
 /* Image alignment and styling */
-.skills-images a {
-    display: inline-block;
+.skills-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Align items vertically in the center */
     margin: 10px 5px;
+    max-width: 100%;
 }
 
-.img-QElogo, .img-yambologo, .img-yambopylogo, .img-siestalogo {
-    width: 100%; /* Responsive Images */
-    height: auto;
-    max-width: 150px; /* Limiting image size */
+.skills-images a {
+    width: calc(50% - 10px); /* Calculate width to include margins, two per line */
+    text-align: center; /* Center the images within the links */
+    margin: 5px; /* Margin around each link */
+    display: block; /* Block display to allow width and margin to work */
+}
+
+.img-fluid {
+    max-width: 100%; /* Ensures img-fluid does not break layout */
+    height: auto; /* Maintains aspect ratio */
 }
 
 /* Enhancements for printing */
@@ -174,4 +184,12 @@ main {
     .contact-info, .skills {
         padding: 5px;
     }
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
 }
