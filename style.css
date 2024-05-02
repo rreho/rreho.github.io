@@ -193,3 +193,54 @@ main {
 .card-body {
     flex: 1;
 }
+@media print {
+    /* General Adjustments for Printing */
+    body, .container, .card, .card-body {
+        width: 100%; /* Utilizes full width for print */
+        margin: 0; /* Removes unnecessary margins */
+        padding: 0; /* Removes unnecessary padding */
+        overflow: visible !important; /* Ensures no content is clipped */
+        background: transparent !important; /* Clears background styles */
+        color: #000; /* Ensures text is black for printing */
+        font-size: 15pt; /* Sets a standard readable font size for print */
+    }
+
+    /* Ensuring Images and Colors Print Correctly */
+    img {
+        display: block; /* Ensures images are always printed */
+        max-width: 100%; /* Avoids overflow */
+        page-break-inside: avoid; /* Avoids breaking images between pages */
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact; /* Forces printing of background colors and images */
+    }
+
+    /* Hide Non-Essential Elements */
+    header, .navbar, .skills-images, footer {
+        display: block; /* Simplifies the print version by removing non-essential elements */
+    }
+
+    /* Adjust Visibility and Color for Important Elements */
+    .name-title-box{
+        color: white;
+        background: rgba(44, 42, 42, 0.286)!important;         
+    } 
+    
+    .contact-info, .skills {
+        color: #000; /* Ensures visibility */
+        background: #FFF !important; /* Sets a solid background for visibility */
+    }
+
+    /* Layout Adjustments for Print */
+    .skills-images a, .card {
+        display: block; /* Stacks elements vertically */
+        width: 100%; /* Uses full width for clarity */
+        margin-bottom: 10px; /* Adds spacing between elements */
+    }
+
+    /* Improve visibility and readability */
+    h1, h2, h3, p {
+        color: #000 !important; /* Ensure all text is black for better readability */
+    }
+}
