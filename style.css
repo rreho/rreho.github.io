@@ -97,6 +97,7 @@ p.font-weight-bold {
     height: 3px;
     background: blue;
     transition: width 0.5s;
+    margin: 0px 0px -3px 0px;
 }
 
 /* Main content and layout styles */
