@@ -46,10 +46,11 @@ header {
 
 #profilePic {
     width: 100%;  /* Ensures the image is responsive within its container */
-    max-width: 450px;  /* Increases the maximum width to make the image larger */
+    max-width: 450px;  /* Maximum width */
     height: auto;  /* Keeps the aspect ratio intact */
+    aspect-ratio: 1 / 1;  /* Enforces a square aspect ratio */
     border-radius: 50%;  /* Ensures the image remains circular */
-    border: 6px solid #333;  /* Aesthetic border */
+    border: 1px solid #333;  /* Aesthetic border */
     box-shadow: 0 0 15px #000;  /* Shadow for depth */
     margin-right: 50px;  /* Space from the text */
     display: block;  /* Ensures the image is correctly displayed */
@@ -65,6 +66,7 @@ header {
         max-width: 250px;  /* Larger than before but still reasonable for mobile */
         margin: 0 auto 40px;  /* Greater separation from text on small screens */
         display: block;
+        aspect-ratio: 1 / 1;  /* Ensures the image maintains a square aspect ratio on mobile */
     }
 }
 
