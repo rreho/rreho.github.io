@@ -36,6 +36,13 @@ header {
     z-index: 1;
 }
 
+.navbar-nav .nav-link, .navbar-brand {
+    color: black !important;  /* Ensures text color is white */
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    background-color: transparent !important;  /* Removes any background change on hover */
+}
 /* Custom style for the QuREX-Book link in the navbar */
 .navbar-nav .nav-item a.qurex-book-link {
     color: #007bff; /* Set a unique color for the QuREX-Book link */
@@ -45,14 +52,6 @@ header {
 .navbar-nav .nav-item a.qurex-book-link:hover {
     color: #0056b3; /* Change color on hover */
     text-decoration: underline;
-}
-
-.navbar-nav .nav-link, .navbar-brand {
-    color: black !important;  /* Ensures text color is white */
-}
-
-.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
-    background-color: transparent !important;  /* Removes any background change on hover */
 }
 
 
