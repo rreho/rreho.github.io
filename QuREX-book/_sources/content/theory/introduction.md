@@ -1,14 +1,4 @@
-# Theoretical Background
-
-This section includes the theoretical formalism needed to understand and contribute to the QuREX library and beyond:
-
-- [model Hamiltonian](model_hamiltonian)
-- [excitonic Hamiltonian](h2p)
-- [Wannier basis](wannier_basis)
-- [BSE equation](bse_equation)
-- [Wannier Exciton](wannier_exciton)
-- [Quantum Mechanics - Quantum well](quantum_well)
-
+(introduction)=
 # Introduction
 Density Functional Theory (DFT){cite}`kohn1965self` is the workhorse for materials simulation in nanoscale systems. It allows for a quantitative microscopic description of the ground state properties of a material from first principles, where only the crystal structure and the atomic species are provided as an input to the code.
 The excited state cannot be described by DFT, and the Ab Initio Many Body Perturbation theory (Ai-MBPT){cite}`onida2002electronic` has been developed, over the years, to predict the physical properties of excited systems under an external perturbing potential.

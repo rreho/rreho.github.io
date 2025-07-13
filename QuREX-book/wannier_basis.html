@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -167,10 +167,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="content/theory/theoretical_background.html">Theoretical Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="content/theory/theoretical_background.html">Theoretical Background</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="content/theory/model_hamiltonian.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/theory/coulomb_potential.html">Model Coulomb potential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/theory/h2p.html">BSE equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="content/theory/wannier_exciton.html">Exciton wavefunction - reference frame and periodic part</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="content/theory/wannier_chern.html">Exciton Chern number</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="content/theory/wannier_basis.html">Wannier representation</a></li>
 
 
-
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
@@ -368,7 +377,7 @@ We distinguish between Bloch-like functions in the <code class="docutils literal
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="representations-in-band-theory">
 <h1>Representations in band theory<a class="headerlink" href="#representations-in-band-theory" title="Link to this heading">#</a></h1>
-<p>In 1962 Blount <span id="id1">[<a class="reference internal" href="workflows/exciton_phonon.html#id107" title="EI Blount. Formalisms of band theory. In Solid state physics, volume 13, pages 305–373. Elsevier, 1962.">Blount, 1962</a>]</span> reviewed the formalism of band theory, pointing out the existence of different representations for electronic states: the crystal momentum representation (CMR) developed by Adams, the Kohn-Luttinger CMR or Modified CMR (MCMR), and the Wannier one.
+<p>In 1962 Blount <span id="id1">[<a class="reference internal" href="wannier_exciton.html#id107" title="EI Blount. Formalisms of band theory. In Solid state physics, volume 13, pages 305–373. Elsevier, 1962.">Blount, 1962</a>]</span> reviewed the formalism of band theory, pointing out the existence of different representations for electronic states: the crystal momentum representation (CMR) developed by Adams, the Kohn-Luttinger CMR or Modified CMR (MCMR), and the Wannier one.
 In this work, he focused on the Schroedinger, Pauli and Dirac Hamiltonians but his results are easily generalizable for applications with DFT Hamiltonians:</p>
 <ol class="arabic simple">
 <li><p>Schrödinger: <span class="math notranslate nohighlight">\(H=\frac{p^2}{2 m}+U\)</span></p></li>
@@ -494,10 +503,6 @@ Under this phase transformation <span class="math notranslate nohighlight">\(\ma
 <div class="citation" id="id61" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>KS65<span class="fn-bracket">]</span></span>
 <p>Walter Kohn and Lu Jeu Sham. Self-consistent equations including exchange and correlation effects. <em>Physical review</em>, 140(4A):A1133, 1965.</p>
-</div>
-<div class="citation" id="id108" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span>LPSA23<span class="fn-bracket">]</span></span>
-<p>Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. <em>Phys. Rev. Mater.</em>, 7:024006, Feb 2023. URL: <a class="reference external" href="https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006">https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006</a>, <a class="reference external" href="https://doi.org/10.1103/PhysRevMaterials.7.024006">doi:10.1103/PhysRevMaterials.7.024006</a>.</p>
 </div>
 <div class="citation" id="id32" role="doc-biblioentry">
 <span class="label"><span class="fn-bracket">[</span>MHGruningV09<span class="fn-bracket">]</span></span>

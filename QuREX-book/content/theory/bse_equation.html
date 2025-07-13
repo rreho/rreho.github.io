@@ -34,9 +34,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -167,10 +167,19 @@
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Theory</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="theoretical_background.html">Theoretical Background</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="theoretical_background.html">Theoretical Background</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="model_hamiltonian.html">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coulomb_potential.html">Model Coulomb potential</a></li>
+<li class="toctree-l2"><a class="reference internal" href="h2p.html">BSE equation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wannier_exciton.html">Exciton wavefunction - reference frame and periodic part</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="wannier_chern.html">Exciton Chern number</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="wannier_basis.html">Wannier representation</a></li>
 
 
-
+</ul>
+</details></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Software</span></p>
 <ul class="nav bd-sidenav">
@@ -348,14 +357,14 @@
 <section id="bethe-salpeter-equation-bse-and-excitonic-effects">
 <h2>Bethe-Salpeter Equation (BSE) and Excitonic Effects<a class="headerlink" href="#bethe-salpeter-equation-bse-and-excitonic-effects" title="Link to this heading">#</a></h2>
 <p>The <strong>Bethe-Salpeter Equation (BSE)</strong> formalism is widely used in <strong>many-body perturbation theory (MBPT)</strong> to describe <strong>neutral excitations</strong> such as excitons. It extends the <strong><a class="reference internal" href="GW.html"><span class="doc std std-doc">GW</span></a> approximation</strong> by incorporating electron-hole interactions, making it essential for calculating <strong>optical spectra</strong> with excitonic effects.</p>
-<p>On this page, we follow the <strong>Ai-MBPT formalism</strong> <span id="id1">[<a class="reference internal" href="../../workflows/exciton_phonon.html#id32" title="Andrea Marini, Conor Hogan, Myrta Grüning, and Daniele Varsano. Yambo: an ab initio tool for excited state calculations. Computer Physics Communications, 180(8):1392–1403, 2009.">Marini <em>et al.</em>, 2009</a>, <a class="reference internal" href="../../workflows/exciton_phonon.html#id6" title="Davide Sangalli, Andrea Ferretti, Henrique Miranda, Claudio Attaccalite, Ivan Marri, Elena Cannuccia, P Melo, Margherita Marsili, Fulvio Paleari, Antimo Marrazzo, and others. Many-body perturbation theory calculations using the yambo code. Journal of Physics: Condensed Matter, 31(32):325902, 2019.">Sangalli <em>et al.</em>, 2019</a>]</span> and reference its implementation in the <strong>Yambo code</strong>. The input variables related to this calculation can be found <a class="reference internal" href="../software/yambo/yambo_input_flags.html#bse-bsk"><span class="std std-ref">here</span></a>.</p>
+<p>On this page, we follow the <strong>Ai-MBPT formalism</strong> <span id="id1">[<a class="reference internal" href="../../wannier_exciton.html#id32" title="Andrea Marini, Conor Hogan, Myrta Grüning, and Daniele Varsano. Yambo: an ab initio tool for excited state calculations. Computer Physics Communications, 180(8):1392–1403, 2009.">Marini <em>et al.</em>, 2009</a>, <a class="reference internal" href="../../wannier_exciton.html#id6" title="Davide Sangalli, Andrea Ferretti, Henrique Miranda, Claudio Attaccalite, Ivan Marri, Elena Cannuccia, P Melo, Margherita Marsili, Fulvio Paleari, Antimo Marrazzo, and others. Many-body perturbation theory calculations using the yambo code. Journal of Physics: Condensed Matter, 31(32):325902, 2019.">Sangalli <em>et al.</em>, 2019</a>]</span> and reference its implementation in the <strong>Yambo code</strong>. The input variables related to this calculation can be found <a class="reference internal" href="../software/yambo/yambo_input_flags.html#bse-bsk"><span class="std std-ref">here</span></a>.</p>
 <section id="connection-to-the-optical-limit-and-experiments">
 <h3>Connection to the Optical Limit and Experiments<a class="headerlink" href="#connection-to-the-optical-limit-and-experiments" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>In the <strong>optical limit</strong> ( q = 0 ), we compute the system’s <strong>response to light absorption</strong>.</p></li>
 <li><p>Solving the BSE provides <strong>exciton energies and wavefunctions</strong>, enabling <strong>optical spectra</strong> calculations, which can be directly compared to experimental <strong>absorption spectra</strong> and <strong>electron energy loss spectra (EELS)</strong>.</p></li>
 </ul>
-<p>In the <strong>Tamm-Dancoff approximation (TDA)</strong>, including <strong>local field effects</strong> <span id="id2">[<a class="reference internal" href="../../workflows/exciton_phonon.html#id29" title="Giovanni Onida, Lucia Reining, and Angel Rubio. Electronic excitations: density-functional versus many-body green’s-function approaches. Reviews of modern physics, 74(2):601, 2002.">Onida <em>et al.</em>, 2002</a>]</span>, the <strong>two-particle BSE Hamiltonian</strong> for a <strong>non-spin-polarized system</strong> in the <strong>optical limit</strong> ( q = 0 ) is given by:
+<p>In the <strong>Tamm-Dancoff approximation (TDA)</strong>, including <strong>local field effects</strong> <span id="id2">[<a class="reference internal" href="../../wannier_exciton.html#id29" title="Giovanni Onida, Lucia Reining, and Angel Rubio. Electronic excitations: density-functional versus many-body green’s-function approaches. Reviews of modern physics, 74(2):601, 2002.">Onida <em>et al.</em>, 2002</a>]</span>, the <strong>two-particle BSE Hamiltonian</strong> for a <strong>non-spin-polarized system</strong> in the <strong>optical limit</strong> ( q = 0 ) is given by:
 <code class="docutils literal notranslate"><span class="pre">yambo</span> <span class="pre">-o</span> <span class="pre">b</span> <span class="pre">-k</span> <span class="pre">sex</span> <span class="pre">-b</span></code></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -454,7 +463,7 @@ the energy of excitonic transition <span class="math notranslate nohighlight">\(
 \[\begin{split}
 K_{\substack{\mathrm{vc\mathbf{k}} \\ v^{\prime} c^{\prime} \mathbf{k}^{\prime}}}^{\mathbf{Q}} =     K_{\substack{\mathrm{vc\mathbf{k}} \\ v^{\prime} c^{\prime} \mathbf{k}^{\prime}}}^{d,\mathbf{Q}} +     K_{\substack{\mathrm{vc\mathbf{k}} \\ v^{\prime} c^{\prime} \mathbf{k}^{\prime}}}^{x,\mathbf{Q}}
 \end{split}\]</div>
-<p>Following the prescription of <span id="id3">[<a class="reference internal" href="../../workflows/exciton_phonon.html#id43" title="Alexandre C Dias, Julian FRV Silveira, and Fanyao Qu. Wantibexos: a wannier based tight binding code for electronic band structure, excitonic and optoelectronic properties of solids. Computer Physics Communications, 285:108636, 2023.">Dias <em>et al.</em>, 2023</a>]</span> we can compute the direct and exchange terms as follows:</p>
+<p>Following the prescription of <span id="id3">[<a class="reference internal" href="../../wannier_exciton.html#id43" title="Alexandre C Dias, Julian FRV Silveira, and Fanyao Qu. Wantibexos: a wannier based tight binding code for electronic band structure, excitonic and optoelectronic properties of solids. Computer Physics Communications, 285:108636, 2023.">Dias <em>et al.</em>, 2023</a>]</span> we can compute the direct and exchange terms as follows:</p>
 <div class="math notranslate nohighlight" id="equation-eq-kernels">
 <span class="eqno">()<a class="headerlink" href="#equation-eq-kernels" title="Link to this equation">#</a></span>\[\begin{split}
 K_{\substack{\mathrm{vc\mathbf{k}} \\ v^{\prime} c^{\prime} \mathbf{k}^{\prime}}}^{d,\mathbf{Q}} = V(\mathbf{k}-\mathbf{k}^\prime)\langle c,\mathbf{k}|c^\prime,\mathbf{k}^\prime\rangle\langle v^\prime, \mathbf{k}^\prime-\mathbf{Q}|v\mathbf{k-Q}\rangle \\
