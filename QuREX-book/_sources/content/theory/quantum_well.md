@@ -2,7 +2,7 @@
 
 ## 1. Introduction
 
-We consider a quantum particle of mass \( m \) moving in a one-dimensional potential \( V(x) \), and study the **stationary states** by solving the **time-independent Schrödinger equation (TISE)**:
+We consider a quantum particle of mass $ m $ moving in a one-dimensional potential $ V(x) $, and study the **stationary states** by solving the **time-independent Schrödinger equation (TISE)**:
 
 <a name='eq:schroedinger'></a>
 
@@ -12,7 +12,7 @@ $$
 \end{equation}
 $$
 
-The wavefunction \( \psi(x) \) must satisfy appropriate **boundary and continuity conditions**, and must be **square-integrable**:
+The wavefunction $ \psi(x) $ must satisfy appropriate **boundary and continuity conditions**, and must be **square-integrable**:
 
 $$
 \int_{-\infty}^{\infty} |\psi(x)|^2 dx < \infty
@@ -20,17 +20,17 @@ $$
 
 We study three important cases:
 
-- **Free particle**: \( V(x) = 0 \)
-- **Infinite square well**: \( V(x) = \infty \) outside a finite interval
-- **Finite square well**: \( V(x) = V_0 \) outside a finite interval, with \( V_0 < \infty \)
+- **Free particle**: $ V(x) = 0 $
+- **Infinite square well**: $ V(x) = \infty $ outside a finite interval
+- **Finite square well**: $ V(x) = V_0 $ outside a finite interval, with $ V_0 < \infty $
 
 ---
 
-## 2. Free Particle: \( V(x) = 0 \)
+## 2. Free Particle: $ V(x) = 0 $
 
 ### Schrödinger Equation:
 
-Set \( V(x) = 0 \) in [Schroedinger equation](#eq:schroedinger):
+Set $ V(x) = 0 $ in [Schroedinger equation](#eq:schroedinger):
 <a name='eq:free_particle_eq'></a>
 
 $$
@@ -55,8 +55,8 @@ E = \frac{\hbar^2 k^2}{2m}
 $$
 
 These solutions are **not square integrable**, and correspond to **scattering states**. We interpret them as momentum eigenstates:
-- \( Ae^{ikx} \): right-moving particle with momentum \( +\hbar k \)
-- \( Be^{-ikx} \): left-moving particle with momentum \( -\hbar k \)
+- $ Ae^{ikx} $: right-moving particle with momentum $ +\hbar k $
+- $ Be^{-ikx} $: left-moving particle with momentum $ -\hbar k $
 
 ---
 
@@ -72,14 +72,14 @@ V(x) = \begin{cases}
 \end{cases}
 $$
 
-- Outside the well (\( x \leq 0 \) or \( x \geq L \)), the wavefunction must vanish:
+- Outside the well ($ x \leq 0 $ or $ x \geq L $), the wavefunction must vanish:
 <a name ='eq:inf_well_BC'></a>
 
 $$
 \psi(0) = \psi(L) = 0
 $$
 
-- Inside the well: \( V(x) = 0 \)
+- Inside the well: $ V(x) = 0 $
 
 The [TISE](#eq:schroedinger) becomes:
 
@@ -95,8 +95,8 @@ $$
 $$
 
 Apply boundary conditions:
-- \( \psi(0) = 0 \Rightarrow B = 0 \)
-- \( \psi(L) = 0 \Rightarrow \sin(kL) = 0 \Rightarrow k_n = \frac{n\pi}{L} \)
+- $ \psi(0) = 0 \Rightarrow B = 0 $
+- $ \psi(L) = 0 \Rightarrow \sin(kL) = 0 \Rightarrow k_n = \frac{n\pi}{L} $
 
 The final solutions are then:
 <a name='eq:inf_well_solution'></a>
@@ -110,8 +110,8 @@ $$
 
 #### Key Features:
 - Energy spectrum is **discrete** and **non-degenerate**
-- No zero-point: \( E_1 \neq 0 \)
-- Energies increase as \( n^2 \)
+- No zero-point: $ E_1 \neq 0 $
+- Energies increase as $ n^2 $
 
 ---
 
@@ -127,11 +127,11 @@ V_0 & \text{if } |x| \geq a
 \quad\text{with } V_0 > 0
 $$
 
-We analyze **bound states** where \( E < V_0 \). The [TISE](#eq:schroedinger) must be solved in each region:
+We analyze **bound states** where $ E < V_0 $. The [TISE](#eq:schroedinger) must be solved in each region:
 
 ---
 
-### Region I: \( x < -a \)
+### Region I: $ x < -a $
 
 $$
 \frac{d^2\psi}{dx^2} = \frac{2m(V_0 - E)}{\hbar^2} \psi = \kappa^2 \psi,
@@ -145,7 +145,7 @@ $$
 
 ---
 
-### Region II: \( -a < x < a \)
+### Region II: $ -a < x < a $
 
 $$
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
@@ -160,7 +160,7 @@ $$
 
 ---
 
-### Region III: \( x > a \)
+### Region III: $ x > a $
 
 $$
 \psi_{III}(x) = De^{-\kappa x}, \quad \text{reject } e^{\kappa x} \text{ (diverges)}
@@ -170,7 +170,7 @@ $$
 
 ### Even/Odd Solutions:
 
-We use the symmetry \( V(x) = V(-x) \Rightarrow \psi(x) \) is either **even** or **odd**.
+We use the symmetry $ V(x) = V(-x) \Rightarrow \psi(x) $ is either **even** or **odd**.
 
 #### Even Solutions:
 
@@ -182,7 +182,7 @@ A e^{-\kappa x} & x > a
 \end{cases}
 $$
 
-Matching at \( x = a \) imposes continuity of \( \psi \) and \( \psi' \):
+Matching at $ x = a $ imposes continuity of $ \psi $ and $ \psi' $:
 
 <a name='eq_even_odd'></a>
 
@@ -201,7 +201,7 @@ A e^{-\kappa x} & x > a
 \end{cases}
 $$
 
-Matching at \( x = a \) gives:
+Matching at $ x = a $ gives:
 
 <a name='eq:odd_cond'></a>
 
@@ -214,7 +214,7 @@ $$
 
 ### Graphical/Numerical Solution:
 
-Equations \eqref{eq:even_cond} and \eqref{eq:odd_cond} are transcendental → solve graphically or numerically for \( E \).
+Equations \eqref{eq:even_cond} and \eqref{eq:odd_cond} are transcendental → solve graphically or numerically for $ E $.
 
 Define:
 
@@ -223,16 +223,16 @@ z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{
 $$
 
 Plot left-hand and right-hand sides of:
-- \( \tan(z) = \sqrt{z_0^2 - z^2} / z \) (even)
-- \( -\cot(z) = \sqrt{z_0^2 - z^2} / z \) (odd)
+- $ \tan(z) = \sqrt{z_0^2 - z^2} / z $ (even)
+- $ -\cot(z) = \sqrt{z_0^2 - z^2} / z $ (odd)
 
 ---
 
 ## 5. Remarks and Limits
 
-- As \( V_0 \to \infty \), the equations reduce to the infinite well solution.
-- For small \( V_0 \), fewer bound states exist.
-- The wavefunction **leaks** into classically forbidden regions \( |x| > a \): tunneling effect.
+- As $ V_0 \to \infty $, the equations reduce to the infinite well solution.
+- For small $ V_0 $, fewer bound states exist.
+- The wavefunction **leaks** into classically forbidden regions $ |x| > a $: tunneling effect.
 
 ---
 
