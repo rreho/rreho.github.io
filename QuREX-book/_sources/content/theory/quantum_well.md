@@ -1,4 +1,4 @@
-# Quantum Wells — "Buca di Potenziale"
+# Quantum Wells and Walls
 
 ## 1. Introduction
 
@@ -9,7 +9,6 @@ We consider a quantum particle of mass \( m \) moving in a one-dimensional poten
 $$
 \begin{equation}
 \frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x)
-\tag{1.1}
 \end{equation}
 $$
 
@@ -38,7 +37,6 @@ $$
 \begin{equation}
 \frac{d^2\psi(x)}{dx^2} + k^2 \psi(x) = 0,
 \quad \text{with} \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{2.1}
 \end{equation}
 $$
 
@@ -53,7 +51,6 @@ This corresponds to **plane wave solutions**, with energy:
 $$
 \begin{equation}
 E = \frac{\hbar^2 k^2}{2m}
-\tag{2.2}
 \end{equation}
 $$
 
@@ -73,7 +70,6 @@ V(x) = \begin{cases}
 0 & \text{for } 0 < x < L \\
 \infty & \text{otherwise}
 \end{cases}
-\tag{3.1}
 $$
 
 - Outside the well (\( x \leq 0 \) or \( x \geq L \)), the wavefunction must vanish:
@@ -81,7 +77,6 @@ $$
 
 $$
 \psi(0) = \psi(L) = 0
-\tag{3.2}
 $$
 
 - Inside the well: \( V(x) = 0 \)
@@ -91,7 +86,6 @@ The [TISE](#eq:schroedinger) becomes:
 $$
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{3.3}
 $$
 
 with general solution:
@@ -111,7 +105,6 @@ $$
 \begin{equation}
 \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left( \frac{n\pi x}{L} \right), \quad
 E_n = \frac{n^2\pi^2\hbar^2}{2mL^2},\quad n = 1,2,3,\dots
-\tag{3.4}
 \end{equation}
 $$
 
@@ -132,7 +125,6 @@ V(x) = \begin{cases}
 V_0 & \text{if } |x| \geq a
 \end{cases}
 \quad\text{with } V_0 > 0
-\tag{4.1}
 $$
 
 We analyze **bound states** where \( E < V_0 \). The [TISE](#eq:schroedinger) must be solved in each region:
@@ -144,7 +136,6 @@ We analyze **bound states** where \( E < V_0 \). The [TISE](#eq:schroedinger) mu
 $$
 \frac{d^2\psi}{dx^2} = \frac{2m(V_0 - E)}{\hbar^2} \psi = \kappa^2 \psi,
 \quad \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}
-\tag{4.2}
 $$
 
 Solution (exponentially decaying):
@@ -159,7 +150,6 @@ $$
 $$
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{4.3}
 $$
 
 General solution:
@@ -199,7 +189,6 @@ Matching at \( x = a \) imposes continuity of \( \psi \) and \( \psi' \):
 $$
 B\cos(ka) = A e^{-\kappa a},\quad -Bk \sin(ka) = -A \kappa e^{-\kappa a}
 \Rightarrow \tan(ka) = \frac{\kappa}{k}
-\tag{4.4}
 $$
 
 #### Odd Solutions:

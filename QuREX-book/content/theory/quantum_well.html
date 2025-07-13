@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Quantum Wells — “Buca di Potenziale” &#8212; QuREX Documentation</title>
+    <title>Quantum Wells and Walls &#8212; QuREX Documentation</title>
   
   
   
@@ -180,6 +180,14 @@
 </ul>
 </details></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
+
+</ul>
+</details></li>
+</ul>
 
     </div>
 </nav></div>
@@ -314,7 +322,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Quantum Wells — “Buca di Potenziale”</h1>
+    <h1>Quantum Wells and Walls</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -359,8 +367,8 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quantum-wells-buca-di-potenziale">
-<h1>Quantum Wells — “Buca di Potenziale”<a class="headerlink" href="#quantum-wells-buca-di-potenziale" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="quantum-wells-and-walls">
+<h1>Quantum Wells and Walls<a class="headerlink" href="#quantum-wells-and-walls" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>We consider a quantum particle of mass ( m ) moving in a one-dimensional potential ( V(x) ), and study the <strong>stationary states</strong> by solving the <strong>time-independent Schrödinger equation (TISE)</strong>:</p>
@@ -369,7 +377,6 @@
 \[
 \begin{equation}
 \frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x)
-\tag{1.1}
 \end{equation}
 \]</div>
 <p>The wavefunction ( \psi(x) ) must satisfy appropriate <strong>boundary and continuity conditions</strong>, and must be <strong>square-integrable</strong>:</p>
@@ -396,7 +403,6 @@
 \begin{equation}
 \frac{d^2\psi(x)}{dx^2} + k^2 \psi(x) = 0,
 \quad \text{with} \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{2.1}
 \end{equation}
 \]</div>
 <p>The general solution is:</p>
@@ -409,7 +415,6 @@
 \[
 \begin{equation}
 E = \frac{\hbar^2 k^2}{2m}
-\tag{2.2}
 \end{equation}
 \]</div>
 <p>These solutions are <strong>not square integrable</strong>, and correspond to <strong>scattering states</strong>. We interpret them as momentum eigenstates:</p>
@@ -430,7 +435,6 @@ V(x) = \begin{cases}
 0 &amp; \text{for } 0 &lt; x &lt; L \\
 \infty &amp; \text{otherwise}
 \end{cases}
-\tag{3.1}
 \end{split}\]</div>
 <ul class="simple">
 <li><p>Outside the well (( x \leq 0 ) or ( x \geq L )), the wavefunction must vanish:
@@ -439,7 +443,6 @@ V(x) = \begin{cases}
 <div class="math notranslate nohighlight">
 \[
 \psi(0) = \psi(L) = 0
-\tag{3.2}
 \]</div>
 <ul class="simple">
 <li><p>Inside the well: ( V(x) = 0 )</p></li>
@@ -449,7 +452,6 @@ V(x) = \begin{cases}
 \[
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{3.3}
 \]</div>
 <p>with general solution:</p>
 <div class="math notranslate nohighlight">
@@ -468,7 +470,6 @@ V(x) = \begin{cases}
 \begin{equation}
 \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left( \frac{n\pi x}{L} \right), \quad
 E_n = \frac{n^2\pi^2\hbar^2}{2mL^2},\quad n = 1,2,3,\dots
-\tag{3.4}
 \end{equation}
 \]</div>
 <section id="key-features">
@@ -492,7 +493,6 @@ V(x) = \begin{cases}
 V_0 &amp; \text{if } |x| \geq a
 \end{cases}
 \quad\text{with } V_0 &gt; 0
-\tag{4.1}
 \end{split}\]</div>
 <p>We analyze <strong>bound states</strong> where ( E &lt; V_0 ). The <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">TISE</span></a> must be solved in each region:</p>
 <hr class="docutils" />
@@ -502,7 +502,6 @@ V_0 &amp; \text{if } |x| \geq a
 \[
 \frac{d^2\psi}{dx^2} = \frac{2m(V_0 - E)}{\hbar^2} \psi = \kappa^2 \psi,
 \quad \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}
-\tag{4.2}
 \]</div>
 <p>Solution (exponentially decaying):
 $<span class="math notranslate nohighlight">\(
@@ -516,7 +515,6 @@ $<span class="math notranslate nohighlight">\(
 \[
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\tag{4.3}
 \]</div>
 <p>General solution:</p>
 <div class="math notranslate nohighlight">
@@ -552,7 +550,6 @@ A e^{-\kappa x} &amp; x &gt; a
 \[
 B\cos(ka) = A e^{-\kappa a},\quad -Bk \sin(ka) = -A \kappa e^{-\kappa a}
 \Rightarrow \tan(ka) = \frac{\kappa}{k}
-\tag{4.4}
 \]</div>
 </section>
 <section id="odd-solutions">
