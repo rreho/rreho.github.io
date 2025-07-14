@@ -66,6 +66,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/tutorials/exciton_phonon';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Notebooks Dashboard" href="../../notebooks/notebooks.html" />
     <link rel="prev" title="Workflows" href="tutorials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -186,6 +187,24 @@
 
 </ul>
 </details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/notebooks.html">Notebooks Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -369,7 +388,7 @@ Compute BSE kernel and diagonalize on top of GW calculation, using the Yambo cod
 Combine all of the above to compute the exciton-phonon matrix elements that are used to compute photoluminesensce spectrum with python <a class="reference external" href="https://github.com/muralidhar-nalabothula/PhdScripts/">scripts</a>.</p></li>
 </ol>
 <p>We will go through these steps with a simple system of hBN monolayer that can be readily run with relatively small computational cost. Step 1 of calculating the phonons takes some time, but one can parallelize and calculate at the same time the GW-BSE kernel at step 3.
-For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="#id108" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
+For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="../../notebooks/exciton_phonon.html#id112" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
 <section id="step-0-dft-ground-state-calculation-using-pwx">
 <h2>Step 0: DFT ground state calculation using pwx<a class="headerlink" href="#step-0-dft-ground-state-calculation-using-pwx" title="Link to this heading">#</a></h2>
 <p>Details about the DFT ground state calculation using pw.x.
@@ -420,6 +439,7 @@ For this step we use these <a class="reference external" href="https://github.co
 <p>Run the python script.</p>
 <p>Now you obtain <code class="docutils literal notranslate"><span class="pre">Ex-ph.npy</span></code> and <code class="docutils literal notranslate"><span class="pre">luminescence_intensities.dat</span></code>. Which we can plot:
 <img alt="Photoluminescence Spectrum of 2D hBN" src="../../_images/2D_hBN_PL.png" /></p>
+<p>Follow the <a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="std std-doc">Jupyter Notebook</span></a> for a pratical tutorial on how to compute photoluminescence and Raman including exciton-phonon coupling.</p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="references">
@@ -520,6 +540,15 @@ For this step we use these <a class="reference external" href="https://github.co
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Workflows</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../../notebooks/notebooks.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Notebooks Dashboard</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>

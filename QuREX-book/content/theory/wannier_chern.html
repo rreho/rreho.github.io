@@ -180,6 +180,20 @@
 </ul>
 </details></li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
+
+</ul>
+</details></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Notebooks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/notebooks.html">Notebooks Dashboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
+</ul>
 
     </div>
 </nav></div>
@@ -342,7 +356,7 @@
 <h1>Exciton Chern number<a class="headerlink" href="#exciton-chern-number" title="Link to this heading">#</a></h1>
 <p>To compute the exciton Chern number we need to compute overlaps between the periodic part of the exciton wavefunction. In particular, we have to compute the overlap between at point <span class="math notranslate nohighlight">\(Q\)</span> belonging to a plane and <span class="math notranslate nohighlight">\(Q+\Delta Q_{\hat{i}}/\)</span>, where <span class="math notranslate nohighlight">\(\Delta Q_{\hat{i}}\)</span> (<span class="math notranslate nohighlight">\( i = 1,2\)</span>) denote an increment (of size <span class="math notranslate nohighlight">\(1/N_{Q_{i}}\)</span>) along the first or second direction in the plane.
 This method is referred as the plaquette method.</p>
-<p>We want to compute the exciton overlap <span class="math notranslate nohighlight">\(M_{\lambda,\lambda^\prime}(\mathbf{Q},\mathbf{Q}+\mathbf{Q_{\hat{i}}})\)</span>, in terms of the exciton wavefunction written in the center of mass of the exciton <span class="math notranslate nohighlight">\(F_{\lambda,\mathbf{Q}}(\mathbf{R},\mathbf{r})\)</span> <span id="id1">[<a class="reference internal" href="../../workflows/exciton_phonon.html#id103" title="Jonah B Haber, Diana Y Qiu, Felipe H da Jornada, and Jeffrey B Neaton. Maximally localized exciton wannier functions for solids. Physical Review B, 108(12):125118, 2023.">Haber <em>et al.</em>, 2023</a>]</span> .</p>
+<p>We want to compute the exciton overlap <span class="math notranslate nohighlight">\(M_{\lambda,\lambda^\prime}(\mathbf{Q},\mathbf{Q}+\mathbf{Q_{\hat{i}}})\)</span>, in terms of the exciton wavefunction written in the center of mass of the exciton <span class="math notranslate nohighlight">\(F_{\lambda,\mathbf{Q}}(\mathbf{R},\mathbf{r})\)</span> <span id="id1">[<a class="reference internal" href="../../wannier_exciton.html#id103" title="Jonah B Haber, Diana Y Qiu, Felipe H da Jornada, and Jeffrey B Neaton. Maximally localized exciton wannier functions for solids. Physical Review B, 108(12):125118, 2023.">Haber <em>et al.</em>, 2023</a>]</span> .</p>
 <div class="math notranslate nohighlight" id="equation-plaquette-overlap">
 <span class="eqno">(7)<a class="headerlink" href="#equation-plaquette-overlap" title="Link to this equation">#</a></span>\[\begin{split}
 \begin{align}
