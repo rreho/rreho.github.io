@@ -36,7 +36,6 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -65,7 +64,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Exciton-Phonon Tutorial" href="exciton_phonon.html" />
-    <link rel="prev" title="Exciton-Phonon" href="../content/tutorials/exciton_phonon.html" />
+    <link rel="prev" title="LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods" href="../content/tutorials/LiF-tutorial-RR.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -174,7 +173,11 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../content/software/software.html">Software</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../content/software/yambo/yambo.html">Yambo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../content/software/yambo/yambo_input_flags.html">Yambo Input variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/software/yambo/yambo_input_flags.html">Yambo Input Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/software/qe/qe_compilation.html">Quantum ESPRESSO - Compilation Guide</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../content/software/wannier90/wannier90_compilation.html">Wannier90 - Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content/software/wannier_tools/wannier_tools.html">Wannier Tools - Compilation</a></li>
 </ul>
 </details></li>
 </ul>
@@ -183,6 +186,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../content/tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../content/tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../content/tutorials/LiF-tutorial-RR.html">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</a></li>
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -190,6 +199,16 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Notebooks Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="LiF-minimal_mssp.html">Start</a></li>
+
+
+
+
+
+
+
 
 </ul>
 
@@ -338,10 +357,12 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="notebooks-dashboard">
+  <section id="notebooks-dashboard">
 <h1>Notebooks Dashboard<a class="headerlink" href="#notebooks-dashboard" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p><a class="reference internal" href="exciton_phonon.html"><span class="doc std std-doc">Exciton-phonon coupling</span></a></p></li>
+<li><p><a class="reference internal" href="LiF-minimal_mssp.html"><span class="doc std std-doc">LiF IO wannier90 exciton overalp</span></a></p></li>
+<li><p><a class="reference internal" href="wannberri.html"><span class="doc std std-doc">wannierberri</span></a></p></li>
 </ul>
 </section>
 
@@ -376,12 +397,12 @@
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../content/tutorials/exciton_phonon.html"
+       href="../content/tutorials/LiF-tutorial-RR.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exciton-Phonon</p>
+        <p class="prev-next-title">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</p>
       </div>
     </a>
     <a class="right-next"

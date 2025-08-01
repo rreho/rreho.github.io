@@ -36,7 +36,6 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -64,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/software/yambo/yambo';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Yambo Input variables" href="yambo_input_flags.html" />
+    <link rel="next" title="Yambo Input Flags" href="yambo_input_flags.html" />
     <link rel="prev" title="Software" href="../software.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -174,7 +173,11 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="../software.html">Software</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Yambo</a></li>
-<li class="toctree-l2"><a class="reference internal" href="yambo_input_flags.html">Yambo Input variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yambo_input_flags.html">Yambo Input Flags</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../qe/qe_compilation.html">Quantum ESPRESSO - Compilation Guide</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../wannier90/wannier90_compilation.html">Wannier90 - Compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../wannier_tools/wannier_tools.html">WanierTools</a></li>
 </ul>
 </details></li>
 </ul>
@@ -183,6 +186,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../../tutorials/LiF-tutorial-RR.html">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</a></li>
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -190,6 +199,16 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../notebooks/notebooks.html">Notebooks Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../notebooks/exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../../../notebooks/LiF-minimal_mssp.html">Start</a></li>
+
+
+
+
+
+
+
 
 </ul>
 
@@ -338,8 +357,13 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="yambo">
+  <section id="yambo">
 <h1>Yambo<a class="headerlink" href="#yambo" title="Link to this heading">#</a></h1>
+<p>Yambo is a MPBT theory code that allow calculation of optical properties from first-principles.</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#yambo_compilation"><span class="xref myst">Yambo Compilation</span></a></p></li>
+<li><p><a class="reference internal" href="yambo_input_flags.html"><span class="doc std std-doc">Yambo Input Flags</span></a></p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -386,7 +410,7 @@
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Yambo Input variables</p>
+        <p class="prev-next-title">Yambo Input Flags</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

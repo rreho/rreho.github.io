@@ -34,9 +34,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -61,12 +60,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"tags": "all", "tagSide": "right", "tagIndent": "0.8em"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/theory/quantum_well';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Software" href="../software/software.html" />
+    <link rel="next" title="Exciton Phonon Coupling" href="exciton_phonon_coupling.html" />
     <link rel="prev" title="Wannier representation" href="wannier_basis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +182,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../tutorials/LiF-tutorial-RR.html">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</a></li>
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -192,6 +195,7 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/notebooks.html">Notebooks Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
 
 </ul>
 
@@ -339,7 +343,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-v-x-0">2. Free Particle: <span class="math notranslate nohighlight">\( V(x) = 0 \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-v-x-0">2. Free Particle: $ V(x) = 0 $</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">Schrödinger Equation:</a></li>
 </ul>
 </li>
@@ -348,9 +352,9 @@
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-square-well">4. Finite Square Well</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-i-x-a">Region I: <span class="math notranslate nohighlight">\( x &lt; -a \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-ii-a-x-a">Region II: <span class="math notranslate nohighlight">\( -a &lt; x &lt; a \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-iii-x-a">Region III: <span class="math notranslate nohighlight">\( x &gt; a \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-i-x-a">Region I: $ x &lt; -a $</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-ii-a-x-a">Region II: $ -a &lt; x &lt; a $</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-iii-x-a">Region III: $ x &gt; a $</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-odd-solutions">Even/Odd Solutions:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#even-solutions">Even Solutions:</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#odd-solutions">Odd Solutions:</a></li>
@@ -373,60 +377,55 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="quantum-wells-and-walls">
+  <section id="quantum-wells-and-walls">
 <h1>Quantum Wells and Walls<a class="headerlink" href="#quantum-wells-and-walls" title="Link to this heading">#</a></h1>
 <section id="introduction">
 <h2>1. Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>We consider a quantum particle of mass <span class="math notranslate nohighlight">\( m \)</span> moving in a one-dimensional potential <span class="math notranslate nohighlight">\( V(x) \)</span>, and study the <strong>stationary states</strong> by solving the <strong>time-independent Schrödinger equation (TISE)</strong>:</p>
+<p>We consider a quantum particle of mass $ m $ moving in a one-dimensional potential $ V(x) $, and study the <strong>stationary states</strong> by solving the <strong>time-independent Schrödinger equation (TISE)</strong>:</p>
 <p><a name='eq:schroedinger'></a></p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \begin{equation}
 \frac{\hbar^2}{2m} \frac{d^2\psi(x)}{dx^2} + V(x)\psi(x) = E\psi(x)
 \end{equation}
-\]</div>
-<p>The wavefunction <span class="math notranslate nohighlight">\( \psi(x) \)</span> must satisfy appropriate <strong>boundary and continuity conditions</strong>, and must be <strong>square-integrable</strong>:</p>
-<div class="math notranslate nohighlight">
-\[
+$$</p>
+<p>The wavefunction $ \psi(x) $ must satisfy appropriate <strong>boundary and continuity conditions</strong>, and must be <strong>square-integrable</strong>:</p>
+<p>$$
 \int_{-\infty}^{\infty} |\psi(x)|^2 dx &lt; \infty
-\]</div>
+$$</p>
 <p>We study three important cases:</p>
 <ul class="simple">
-<li><p><strong>Free particle</strong>: <span class="math notranslate nohighlight">\( V(x) = 0 \)</span></p></li>
-<li><p><strong>Infinite square well</strong>: <span class="math notranslate nohighlight">\( V(x) = \infty \)</span> outside a finite interval</p></li>
-<li><p><strong>Finite square well</strong>: <span class="math notranslate nohighlight">\( V(x) = V_0 \)</span> outside a finite interval, with <span class="math notranslate nohighlight">\( V_0 &lt; \infty \)</span></p></li>
+<li><p><strong>Free particle</strong>: $ V(x) = 0 $</p></li>
+<li><p><strong>Infinite square well</strong>: $ V(x) = \infty $ outside a finite interval</p></li>
+<li><p><strong>Finite square well</strong>: $ V(x) = V_0 $ outside a finite interval, with $ V_0 &lt; \infty $</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="free-particle-v-x-0">
-<h2>2. Free Particle: <span class="math notranslate nohighlight">\( V(x) = 0 \)</span><a class="headerlink" href="#free-particle-v-x-0" title="Link to this heading">#</a></h2>
+<h2>2. Free Particle: $ V(x) = 0 $<a class="headerlink" href="#free-particle-v-x-0" title="Link to this heading">#</a></h2>
 <section id="schrodinger-equation">
 <h3>Schrödinger Equation:<a class="headerlink" href="#schrodinger-equation" title="Link to this heading">#</a></h3>
-<p>Set <span class="math notranslate nohighlight">\( V(x) = 0 \)</span> in <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">Schroedinger equation</span></a>:
+<p>Set $ V(x) = 0 $ in <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">Schroedinger equation</span></a>:
 <a name='eq:free_particle_eq'></a></p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \begin{equation}
 \frac{d^2\psi(x)}{dx^2} + k^2 \psi(x) = 0,
 \quad \text{with} \quad k = \frac{\sqrt{2mE}}{\hbar}
 \end{equation}
-\]</div>
+$$</p>
 <p>The general solution is:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \psi(x) = Ae^{ikx} + Be^{-ikx}
-\]</div>
+$$</p>
 <p>This corresponds to <strong>plane wave solutions</strong>, with energy:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \begin{equation}
 E = \frac{\hbar^2 k^2}{2m}
 \end{equation}
-\]</div>
+$$</p>
 <p>These solutions are <strong>not square integrable</strong>, and correspond to <strong>scattering states</strong>. We interpret them as momentum eigenstates:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( Ae^{ikx} \)</span>: right-moving particle with momentum <span class="math notranslate nohighlight">\( +\hbar k \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( Be^{-ikx} \)</span>: left-moving particle with momentum <span class="math notranslate nohighlight">\( -\hbar k \)</span></p></li>
+<li><p>$ Ae^{ikx} $: right-moving particle with momentum $ +\hbar k $</p></li>
+<li><p>$ Be^{-ikx} $: left-moving particle with momentum $ -\hbar k $</p></li>
 </ul>
 </section>
 </section>
@@ -435,55 +434,50 @@ E = \frac{\hbar^2 k^2}{2m}
 <h2>3. Infinite Square Well (Potential Box)<a class="headerlink" href="#infinite-square-well-potential-box" title="Link to this heading">#</a></h2>
 <p>In this case the potential assumes the form:
 <a name='eq:inf_well_V'></a></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 V(x) = \begin{cases}
-0 &amp; \text{for } 0 &lt; x &lt; L \\
+0 &amp; \text{for } 0 &lt; x &lt; L \
 \infty &amp; \text{otherwise}
 \end{cases}
-\end{split}\]</div>
+$$</p>
 <ul class="simple">
-<li><p>Outside the well (<span class="math notranslate nohighlight">\( x \leq 0 \)</span> or <span class="math notranslate nohighlight">\( x \geq L \)</span>), the wavefunction must vanish:
+<li><p>Outside the well ($ x \leq 0 $ or $ x \geq L $), the wavefunction must vanish:
 <a name ='eq:inf_well_BC'></a></p></li>
 </ul>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \psi(0) = \psi(L) = 0
-\]</div>
+$$</p>
 <ul class="simple">
-<li><p>Inside the well: <span class="math notranslate nohighlight">\( V(x) = 0 \)</span></p></li>
+<li><p>Inside the well: $ V(x) = 0 $</p></li>
 </ul>
 <p>The <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">TISE</span></a> becomes:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\]</div>
+$$</p>
 <p>with general solution:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \psi(x) = A\sin(kx) + B\cos(kx)
-\]</div>
+$$</p>
 <p>Apply boundary conditions:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( \psi(0) = 0 \Rightarrow B = 0 \)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \psi(L) = 0 \Rightarrow \sin(kL) = 0 \Rightarrow k_n = \frac{n\pi}{L} \)</span></p></li>
+<li><p>$ \psi(0) = 0 \Rightarrow B = 0 $</p></li>
+<li><p>$ \psi(L) = 0 \Rightarrow \sin(kL) = 0 \Rightarrow k_n = \frac{n\pi}{L} $</p></li>
 </ul>
 <p>The final solutions are then:
 <a name='eq:inf_well_solution'></a></p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \begin{equation}
 \psi_n(x) = \sqrt{\frac{2}{L}} \sin\left( \frac{n\pi x}{L} \right), \quad
 E_n = \frac{n^2\pi^2\hbar^2}{2mL^2},\quad n = 1,2,3,\dots
 \end{equation}
-\]</div>
+$$</p>
 <section id="key-features">
 <h3>Key Features:<a class="headerlink" href="#key-features" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Energy spectrum is <strong>discrete</strong> and <strong>non-degenerate</strong></p></li>
-<li><p>No zero-point: <span class="math notranslate nohighlight">\( E_1 \neq 0 \)</span></p></li>
-<li><p>Energies increase as <span class="math notranslate nohighlight">\( n^2 \)</span></p></li>
+<li><p>No zero-point: $ E_1 \neq 0 $</p></li>
+<li><p>Energies increase as $ n^2 $</p></li>
 </ul>
 </section>
 </section>
@@ -492,104 +486,94 @@ E_n = \frac{n^2\pi^2\hbar^2}{2mL^2},\quad n = 1,2,3,\dots
 <h2>4. Finite Square Well<a class="headerlink" href="#finite-square-well" title="Link to this heading">#</a></h2>
 <p>The potential assumes the form
 <a name='eq:finite_well_V'></a></p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 V(x) = \begin{cases}
-0 &amp; \text{if } |x| &lt; a \\
+0 &amp; \text{if } |x| &lt; a \
 V_0 &amp; \text{if } |x| \geq a
 \end{cases}
 \quad\text{with } V_0 &gt; 0
-\end{split}\]</div>
-<p>We analyze <strong>bound states</strong> where <span class="math notranslate nohighlight">\( E &lt; V_0 \)</span>. The <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">TISE</span></a> must be solved in each region:</p>
+$$</p>
+<p>We analyze <strong>bound states</strong> where $ E &lt; V_0 $. The <a class="reference internal" href="#eq:schroedinger"><span class="xref myst">TISE</span></a> must be solved in each region:</p>
 <hr class="docutils" />
 <section id="region-i-x-a">
-<h3>Region I: <span class="math notranslate nohighlight">\( x &lt; -a \)</span><a class="headerlink" href="#region-i-x-a" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
+<h3>Region I: $ x &lt; -a $<a class="headerlink" href="#region-i-x-a" title="Link to this heading">#</a></h3>
+<p>$$
 \frac{d^2\psi}{dx^2} = \frac{2m(V_0 - E)}{\hbar^2} \psi = \kappa^2 \psi,
 \quad \kappa = \frac{\sqrt{2m(V_0 - E)}}{\hbar}
-\]</div>
+$$</p>
 <p>Solution (exponentially decaying):
-$<span class="math notranslate nohighlight">\(
+$$
 \psi_I(x) = Ae^{\kappa x}, \quad \text{reject } e^{-\kappa x} \text{ (diverges)}
-\)</span>$</p>
+$$</p>
 </section>
 <hr class="docutils" />
 <section id="region-ii-a-x-a">
-<h3>Region II: <span class="math notranslate nohighlight">\( -a &lt; x &lt; a \)</span><a class="headerlink" href="#region-ii-a-x-a" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
+<h3>Region II: $ -a &lt; x &lt; a $<a class="headerlink" href="#region-ii-a-x-a" title="Link to this heading">#</a></h3>
+<p>$$
 \frac{d^2\psi}{dx^2} + k^2 \psi = 0,
 \quad k = \frac{\sqrt{2mE}}{\hbar}
-\]</div>
+$$</p>
 <p>General solution:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 \psi_{II}(x) = B\cos(kx) + C\sin(kx)
-\]</div>
+$$</p>
 </section>
 <hr class="docutils" />
 <section id="region-iii-x-a">
-<h3>Region III: <span class="math notranslate nohighlight">\( x &gt; a \)</span><a class="headerlink" href="#region-iii-x-a" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
+<h3>Region III: $ x &gt; a $<a class="headerlink" href="#region-iii-x-a" title="Link to this heading">#</a></h3>
+<p>$$
 \psi_{III}(x) = De^{-\kappa x}, \quad \text{reject } e^{\kappa x} \text{ (diverges)}
-\]</div>
+$$</p>
 </section>
 <hr class="docutils" />
 <section id="even-odd-solutions">
 <h3>Even/Odd Solutions:<a class="headerlink" href="#even-odd-solutions" title="Link to this heading">#</a></h3>
-<p>We use the symmetry <span class="math notranslate nohighlight">\( V(x) = V(-x) \Rightarrow \psi(x) \)</span> is either <strong>even</strong> or <strong>odd</strong>.</p>
+<p>We use the symmetry $ V(x) = V(-x) \Rightarrow \psi(x) $ is either <strong>even</strong> or <strong>odd</strong>.</p>
 <section id="even-solutions">
 <h4>Even Solutions:<a class="headerlink" href="#even-solutions" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 \psi(x) = \begin{cases}
-A e^{\kappa x} &amp; x &lt; -a \\
-B \cos(kx) &amp; |x| &lt; a \\
+A e^{\kappa x} &amp; x &lt; -a \
+B \cos(kx) &amp; |x| &lt; a \
 A e^{-\kappa x} &amp; x &gt; a
 \end{cases}
-\end{split}\]</div>
-<p>Matching at <span class="math notranslate nohighlight">\( x = a \)</span> imposes continuity of <span class="math notranslate nohighlight">\( \psi \)</span> and <span class="math notranslate nohighlight">\( \psi' \)</span>:</p>
+$$</p>
+<p>Matching at $ x = a $ imposes continuity of $ \psi $ and $ \psi’ $:</p>
 <p><a name='eq_even_odd'></a></p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 B\cos(ka) = A e^{-\kappa a},\quad -Bk \sin(ka) = -A \kappa e^{-\kappa a}
 \Rightarrow \tan(ka) = \frac{\kappa}{k}
-\]</div>
+$$</p>
 </section>
 <section id="odd-solutions">
 <h4>Odd Solutions:<a class="headerlink" href="#odd-solutions" title="Link to this heading">#</a></h4>
-<div class="math notranslate nohighlight">
-\[\begin{split}
+<p>$$
 \psi(x) = \begin{cases}
--A e^{\kappa x} &amp; x &lt; -a \\
-B \sin(kx) &amp; |x| &lt; a \\
+-A e^{\kappa x} &amp; x &lt; -a \
+B \sin(kx) &amp; |x| &lt; a \
 A e^{-\kappa x} &amp; x &gt; a
 \end{cases}
-\end{split}\]</div>
-<p>Matching at <span class="math notranslate nohighlight">\( x = a \)</span> gives:</p>
+$$</p>
+<p>Matching at $ x = a $ gives:</p>
 <p><a name='eq:odd_cond'></a></p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 B \sin(ka) = A e^{-\kappa a},\quad Bk \cos(ka) = -A \kappa e^{-\kappa a}
 \Rightarrow -\cot(ka) = \frac{\kappa}{k}
-\]</div>
+$$</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="graphical-numerical-solution">
 <h3>Graphical/Numerical Solution:<a class="headerlink" href="#graphical-numerical-solution" title="Link to this heading">#</a></h3>
-<p>Equations \eqref{eq:even_cond} and \eqref{eq:odd_cond} are transcendental → solve graphically or numerically for <span class="math notranslate nohighlight">\( E \)</span>.</p>
+<p>Equations \eqref{eq:even_cond} and \eqref{eq:odd_cond} are transcendental → solve graphically or numerically for $ E $.</p>
 <p>Define:</p>
-<div class="math notranslate nohighlight">
-\[
+<p>$$
 z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{z_0^2 - z^2}
-\]</div>
+$$</p>
 <p>Plot left-hand and right-hand sides of:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( \tan(z) = \sqrt{z_0^2 - z^2} / z \)</span> (even)</p></li>
-<li><p><span class="math notranslate nohighlight">\( -\cot(z) = \sqrt{z_0^2 - z^2} / z \)</span> (odd)</p></li>
+<li><p>$ \tan(z) = \sqrt{z_0^2 - z^2} / z $ (even)</p></li>
+<li><p>$ -\cot(z) = \sqrt{z_0^2 - z^2} / z $ (odd)</p></li>
 </ul>
 </section>
 </section>
@@ -597,9 +581,9 @@ z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{
 <section id="remarks-and-limits">
 <h2>5. Remarks and Limits<a class="headerlink" href="#remarks-and-limits" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>As <span class="math notranslate nohighlight">\( V_0 \to \infty \)</span>, the equations reduce to the infinite well solution.</p></li>
-<li><p>For small <span class="math notranslate nohighlight">\( V_0 \)</span>, fewer bound states exist.</p></li>
-<li><p>The wavefunction <strong>leaks</strong> into classically forbidden regions <span class="math notranslate nohighlight">\( |x| &gt; a \)</span>: tunneling effect.</p></li>
+<li><p>As $ V_0 \to \infty $, the equations reduce to the infinite well solution.</p></li>
+<li><p>For small $ V_0 $, fewer bound states exist.</p></li>
+<li><p>The wavefunction <strong>leaks</strong> into classically forbidden regions $ |x| &gt; a $: tunneling effect.</p></li>
 </ul>
 </section>
 <hr class="docutils" />
@@ -656,11 +640,11 @@ z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{
       </div>
     </a>
     <a class="right-next"
-       href="../software/software.html"
+       href="exciton_phonon_coupling.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Software</p>
+        <p class="prev-next-title">Exciton Phonon Coupling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -682,7 +666,7 @@ z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">1. Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-v-x-0">2. Free Particle: <span class="math notranslate nohighlight">\( V(x) = 0 \)</span></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#free-particle-v-x-0">2. Free Particle: $ V(x) = 0 $</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#schrodinger-equation">Schrödinger Equation:</a></li>
 </ul>
 </li>
@@ -691,9 +675,9 @@ z = ka, \quad z_0 = a \sqrt{\frac{2mV_0}{\hbar^2}} \Rightarrow \kappa a = \sqrt{
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#finite-square-well">4. Finite Square Well</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-i-x-a">Region I: <span class="math notranslate nohighlight">\( x &lt; -a \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-ii-a-x-a">Region II: <span class="math notranslate nohighlight">\( -a &lt; x &lt; a \)</span></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-iii-x-a">Region III: <span class="math notranslate nohighlight">\( x &gt; a \)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-i-x-a">Region I: $ x &lt; -a $</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-ii-a-x-a">Region II: $ -a &lt; x &lt; a $</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#region-iii-x-a">Region III: $ x &gt; a $</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#even-odd-solutions">Even/Odd Solutions:</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#even-solutions">Even Solutions:</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#odd-solutions">Odd Solutions:</a></li>

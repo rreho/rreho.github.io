@@ -34,9 +34,8 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -61,8 +60,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"tags": "all", "tagSide": "right", "tagIndent": "0.8em"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/exciton_phonon';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -184,6 +181,12 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../content/tutorials/tutorials.html">Workflows</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../content/tutorials/exciton_phonon.html">Exciton-Phonon</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="../content/tutorials/LiF-tutorial-RR.html">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</a></li>
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -191,6 +194,7 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Notebooks Dashboard</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
+
 
 </ul>
 
@@ -342,6 +346,11 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-dfpt">Step 1: <span class="xref myst">DFPT</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-elph">Step 2: <span class="xref myst">ELPH</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-gw-bse-mbpt">Step 3:GW-BSE <span class="xref myst">MBPT</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-exc-ph">Step 4:<span class="xref myst">EXC-PH</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-alternative-with-yambopy-elph">Step 2: Alternative with Yambopy <span class="xref myst">ELPH</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-phonon-assisted-photoluminescence">Plot phonon-assisted photoluminescence</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>
@@ -357,22 +366,22 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exciton-phonon-tutorial">
+  <section id="exciton-phonon-tutorial">
 <h1><a class="reference internal" href="#exc-phonontutorial"><span class="xref myst">Exciton-Phonon Tutorial</span></a><a class="headerlink" href="#exciton-phonon-tutorial" title="Link to this heading">#</a></h1>
 <p>Exciton-phonon coupling refers to the interaction between excitons (bound states of an electron and a hole) and phonons (quanta of lattice vibrations) in a material. This coupling can significantly affect the optical and electronic properties of the material. When an exciton interacts with phonons, it can scatter, leading to changes in its energy and momentum. This process is crucial for understanding phenomena such as thermalization, relaxation, and recombination of excitons in semiconductors and other materials.
 This workflow is split up into several sections:</p>
 <ol class="arabic simple" start="0">
 <li><p><a class="reference internal" href="#step-0-dft-ground-state-calculation-using-pwx"><span class="xref myst">DFT</span></a></p></li>
 <li><p><a class="reference internal" href="#step-1-dfpt-calculation-using-phx"><span class="xref myst">DFPT</span></a></p></li>
-<li><p><a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph-yambopy"><span class="xref myst">ELPH</span></a>
-Compute the electron-phonon matrix elements <span class="math notranslate nohighlight">\(g_{kkp}\)</span> using the <a class="reference external" href="https://github.com/muralidhar-nalabothula/LetzElPhC/">LetzElPhC code</a>.</p></li>
+<li><p><a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph"><span class="xref myst">ELPH</span></a>
+Compute the electron-phonon matrix elements $g_{kkp}$ using the <a class="reference external" href="https://gitlab.com/lumen-code/LetzElPhC">LetzElPhC code</a>.</p></li>
 <li><p><a class="reference internal" href="#step-3-mbpt-calculation-using-yambo"><span class="xref myst">MBPT</span></a>
 Compute BSE kernel and diagonalize on top of GW calculation, using the Yambo code to get the exciton wavefunctions.</p></li>
 <li><p><a class="reference internal" href="#step-4-exciton-phonon-calculation-using-yambopy"><span class="xref myst">EXC-PH</span></a>
 Combine all of the above to compute the exciton-phonon matrix elements that are used to compute photoluminesensce spectrum with python <a class="reference external" href="https://github.com/muralidhar-nalabothula/PhdScripts/">scripts</a>.</p></li>
 </ol>
 <p>We will go through these steps with a simple system of hBN monolayer that can be readily run with relatively small computational cost. Step 1 of calculating the phonons takes some time, but one can parallelize and calculate at the same time the GW-BSE kernel at step 3.
-For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="#id108" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
+For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="../wannier_exciton.html#id108" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
 <p><strong>NB</strong>: For a detailed tutorials on Quantum Espresso we refer to this <a class="reference external" href="https://pranabdas.github.io/espresso/setup/jupyter/">Webpage</a></p>
 <section id="step-0-dft">
 <h2>Step 0: <a class="reference internal" href="#step-0-dft-ground-state-calculation-using-pwx"><span class="xref myst">DFT</span></a><a class="headerlink" href="#step-0-dft" title="Link to this heading">#</a></h2>
@@ -470,19 +479,19 @@ K_POINTS automatic
 </details></section>
 <section id="step-1-dfpt">
 <h2>Step 1: <a class="reference internal" href="#step-1-dfpt-calculation-using-phx"><span class="xref myst">DFPT</span></a><a class="headerlink" href="#step-1-dfpt" title="Link to this heading">#</a></h2>
-<p>The goal of this step is to compute the electron-phonon matrix elements <span class="math notranslate nohighlight">\(g_{q\nu}(\mathbf{k}, i, j)\)</span> defined as</p>
-<p><span class="math notranslate nohighlight">\(g_{\mathbf{q} \nu}(\mathbf{k}, i, j)=\left(\frac{\hbar}{2 M \omega_{\mathbf{q} \nu}}\right)^{1 / 2}\left\langle\psi_{i, \mathbf{k}}\right| \frac{\partial V_{S C F}}{\partial \hat{u}_{\mathbf{q} \nu}} \cdot \hat{\epsilon}_{\mathbf{q} \nu}\left|\psi_{j, \mathbf{k}+\mathbf{q}}\right\rangle\)</span></p>
-<p>(<span class="math notranslate nohighlight">\(\frac{\partial V_{S C F}}{\partial \hat{u}_{\mathbf{q} \nu}}\)</span> is what we call <code class="docutils literal notranslate"><span class="pre">dvscf</span></code>)</p>
+<p>The goal of this step is to compute the electron-phonon matrix elements $g_{q\nu}(\mathbf{k}, i, j)$ defined as</p>
+<p>$g_{\mathbf{q} \nu}(\mathbf{k}, i, j)=\left(\frac{\hbar}{2 M \omega_{\mathbf{q} \nu}}\right)^{1 / 2}\left\langle\psi_{i, \mathbf{k}}\right| \frac{\partial V_{S C F}}{\partial \hat{u}<em>{\mathbf{q} \nu}} \cdot \hat{\epsilon}</em>{\mathbf{q} \nu}\left|\psi_{j, \mathbf{k}+\mathbf{q}}\right\rangle$</p>
+<p>($\frac{\partial V_{S C F}}{\partial \hat{u}_{\mathbf{q} \nu}}$ is what we call <code class="docutils literal notranslate"><span class="pre">dvscf</span></code>)</p>
 <p>and the dynamical matrices defined as:</p>
-<p><span class="math notranslate nohighlight">\(D_{s t}^{\alpha \beta}(\mathbf{q})=\frac{1}{\sqrt{M_s M_t}} \sum_{\mathbf{R}} C_{s t}^{\alpha \beta}(\mathbf{R}) \exp (i \mathbf{q} \cdot \mathbf{R})\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(C_{I J}^{\alpha \beta}(\mathbf{R})\)</span> is the matrix of inter-atomic force constant (IFC), defined as the second derivative with respect to the total energy <span class="math notranslate nohighlight">\(E(\mathbf{R})\)</span></p>
-<p><span class="math notranslate nohighlight">\(C_{I J}^{\alpha \beta} \equiv \frac{\partial^2 E(\{\mathbf{R}\})}{\partial R_I^\alpha \partial R_J^\beta}\)</span></p>
-<p><span class="math notranslate nohighlight">\(M_{s/t}\)</span>: mass of the ions</p>
+<p>$D_{s t}^{\alpha \beta}(\mathbf{q})=\frac{1}{\sqrt{M_s M_t}} \sum_{\mathbf{R}} C_{s t}^{\alpha \beta}(\mathbf{R}) \exp (i \mathbf{q} \cdot \mathbf{R})$</p>
+<p>where $C_{I J}^{\alpha \beta}(\mathbf{R})$ is the matrix of inter-atomic force constant (IFC), defined as the second derivative with respect to the total energy $E(\mathbf{R})$</p>
+<p>$C_{I J}^{\alpha \beta} \equiv \frac{\partial^2 E({\mathbf{R}})}{\partial R_I^\alpha \partial R_J^\beta}$</p>
+<p>$M_{s/t}$: mass of the ions</p>
 <p>To compute the el-ph matrix elements we make use of the library <a class="reference download internal" download="" href="../_downloads/d451fa70b58bcbcd45d1fdefaaceed37/LetzElPhC_documentation.pdf"><span class="xref download myst">LetzElPhC</span></a></p>
-<p><strong>Before</strong> Computing <span class="math notranslate nohighlight">\(g_{q\nu}(\mathbf{k}, i, j)\)</span> and <span class="math notranslate nohighlight">\(D_{s t}^{\alpha \beta}(\mathbf{q})\)</span>  we need the:</p>
+<p><strong>Before</strong> Computing $g_{q\nu}(\mathbf{k}, i, j)$ and $D_{s t}^{\alpha \beta}(\mathbf{q})$  we need the:</p>
 <ul class="simple">
 <li><p>Kohn-Sham wavefunctions (obtained in <a class="reference internal" href="#step-0-dft"><span class="xref myst">Step 0</span></a>)</p></li>
-<li><p>phonon eigenvectors and perturbed Hartree (<span class="math notranslate nohighlight">\(\Delta V_{Hartree}\)</span>) and Exchange potentials (<span class="math notranslate nohighlight">\(\Delta V_{exchange}\)</span>) due to the phonon mode (obtained via <code class="docutils literal notranslate"><span class="pre">DFPT</span></code>)</p></li>
+<li><p>phonon eigenvectors and perturbed Hartree ($\Delta V_{Hartree}$) and Exchange potentials ($\Delta V_{exchange}$) due to the phonon mode (obtained via <code class="docutils literal notranslate"><span class="pre">DFPT</span></code>)</p></li>
 </ul>
 <p>The phonon eigenvectors are obtained via a <strong>DFPT</strong> calculation (<code class="docutils literal notranslate"><span class="pre">ph.x</span> <span class="pre">&lt;</span> <span class="pre">ph.in</span> <span class="pre">&gt;</span> <span class="pre">log_ph.out</span></code>). We work in a fresh folder in ROOT FOLDER <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">phonons</span></code>:</p>
 <details>
@@ -517,17 +526,17 @@ phonons on a grid
 #SBATCH --time=6:00:00
 #SBATCH --hint=multithread
 #SBATCH --qos=normal
-<p>export OMP_NUM_THREADS=<span class="math notranslate nohighlight">\(SLURM_CPUS_PER_TASK
-export SRUN_CPUS_PER_TASK=\)</span>SLURM_CPUS_PER_TASK</p>
+<p>export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
+export SRUN_CPUS_PER_TASK=$SLURM_CPUS_PER_TASK</p>
 <p>export PATH=”$PATH:/home/users/rreho/codes/q-e-qe-7.4.1/bin:/home/users/rreho/personalcodes/lumen/bin”</p>
 <p>module load env/development/2024a
 module load math/ELPA/2024.05.001-foss-2024a
 module load data/netCDF-Fortran/4.6.1-gompi-2024a</p>
-<p>srun -n ${SLURM_NTASKS} ph.x -ni 4 -nk 2 &lt; <a class="reference external" href="http://ph.in">ph.in</a> &gt; log_ph.out
+<p>srun -n ${SLURM_NTASKS} ph.x -ni 4 -nk 2 &lt; ph.in &gt; log_ph.out
 </code></pre></p>
 </details></section>
 <section id="step-2-elph">
-<h2>Step 2: <a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph-yambopy"><span class="xref myst">ELPH</span></a><a class="headerlink" href="#step-2-elph" title="Link to this heading">#</a></h2>
+<h2>Step 2: <a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph"><span class="xref myst">ELPH</span></a><a class="headerlink" href="#step-2-elph" title="Link to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">LetzElPhC</span></code> requires the initialization of the yambo SAVE folder. Go to the <code class="docutils literal notranslate"><span class="pre">nscf_6x6x1</span></code> folder inside <code class="docutils literal notranslate"><span class="pre">hBN.save</span></code> and run <code class="docutils literal notranslate"><span class="pre">p2y</span></code> followed by <code class="docutils literal notranslate"><span class="pre">yambo</span></code>.
 For convenience we advise to create in the ROOT_FOLDER a <code class="docutils literal notranslate"><span class="pre">database</span></code> folder where you store the <code class="docutils literal notranslate"><span class="pre">yambo</span></code> <code class="docutils literal notranslate"><span class="pre">SAVE</span></code> folder (<code class="docutils literal notranslate"><span class="pre">mv</span> <span class="pre">nscf_6x6x1/hBN.save/SAVE</span> <span class="pre">./database</span></code>).</p>
 <p>Navigate in <code class="docutils literal notranslate"><span class="pre">phonons</span></code> and run the preprocess step needed by <code class="docutils literal notranslate"><span class="pre">lelphc</span></code>:</p>
@@ -626,6 +635,7 @@ QPExpand
 %
 </code></pre>
 </details>
+<p>In the BSE we are, at the same time, applying the GW correction and a scissor. For real-life applications, the energies should be shifted either by GW correction or scissor only once.</p>
 <details>
     <summary><strong>▶️ Expand for `BSE` input file</strong></summary>
     <pre><code class="language-bash">
@@ -675,8 +685,113 @@ DIP_ROLEs= "k c v"                    # [PARALLEL] CPUs roles (k,c,v)
 %
 </code></pre>
 </details></section>
+<section id="step-4-exc-ph">
+<h2>Step 4:<a class="reference internal" href="#step-4-exciton-phonon-calculation-using-yambopy"><span class="xref myst">EXC-PH</span></a><a class="headerlink" href="#step-4-exc-ph" title="Link to this heading">#</a></h2>
+<p>Details about the Exciton-Phonon calculation using yambopy.
+For this step we use these <a class="reference external" href="https://github.com/muralidhar-nalabothula/PhdScripts/">scripts</a> to calculate the exciton-phonon matrix elements but also to calculate the photoluminescense spectrum of the material. The script we will be using is called <code class="docutils literal notranslate"><span class="pre">ex_ph_program.py</span></code>.</p>
+<p>It takes a few basic inputs:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="n">calc_folder</span><span class="p">:</span> <span class="o">/</span><span class="n">Path</span><span class="o">/</span> <span class="c1">#where the calculations took place.</span>
+<span class="o">-</span> <span class="n">SAVE_dir</span><span class="p">:</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/path/to/SAVE&#39;</span>
+<span class="o">-</span> <span class="n">BSE_dir</span><span class="p">:</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/path/of/job/bse/&#39;</span>
+<span class="o">-</span> <span class="n">elph_file</span><span class="p">:</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/path/to/ndb.elph&#39;</span>
+<span class="o">-</span> <span class="n">Dmat_file</span><span class="p">:</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/path/to/ndb.Dmats&#39;</span>
+<span class="o">-</span> <span class="n">nstates</span><span class="p">:</span> <span class="mi">19</span><span class="o">*</span><span class="mi">4</span>             <span class="c1"># Number of states to include in the PL, `nq * ntransitions` (e.g., 19*4)</span>
+<span class="o">-</span> <span class="n">lumin</span><span class="p">:</span> <span class="kc">True</span>               <span class="c1"># Compute luminescence if set to `True`</span>
+<span class="o">-</span> <span class="n">Exph</span><span class="p">:</span> <span class="kc">True</span> 
+<span class="o">-</span> <span class="n">Temp</span><span class="p">:</span> <span class="mi">20</span>                  <span class="c1"># Temperature used in luminescence (in Kelvin, e.g., 20)</span>
+<span class="o">-</span> <span class="n">ome_range</span><span class="p">:[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]</span>    <span class="c1"># Range for omega in the format `(min, max, numpoints)` (in eV, e.g., [1, 8, 1000])</span>
+<span class="o">-</span> <span class="n">broading</span><span class="p">:</span> <span class="mf">0.005</span>           <span class="c1"># Broadening (in eV, e.g., 0.005)</span>
+<span class="o">-</span> <span class="n">npol</span><span class="p">:</span> <span class="mi">2</span>                   <span class="c1"># Polarization, set to 2 for 2D materials</span>
+</pre></div>
+</div>
+<p>Run the python script.</p>
+<p>Now you obtain <code class="docutils literal notranslate"><span class="pre">Ex-ph.npy</span></code> and <code class="docutils literal notranslate"><span class="pre">luminescence_intensities.dat</span></code>.</p>
+<p>The exciton-phonon matrix elements are computed within TDA via</p>
+<p>$
+\begin{aligned} \mathcal{G}<em>{S^{\prime}, S}^\lambda(\mathbf{Q}, \mathbf{q}) &amp; =\sum</em>{\mathbf{k} c c^{\prime} v}\left(A_{\mathbf{k}+\mathbf{q}, c^{\prime} v}^{S^{\prime},(\mathbf{Q}+\mathbf{q})}\right)^* A_{\mathbf{k}, c v}^{S,(\mathbf{Q})} \tilde{g}<em>{c^{\prime}, c}^\lambda(\mathbf{k}, \mathbf{q}) \ &amp; -\sum</em>{\mathbf{k} c v v^{\prime}}\left(A_{\mathbf{k}, c v^{\prime}}^{S^{\prime},(\mathbf{Q}+\mathbf{q})}\right)^* A_{\mathbf{k}, c v}^{S,(\mathbf{Q})} \tilde{g}_{v, v^{\prime}}^\lambda(\mathbf{k}-\mathbf{Q}-\mathbf{q}, \mathbf{q}) .\end{aligned}
+$</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="references">
+</section>
+<section id="step-2-alternative-with-yambopy-elph">
+<h1>Step 2: Alternative with Yambopy <a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph-yambopy"><span class="xref myst">ELPH</span></a><a class="headerlink" href="#step-2-alternative-with-yambopy-elph" title="Link to this heading">#</a></h1>
+<p>Move into the folder containing <code class="docutils literal notranslate"><span class="pre">Yambo</span></code> save directory and run <code class="docutils literal notranslate"><span class="pre">yambopy</span> <span class="pre">l2y</span></code>. This command will display the various options to
+calculate gauge-invariant electron-phonon matrix elements with <code class="docutils literal notranslate"><span class="pre">LetzElPhC</span></code> and convert them into <code class="docutils literal notranslate"><span class="pre">Yambo</span></code> format.</p>
+<p>Then you can generate the database via</p>
+<p><code class="docutils literal notranslate"><span class="pre">yambopy</span> <span class="pre">l2y</span> <span class="pre">-ph</span> <span class="pre">../phonons/ph.in</span>&#160; <span class="pre">-b</span> <span class="pre">7</span> <span class="pre">10</span> <span class="pre">-par</span> <span class="pre">1</span> <span class="pre">1</span> <span class="pre">-k</span> <span class="pre">'dfpt'</span> <span class="pre">-lelph</span> <span class="pre">/home/users/rreho/codes/LetzElphC/src/lelphc</span>&#160; </code></p>
+<section id="plot-phonon-assisted-photoluminescence">
+<h2>Plot phonon-assisted photoluminescence<a class="headerlink" href="#plot-phonon-assisted-photoluminescence" title="Link to this heading">#</a></h2>
+<p>With <code class="docutils literal notranslate"><span class="pre">yambopy</span></code>, it’s easier to read the database of <code class="docutils literal notranslate"><span class="pre">yambo</span></code> and <code class="docutils literal notranslate"><span class="pre">LetzElPhCode</span></code> to analyze the electron-phonon coupling matrix elements and dynamical force matrices. Classes and methods are available to plot and post-process observables such as phonon-assisted luminescence.
+Notably, quantities levaraging the symmetries of the electronic and excitonic wavefunctions. Hence, the phase of the exciton wavefunction is properly took into account for.</p>
+<p>Below I provide an example of some notebooks cells to compute and plot <strong>Phonon-Assisted Photoluminescence</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import yambopy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">yambopy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="c1"># Add to sys.path if not already present</span>
+<span class="k">if</span> <span class="n">script_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">script_dir</span><span class="p">)</span>
+
+<span class="c1"># plotting library</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="c1"># Import objects for IO of LetzElPhC</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">yambopy.letzelphc_interface.lelphcdb</span><span class="w"> </span><span class="kn">import</span> <span class="n">LetzElphElectronPhononDB</span>
+<span class="c1"># Import optical properties objects for post-processing</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">yambopy.optical_properties.luminescence</span><span class="w"> </span><span class="kn">import</span> <span class="n">Luminescence</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">yambopy</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Add to sys.path if not already present</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">if</span> <span class="n">script_dir</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">script_dir</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># plotting library</span>
+
+<span class="ne">NameError</span>: name &#39;script_dir&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Path to relevant folders</span>
+<span class="n">calc_folder</span> <span class="o">=</span> <span class="s1">&#39;/home/users/rreho/project_folder/exc-ph-workflow/hBN-3D&#39;</span>
+<span class="n">SAVE_dir</span> <span class="o">=</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/database/SAVE&#39;</span>
+<span class="n">BSE_dir</span> <span class="o">=</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/GW_BSE/bse/&#39;</span>
+<span class="n">elph_file</span> <span class="o">=</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/lelph/ndb.elph&#39;</span>
+<span class="n">Dmat_file</span> <span class="o">=</span> <span class="n">calc_folder</span> <span class="o">+</span> <span class="s1">&#39;/lelph/ndb.Dmats&#39;</span>
+<span class="c1"># initialize useful database</span>
+<span class="n">lelph_db</span> <span class="o">=</span> <span class="n">LetzElphElectronPhononDB</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">elph_file</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">lat_db</span> <span class="o">=</span> <span class="n">YamboLatticeDB</span><span class="o">.</span><span class="n">from_db</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">SAVE_dir</span><span class="o">+</span><span class="s1">&#39;/ns.db1&#39;</span><span class="p">)</span>
+<span class="n">bse_db</span> <span class="o">=</span> <span class="n">YamboExcitonDB</span><span class="o">.</span><span class="n">from_db_file</span><span class="p">(</span><span class="n">lat_db</span><span class="p">,</span> <span class="n">folder</span><span class="o">=</span><span class="n">BSE_dir</span><span class="p">)</span>
+<span class="n">wfdb</span> <span class="o">=</span>   <span class="n">YamboWFDB</span><span class="p">(</span><span class="n">path</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">save</span><span class="o">=</span><span class="n">SAVE_dir</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;ns.wf&#39;</span><span class="p">,</span> <span class="n">latdb</span><span class="o">=</span><span class="n">lat_db</span><span class="p">,</span><span class="n">bands_range</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lumen</span> <span class="o">=</span> <span class="n">Luminescence</span><span class="p">(</span><span class="n">lelph_db</span> <span class="o">=</span> <span class="n">lelph_db</span><span class="p">,</span> <span class="n">latdb</span><span class="o">=</span><span class="n">lat_db</span><span class="p">,</span> <span class="n">wfdb</span><span class="o">=</span><span class="n">wfdb</span><span class="p">,</span><span class="n">BSE_dir</span><span class="o">=</span><span class="n">BSE_dir</span><span class="p">,</span> <span class="n">bands_range</span><span class="o">=</span><span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">10</span><span class="p">],</span> <span class="n">DIP_dir</span> <span class="o">=</span> <span class="n">BSE_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">energy</span><span class="p">,</span> <span class="n">pl</span> <span class="o">=</span><span class="n">lumen</span><span class="o">.</span><span class="n">compute_luminescence</span><span class="p">(</span><span class="n">ome_range</span><span class="o">=</span><span class="p">[</span><span class="mf">6.5</span><span class="p">,</span><span class="mf">7.5</span><span class="p">,</span><span class="mi">500</span><span class="p">],</span> <span class="n">broadening</span><span class="o">=</span><span class="mf">0.005</span><span class="p">,</span> <span class="n">npol</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">temp</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">ph_thr</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">compute_luminescence</span></code> allow you to plot phonon-assited photoluminesnce in a desired energy range with exciton-phonon coupling. It returns the energies and PL intensities. Moreover, if <code class="docutils literal notranslate"><span class="pre">save_files=True</span></code> it creates <code class="docutils literal notranslate"><span class="pre">*.dat</span></code> file and *npy objects. This option might come handy when high computational time is required.</p>
+<p><img alt="title" src="../_images/hBN_refPL.png" /></p>
+</section>
+</section>
+<section id="references">
 <h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
 <div class="docutils container" id="id2">
 <div role="list" class="citation-list">
@@ -797,6 +912,11 @@ DIP_ROLEs= "k c v"                    # [PARALLEL] CPUs roles (k,c,v)
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-dfpt">Step 1: <span class="xref myst">DFPT</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-elph">Step 2: <span class="xref myst">ELPH</span></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-gw-bse-mbpt">Step 3:GW-BSE <span class="xref myst">MBPT</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-exc-ph">Step 4:<span class="xref myst">EXC-PH</span></a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-alternative-with-yambopy-elph">Step 2: Alternative with Yambopy <span class="xref myst">ELPH</span></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-phonon-assisted-photoluminescence">Plot phonon-assisted photoluminescence</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#references">References</a></li>

@@ -34,9 +34,8 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/proof.css?v=b4b7a797" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- So that users can add custom icons -->
@@ -61,12 +60,10 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"tex": {"tags": "all", "tagSide": "right", "tagIndent": "0.8em"}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/tutorials/exciton_phonon';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Notebooks Dashboard" href="../../notebooks/notebooks.html" />
+    <link rel="next" title="LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods" href="LiF-tutorial-RR.html" />
     <link rel="prev" title="Workflows" href="tutorials.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -185,6 +182,12 @@
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="tutorials.html">Workflows</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Exciton-Phonon</a></li>
 
+<li class="toctree-l2"><a class="reference internal" href="LiF-tutorial-RR.html">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</a></li>
+
+
+
+
+
 </ul>
 </details></li>
 </ul>
@@ -192,17 +195,6 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/notebooks.html">Notebooks Dashboard</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="xref myst">Exciton-Phonon Tutorial</span></a></li>
-
-
-
-
-
-
-
-
-
-
-
 
 
 </ul>
@@ -371,7 +363,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exciton-phonon">
+  <section id="exciton-phonon">
 <h1>Exciton-Phonon<a class="headerlink" href="#exciton-phonon" title="Link to this heading">#</a></h1>
 <p>Exciton-phonon coupling refers to the interaction between excitons (bound states of an electron and a hole) and phonons (quanta of lattice vibrations) in a material. This coupling can significantly affect the optical and electronic properties of the material. When an exciton interacts with phonons, it can scatter, leading to changes in its energy and momentum. This process is crucial for understanding phenomena such as thermalization, relaxation, and recombination of excitons in semiconductors and other materials.
 This workflow is split up into several sections:</p>
@@ -379,16 +371,16 @@ This workflow is split up into several sections:</p>
 <li><p><a class="reference internal" href="#step-0-dft-ground-state-calculation-using-pwx"><span class="xref myst">DFT</span></a>
 Calculate ground state wavefunctions of the system using Quantum Espresso <code class="docutils literal notranslate"><span class="pre">pw.x</span></code>.</p></li>
 <li><p><a class="reference internal" href="#step-1-dfpt-calculation-using-phx"><span class="xref myst">DFPT</span></a>
-Calculate the phonons and <span class="math notranslate nohighlight">\(\Delta V_{scf}\)</span> for the electron-phonon matrix elements using Quantum Espresso <code class="docutils literal notranslate"><span class="pre">ph.x</span></code>.</p></li>
+Calculate the phonons and $\Delta V_{scf}$ for the electron-phonon matrix elements using Quantum Espresso <code class="docutils literal notranslate"><span class="pre">ph.x</span></code>.</p></li>
 <li><p><a class="reference internal" href="#step-2-dvscf-calculation-using-letzelph-yambopy"><span class="xref myst">ELPH</span></a>
-Compute the electron-phonon matrix elements <span class="math notranslate nohighlight">\(g_{kkp}\)</span> using the <a class="reference external" href="https://github.com/muralidhar-nalabothula/LetzElPhC/">LetzElPhC code</a>.</p></li>
+Compute the electron-phonon matrix elements $g_{kkp}$ using the <a class="reference external" href="https://github.com/muralidhar-nalabothula/LetzElPhC/">LetzElPhC code</a>.</p></li>
 <li><p><a class="reference internal" href="#step-3-gw-bse-calculation-using-yambo"><span class="xref myst">GW-BSE</span></a>
 Compute BSE kernel and diagonalize on top of GW calculation, using the Yambo code to get the exciton wavefunctions.</p></li>
 <li><p><a class="reference internal" href="#step-4-exciton-phonon-calculation-using-yambopy"><span class="xref myst">EXC-PH</span></a>
 Combine all of the above to compute the exciton-phonon matrix elements that are used to compute photoluminesensce spectrum with python <a class="reference external" href="https://github.com/muralidhar-nalabothula/PhdScripts/">scripts</a>.</p></li>
 </ol>
 <p>We will go through these steps with a simple system of hBN monolayer that can be readily run with relatively small computational cost. Step 1 of calculating the phonons takes some time, but one can parallelize and calculate at the same time the GW-BSE kernel at step 3.
-For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="../../notebooks/exciton_phonon.html#id112" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
+For more detailed information on exciton-phonon coupling and its effects on luminescence in hexagonal boron nitride, you can refer to the paper: <span id="id1">[<a class="reference internal" href="../../wannier_exciton.html#id108" title="Pierre Lechifflart, Fulvio Paleari, Davide Sangalli, and Claudio Attaccalite. First-principles study of luminescence in hexagonal boron nitride single layer: exciton-phonon coupling and the role of substrate. Phys. Rev. Mater., 7:024006, Feb 2023. URL: https://link.aps.org/doi/10.1103/PhysRevMaterials.7.024006, doi:10.1103/PhysRevMaterials.7.024006.">Lechifflart <em>et al.</em>, 2023</a>]</span>.</p>
 <section id="step-0-dft-ground-state-calculation-using-pwx">
 <h2>Step 0: DFT ground state calculation using pwx<a class="headerlink" href="#step-0-dft-ground-state-calculation-using-pwx" title="Link to this heading">#</a></h2>
 <p>Details about the DFT ground state calculation using pw.x.
@@ -442,7 +434,7 @@ For this step we use these <a class="reference external" href="https://github.co
 <p>Follow the <a class="reference internal" href="../../notebooks/exciton_phonon.html"><span class="std std-doc">Jupyter Notebook</span></a> for a pratical tutorial on how to compute photoluminescence and Raman including exciton-phonon coupling.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="references">
+<section id="references">
 <h1>References<a class="headerlink" href="#references" title="Link to this heading">#</a></h1>
 <div class="docutils container" id="id2">
 <div role="list" class="citation-list">
@@ -542,11 +534,11 @@ For this step we use these <a class="reference external" href="https://github.co
       </div>
     </a>
     <a class="right-next"
-       href="../../notebooks/notebooks.html"
+       href="LiF-tutorial-RR.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks Dashboard</p>
+        <p class="prev-next-title">LiF tutorial - From ground state DFT to excited state MBPT via Wannerization methods</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
