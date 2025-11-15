@@ -1,0 +1,121 @@
+<div class="container blog-content">
+  <mat-card class="header-card">
+    <mat-card-header>
+      <mat-card-title>Blog & Thoughts</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>Reflections on physics, philosophy of science, and my research journey. Share your thoughts in the comments!</p>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="blog-layout">
+    <aside class="sidebar">
+      <mat-card *ngIf="isAdmin; else notAdmin">
+        <mat-card-header>
+          <mat-card-title>Write a Post</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <form [formGroup]="blogForm" (ngSubmit)="submitBlogPost()">
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Post Title</mat-label>
+              <input matInput formControlName="title" placeholder="Title of your blog post">
+              <mat-error *ngIf="blogForm.get('title')?.hasError('required')">Title is required</mat-error>
+              <mat-error *ngIf="blogForm.get('title')?.hasError('minlength')">Minimum 5 characters</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Excerpt</mat-label>
+              <textarea matInput formControlName="excerpt" placeholder="Brief summary of your post" rows="3"></textarea>
+              <mat-error *ngIf="blogForm.get('excerpt')?.hasError('required')">Excerpt is required</mat-error>
+              <mat-error *ngIf="blogForm.get('excerpt')?.hasError('minlength')">Minimum 10 characters</mat-error>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width">
+              <mat-label>Content</mat-label>
+              <textarea matInput formControlName="content" placeholder="Write your full blog post here..." rows="10"></textarea>
+              <mat-error *ngIf="blogForm.get('content')?.hasError('required')">Content is required</mat-error>
+              <mat-error *ngIf="blogForm.get('content')?.hasError('minlength')">Minimum 20 characters</mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary" type="submit" [disabled]="blogForm.invalid">
+              <mat-icon>publish</mat-icon> Submit Post
+            </button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+
+      <ng-template #notAdmin>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title>Admin Area</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Only the blog owner can write posts.</p>
+            <p *ngIf="!isAuthenticated">You can still comment as an authenticated user.</p>
+          </mat-card-content>
+        </mat-card>
+      </ng-template>
+    </aside>
+
+    <main class="main-content">
+      <mat-card *ngIf="loading">
+        <mat-card-content class="loading-container">
+          <mat-spinner diameter="50"></mat-spinner>
+          <p>Loading blog posts...</p>
+        </mat-card-content>
+      </mat-card>
+
+      <div *ngIf="!loading && blogPosts.length > 0">
+        <mat-card *ngFor="let post of blogPosts" class="blog-card">
+          <mat-card-header>
+            <mat-card-title>{{ post.title }}</mat-card-title>
+            <mat-card-subtitle>
+              by {{ post.authorEmail }} | {{ formatDate(post.createdAt) }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="excerpt"><strong>{{ post.excerpt }}</strong></p>
+            <p>{{ post.content }}</p>
+            <mat-divider></mat-divider>
+            
+            <div class="comments-section" *ngIf="post.id">
+              <h4>Comments ({{ getComments(post.id).length }})</h4>
+              
+              <div *ngFor="let comment of getComments(post.id)" class="comment">
+                <strong>{{ comment.authorEmail }}</strong>
+                <span class="comment-date">{{ formatDate(comment.createdAt) }}</span>
+                <p>{{ comment.content }}</p>
+              </div>
+
+              <mat-divider *ngIf="isAuthenticated"></mat-divider>
+
+              <div *ngIf="isAuthenticated; else signInToComment" class="comment-form">
+                <h4>Add a Comment</h4>
+                <form [formGroup]="commentForm">
+                  <mat-form-field appearance="fill" class="full-width">
+                    <mat-label>Your Comment</mat-label>
+                    <textarea matInput formControlName="content" placeholder="Share your thoughts..." rows="4"></textarea>
+                  </mat-form-field>
+                  <button mat-raised-button color="primary" (click)="submitComment(post.id!)" [disabled]="commentForm.invalid">
+                    <mat-icon>comment</mat-icon> Post Comment
+                  </button>
+                </form>
+              </div>
+
+              <ng-template #signInToComment>
+                <p class="sign-in-prompt"><em>Sign in to post a comment</em></p>
+              </ng-template>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+
+      <mat-card *ngIf="!loading && blogPosts.length === 0" class="empty-state">
+        <mat-card-content>
+          <mat-icon>edit_note</mat-icon>
+          <p>No blog posts yet. Check back soon!</p>
+        </mat-card-content>
+      </mat-card>
+    </main>
+  </div>
+</div>

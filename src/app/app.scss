@@ -1,0 +1,57 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main-content {
+    flex: 1;
+    background-color: #fafafa;
+    padding-bottom: 40px;
+  }
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+
+    .nav-menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+
+        &.active {
+          border-bottom: 3px solid white;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    .nav-container {
+      .nav-menu {
+        justify-content: space-around;
+        a {
+          font-size: 0.9rem;
+          padding: 8px 4px;
+          mat-icon {
+            font-size: 18px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+      }
+    }
+  }
+}

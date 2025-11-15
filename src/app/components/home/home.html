@@ -1,0 +1,149 @@
+<div class="container home-content">
+  <div class="row">
+    <aside class="sidebar">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Contact</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="contact-link">
+            <mat-icon>email</mat-icon>
+            <a href="mailto:r.reho@uu.nl">r.reho@uu.nl</a>
+          </div>
+          <div class="contact-link">
+            <mat-icon>code</mat-icon>
+            <a href="https://github.com/rreho" target="_blank">rreho</a>
+          </div>
+          <div class="contact-link">
+            <mat-icon>business</mat-icon>
+            <a href="https://www.linkedin.com/in/riccardo-reho-997888245/" target="_blank">Riccardo Reho</a>
+          </div>
+          <div class="contact-link">
+            <mat-icon>school</mat-icon>
+            <a href="https://orcid.org/0009-0002-3703-1292" target="_blank">ORCID</a>
+          </div>
+          <div class="contact-link">
+            <mat-icon>library_books</mat-icon>
+            <a href="https://scholar.google.com/citations?user=WWjH_vYAAAAJ&hl=it&oi=ao" target="_blank">Google Scholar</a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Education</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h3>PhD Diploma</h3>
+          <p><strong>Utrecht University</strong><br>2020-2025</p>
+          <h3>Master's Degree</h3>
+          <p><strong>Theoretical Physics</strong><br>Università di Bologna, 2017-2020</p>
+          <h3>Bachelor's Degree</h3>
+          <p><strong>Physics</strong><br>Università di Bologna, 2014-2017</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Skills</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h4>Programming</h4>
+          <div class="skills-grid">
+            <span class="skill-chip">Fortran</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">GitHub</span>
+          </div>
+          <h4>Tools & Software</h4>
+          <div class="skills-grid">
+            <span class="skill-chip">Quantum Espresso</span>
+            <span class="skill-chip">Yambo</span>
+            <span class="skill-chip">SIESTA</span>
+            <span class="skill-chip">Wannier90</span>
+            <span class="skill-chip">Aiida</span>
+          </div>
+          <h4>Languages</h4>
+          <div class="skills-grid">
+            <span class="skill-chip">English</span>
+            <span class="skill-chip">Italian</span>
+            <span class="skill-chip">Spanish</span>
+            <span class="skill-chip">French</span>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>News</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p><strong>QuREX-Book</strong> is available! Check out tips and tricks about DFT+MBPT+Wannier Theory and best usage of Yambo and Yambopy.</p>
+        </mat-card-content>
+      </mat-card>
+    </aside>
+
+    <main class="main-content-area">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>About</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>I am a computational physicist specializing in ab initio many-body perturbation theory methods to compute the electronic and optical properties of semiconductors. My research projects involve Density Functional Theory (DFT) applied to superconductivity, topology, and optics of van der Waals (vdW) materials.</p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Active Projects</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <div class="projects-grid">
+            <mat-card *ngFor="let project of projects" class="project-card">
+              <img mat-card-image [src]="project.image" [alt]="project.title">
+              <mat-card-header>
+                <mat-card-title>{{ project.title }}</mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <p>{{ project.description }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button mat-raised-button color="primary">Learn More</button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Work Experience</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <h3>PhD Candidate - Utrecht University (2020-2025)</h3>
+          <p>Working as a computational physicist in ab-initio calculations for materials science based on DFT</p>
+          <ul>
+            <li>Developed Superconducting Density Functional Theory in SIESTA</li>
+            <li>Worked on the implementation of Photoluminescence in the YAMBO code via Non-equilibrium Many Body Perturbation Theory methods</li>
+            <li>Theoretical Spectroscopy study on the optical properties of 2D Materials</li>
+            <li>Teaching experience</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Research Overview</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p>I specialize in formulating and developing theoretical frameworks to elucidate quantum phenomena in materials, including superconductivity and light-matter interaction.</p>
+          
+          <h4>Theoretical Spectroscopy</h4>
+          <p>I focus on examining the optical properties of two-dimensional (2D) multilayer structures formed by Transition Metal Dichalcogenides (TMDs) and topological insulators like Bi₂Se₃. These multilayer 2D structures enhance the Coulomb interaction between charge carriers leading to strongly bound electron-hole (exciton) pairs.</p>
+          
+          <h4>Superconductivity</h4>
+          <p>I investigate both conventional superconductors described by Bardeen-Cooper-Schrieffer (BCS) theory and unconventional superconductors exhibiting high-temperature superconductivity. I combined Bogoliubov-de-Gennes and Density Functional Theory (DFT) in a unified approach called Superconducting Density Functional Theory (SCDFT), which I extended to unconventional superconductors and implemented in the SIESTA code.</p>
+        </mat-card-content>
+      </mat-card>
+    </main>
+  </div>
+</div>

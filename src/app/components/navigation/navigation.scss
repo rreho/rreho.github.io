@@ -1,0 +1,21 @@
+mat-toolbar {
+  background-color: #2D3436 !important;
+  color: white;
+
+  a {
+    color: white;
+    
+    &.active {
+      border-bottom: 3px solid #A9A9A9;
+      padding-bottom: 8px;
+    }
+
+    &:hover {
+      color: #E8E8E8;
+    }
+  }
+
+  mat-icon {
+    color: white;
+  }
+}
