@@ -1,5 +1,5 @@
 .content-page {
-  padding: 40px 0;
+  padding: 40px 16px;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -57,6 +57,66 @@
 
 @media (max-width: 768px) {
   .content-page {
-    padding: 20px 0;
+    padding: 20px 12px;
+  }
+
+  .header-card {
+    margin-bottom: 20px;
+  }
+
+  mat-card {
+    margin-bottom: 15px;
+
+    mat-card-title {
+      font-size: 1.1rem;
+    }
+
+    ul {
+      padding-left: 16px;
+
+      li {
+        margin: 8px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .content-page {
+    padding: 16px 10px;
+  }
+
+  .header-card {
+    margin-bottom: 16px;
+
+    mat-card-title {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  mat-card {
+    margin-bottom: 12px;
+
+    mat-card-title {
+      font-size: 1rem;
+    }
+
+    ul {
+      padding-left: 16px;
+      margin: 12px 0;
+
+      li {
+        margin: 6px 0;
+        font-size: 0.9rem;
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
   }
 }
