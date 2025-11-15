@@ -1,0 +1,263 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+body {
+    background: #FAFAFA ; /* A cooler tonality of black */
+    color: black;  /* Keeping the text white for contrast */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+header {
+    background-image: url('images/puzzle.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;  /* Reduced padding for alignment */
+}
+
+.name-title-box {
+    background-color: rgba(44, 42, 42, 0.286); /* Updated semi-transparent dark gray background */
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 10px;
+    color: white;  /* Ensure text is white */
+    font-size: 1.2em; /* Slightly smaller font size than the name */    
+}
+
+/* Update navbar to match dark theme */
+.navbar {
+    background-color: #FAFAFA !important;  /* Matches the dark theme */
+    border-color: black !important;  /* Slightly lighter border for visibility */
+    margin-top: 10px !important;  /* Increased margin-top for pushing down the navbar */
+    margin-bottom: 20px !important;  /* Can be adjusted or set to negative if you need to pull up the navbar */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-nav .nav-link, .navbar-brand {
+    color: black !important;  /* Ensures text color is white */
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    background-color: transparent !important;  /* Removes any background change on hover */
+}
+/* Custom style for the QuREX-Book link in the navbar */
+.navbar-nav .nav-item a.qurex-book-link {
+    color: #007bff; /* Set a unique color for the QuREX-Book link */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item a.qurex-book-link:hover {
+    color: #0056b3; /* Change color on hover */
+    text-decoration: underline;
+}
+
+
+#profilePic {
+    width: 100%;  /* Ensures the image is responsive within its container */
+    max-width: 450px;  /* Maximum width */
+    height: auto;  /* Keeps the aspect ratio intact */
+    aspect-ratio: 1 / 1;  /* Enforces a square aspect ratio */
+    border-radius: 50%;  /* Ensures the image remains circular */
+    border: 1px solid #333;  /* Aesthetic border */
+    box-shadow: 0 0 15px #000;  /* Shadow for depth */
+    margin-right: 50px;  /* Space from the text */
+    display: block;  /* Ensures the image is correctly displayed */
+}
+
+/* Further aesthetic improvements */
+@media (max-width: 768px) {
+    .name-title-box {
+        text-align: center;
+        padding: 20px 30px;  /* Increased padding for mobile to balance the larger image */
+    }
+    #profilePic {
+        max-width: 250px;  /* Larger than before but still reasonable for mobile */
+        margin: 0 auto 40px;  /* Greater separation from text on small screens */
+        display: block;
+        aspect-ratio: 1 / 1;  /* Ensures the image maintains a square aspect ratio on mobile */
+    }
+}
+
+h1 {
+    font-size: 2em; /* Adjust size as needed */
+    margin: 0; /* Remove margin for tighter spacing */
+    color: black; /* White text color */
+}
+
+p.font-weight-bold {
+    margin: 0; /* Remove margin for tighter spacing */
+    color: black; /* White text color */
+    font-size: 1.2em; /* Slightly smaller font size than the name */
+}
+
+/* Navigation styles */
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+    font-size: 18px;
+}
+
+.navbar-nav .nav-link:hover::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: blue;
+    transition: width 0.5s;
+    margin: 0px 0px -3px 0px;
+}
+
+/* Main content and layout styles */
+.container {
+    padding: 1px 15px;
+}
+
+h1, h2, h3 {
+    color:black;
+}
+
+h1 {
+    font-size: 2em;
+    letter-spacing: 0.1em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+/* Utilizing Bootstrap's grid system for main content */
+main {
+    margin-top: 20px;
+}
+
+/* Contact and Skills sections styling */
+.contact-info, .skills {
+    background-color: #FAFAFA; /* Semi-transparent background */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Image alignment and styling */
+.skills-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distributes space around items */
+    align-items: center; /* Align items vertically in the center */
+    margin: 10px 5px;
+    max-width: 100%;
+}
+
+.skills-images a {
+    width: calc(50% - 10px); /* Calculate width to include margins, two per line */
+    text-align: center; /* Center the images within the links */
+    margin: 5px; /* Margin around each link */
+    display: block; /* Block display to allow width and margin to work */
+}
+
+.img-fluid {
+    max-width: 100%; /* Ensures img-fluid does not break layout */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Enhancements for printing */
+@media print {
+    body {
+        color: #121212;
+        background: #fff;
+    }
+
+    header, .navbar, .skills-images, footer {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 16px;
+    }
+
+    .contact-info, .skills {
+        padding: 5px;
+    }
+}
+.card {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-body {
+    flex: 1;
+}
+@media print {
+    /* General Adjustments for Printing */
+    body, .container, .card, .card-body {
+        width: 100%; /* Utilizes full width for print */
+        margin: 0; /* Removes unnecessary margins */
+        padding: 0; /* Removes unnecessary padding */
+        overflow: visible !important; /* Ensures no content is clipped */
+        background: transparent !important; /* Clears background styles */
+        color: #000; /* Ensures text is black for printing */
+        font-size: 15pt; /* Sets a standard readable font size for print */
+    }
+
+    /* Ensuring Images and Colors Print Correctly */
+    img {
+        display: block; /* Ensures images are always printed */
+        max-width: 100%; /* Avoids overflow */
+        page-break-inside: avoid; /* Avoids breaking images between pages */
+    }
+    body {
+        -webkit-print-color-adjust: exact;
+        color-adjust: exact; /* Forces printing of background colors and images */
+    }
+
+    /* Hide Non-Essential Elements */
+    header, .navbar, .skills-images, footer {
+        display: block; /* Simplifies the print version by removing non-essential elements */
+    }
+
+    /* Adjust Visibility and Color for Important Elements */
+    .name-title-box{
+        color: white;
+        background: rgba(44, 42, 42, 0.286)!important;         
+    } 
+    
+    .contact-info, .skills {
+        color: #000; /* Ensures visibility */
+        background: #FFF !important; /* Sets a solid background for visibility */
+    }
+
+    /* Layout Adjustments for Print */
+    .skills-images a, .card {
+        display: block; /* Stacks elements vertically */
+        width: 100%; /* Uses full width for clarity */
+        margin-bottom: 10px; /* Adds spacing between elements */
+    }
+
+    /* Improve visibility and readability */
+    h1, h2, h3, p {
+        color: #000 !important; /* Ensure all text is black for better readability */
+    }
+}

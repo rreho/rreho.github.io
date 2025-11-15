@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Riccardo Reho Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="style.css" rel="stylesheet">  <!-- This ensures your custom styles apply last -->
+</head>
+<body>
+    <header class="text-center p-3">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-2">
+                    <img src="images/RR_chill.jpeg" alt="Profile Picture" id="profilePic" class="img-fluid rounded-circle">
+                </div>
+                <div class="col-md-10">
+                    <div class="name-title-box">
+                        <b>Riccardo Reho</b><br>
+                        <b>Theoretical physicist in Materials Science</b>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </header>    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>        
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active"><a class="nav-link" href="index.html">🏡 Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="talks.html">🗣️ Talks</a></li>
+                    <li class="nav-item"><a class="nav-link" href="publications.html">📄 Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aboutme.html">🌍 About me</a></li>    
+                    <li class="nav-item"><a class="nav-link" href="outreach.html">👤 Outreach</a></li>                                                
+                    <a href="https://rreho.github.io/QuREX-book/index.html" class="nav-link qurex-book-link">📖 QuREX-Book</a>                                                  
+                </ul>
+            </div>
+        </div>
+    </nav>  
+    <div class="container mt-4">    
+        <div class="row">
+            <div class="col-md-4">    
+                <div class="contact-info">
+                <h2>CONTACTS</h2>
+                <!-- contact info including social media -->
+                <p><i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:r.reho@uu.nl">r.reho@uu.nl</a></p>
+                <p><i class="fab fa-github" aria-hidden="true"></i> <a href="https://github.com/rreho">rreho</a></p>
+                <p><i class="fab fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/riccardo-reho-997888245/">Riccardo Reho</a></p>   
+                <p><i class="fas fa-user-circle" aria-hidden="true"></i> <a href="https://orcid.org/0009-0002-3703-1292">ORCID</a></p>
+                <p><i class="fas fa-book-reader" aria-hidden="true"></i> <a href="https://scholar.google.com/citations?user=WWjH_vYAAAAJ&hl=it&oi=ao">Google Scholar</a></p>                                   
+            </div>
+            <section>
+                <h2>Education</h2>
+                <p><strong>PhD Candidate:</strong> Utrecht University, 2020-2025</p>
+                <p><strong>Master Degree Theoretical Physics:</strong> Università di Bologna, 2017-2020</p>
+                <p><strong>Bachelor Physics:</strong> Università di Bologna, 2014-2017</p>
+            </section>                               
+            <div class="skills">
+                <h2>Skills</h2>
+                <p>Fortran, Python, GitHub, VS Code</p>
+                <p>Quantum Espresso, Aiida, Yambo, SIESTA</p>
+                <div class="skills-images">
+                    <a href="https://www.quantum-espresso.org/" target="_blank"><img src="images/Quantum_Espresso_Logo.png" alt="QElogo" class="img-fluid"></a>
+                    <a href="http://www.yambo-code.org/" target="_blank"><img src="images/yambo_logo_overlay.svg" alt="yambologo" class="img-fluid"></a>
+                    <a href="https://github.com/rreho/yambopy" target="_blank"><img src="images/yambopylog.png" alt="yambopylogo" class="img-fluid"></a>
+                    <a href="https://siesta-project.org/siesta/"><img src="images/SIESTA_logo_TM.png" alt="siestalogo" class="img-fluid"></a>
+                </div>
+                <h2>Languages</h2>
+                <p> English </p> 
+                <p> Italian </p>
+                <p>Spanish (Beginner)</p>    
+                <h2> News </h2>
+                <p> QuREX-Book will be available soon. Have a look for some tips and tricks about DFT+MBPT+Wannier Thery and best usage of Yambo, Yambopy. </p> 
+            </div>
+        </div>   
+            <div class="col-md-6">
+                <section>
+                    <h2>List of Publications</h2>
+                    <ol>
+                    <li id="RR-TMDs"> 
+                        <b>R. Reho</b>, A. R. Botello Méndez, M. Verstraete, Z. Zanolli 
+                        "Excitonic response in transition metal dichalcogenide heterostructures from first-principles: impact of stacking, 
+                        twisting, and interlayer distance" <a href="https://doi.org/10.48550/arXiv.2404.17182"> Phys. Rev. B <b>110</b> (2024) 
+                        DOI: 10.1103/PhysRevB.110.035118 </a>
+                        Physical Review B (PRB), Selected as <b>PRB Editors’ suggestions</b>.
+                    </li> 
+                    <li id="RR-BdG">
+                        <b>R. Reho</b>, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli 
+                        "Density functional Bologiubov-de Gennes theory for superconductors implemented
+                        in the SIESTA code" <a href="https://journals.aps.org/prb/abstract/10.1103/PhysRevB.110.134505"> Phys. Rev. B <b>110</b>, 134505 (2024) 
+                        DOI: 10.1103/PhysRevB.110.134505</a>                        
+                    </li>
+                    <li id="RR-PbTe/Pb">
+                        <b>R. Reho</b>, A. R. Botello-Méndez, and Zeila Zanolli. "Ab initio study of Proximity-Induced Superconductivity 
+                        in PbTe/Pb heterostructures." arXiv preprint arXiv:2412.01749 (2024).
+                        <a href="https://arxiv.org/abs/2412.01749"> arXiv:2412.01749</a>
+                    </li>
+                    <li id="RR-FeSe/STO">
+                        <b>R. Reho</b>, N. Wittemeier, A.H. Kole, A. R. Botello-Méndez, and Zeila Zanolli. "The crucial role of substrate in FeSe/STO:
+                        new insights to interface-driven superconductivity from first-principles." arXiv preprint arXiv:2412.01749 (2024).
+                        <a href="https://arxiv.org/abs/2503.15025"> arXiv:2503.15025</a>
+                    </li>                    
+                    <li id = 'RR-roadmap'>
+                        <b>R. Reho</b>, M. H. D. Guimarães and Zeila Zanolli, ``Magnetic and optical frontiers in 2D semiconductors, 
+                        Roadmap on Quantum Magnetic Materials''', arXiv:2412.18020 (2024)
+                        <a href="https://iopscience.iop.org/article/10.1088/2053-1583/adbe89/meta"> 2D Materials, IOP Publishing, DOI: 10.1088/2053-1583</a>
+                    </li>
+                    <li id="RR-JVliem-Bi2Se3">
+                        J. Vliem, S. A. Cayan, <b>R. Reho</b>, A. R. Botello Méndez, P. M. M. C. Melo, P. Geiregat, Z. Zanolli, D. Vanmaekelbergh
+                        ``Role of surface bands in the photogeneration, cooling, and recombination of charge carriers in two-dimensional Bi<sub>2</sub>Se<sub>3</sub>''
+                        , submitted and under review in ACS Nano (2025) 
+                    </li>
+                </ol>                    
+                </section>
+            </div>
+        </div>
+    </main>
+    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    
+</body>
+</html>
