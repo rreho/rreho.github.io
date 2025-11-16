@@ -4,8 +4,7 @@ import { TalksComponent } from './components/talks/talks';
 import { PublicationsComponent } from './components/publications/publications';
 import { AboutComponent } from './components/about/about';
 // import { OutreachComponent } from './components/outreach/outreach';
-import { QaComponent } from './components/qa/qa';
-import { BlogComponent } from './components/blog/blog';
+import { ThoughtsComponent } from './components/thoughts/thoughts';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -14,7 +13,6 @@ export const routes: Routes = [
   { path: 'publications', component: PublicationsComponent },
   { path: 'about', component: AboutComponent },
   // { path: 'outreach', component: OutreachComponent },
-  { path: 'qa', component: QaComponent },
-  { path: 'blog', component: BlogComponent },
+  { path: 'thoughts', component: ThoughtsComponent },
   { path: '**', redirectTo: '/home' }
 ];

@@ -1,7 +1,8 @@
 mat-toolbar {
   background-color: #2D3436 !important;
   color: white;
-
+  overflow-x: auto !important;
+  width: 100% !important;
   a {
     color: white;
     

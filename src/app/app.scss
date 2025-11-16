@@ -12,11 +12,15 @@
 
 .navbar {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto !important;
+  width: 100% !important;
 
   .nav-container {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
 
     .nav-menu {
       display: flex;
@@ -27,6 +31,7 @@
         align-items: center;
         gap: 8px;
         font-weight: 500;
+        white-space: nowrap;
 
         &.active {
           border-bottom: 3px solid white;
@@ -85,14 +90,17 @@
   .navbar {
     .nav-container {
       .nav-menu {
-        gap: 0;
+        gap: 2px;
         a {
-          font-size: 0.7rem;
-          padding: 8px 3px;
+          font-size: 0;
+          padding: 8px 4px;
+          gap: 0;
+          
           mat-icon {
-            font-size: 14px;
-            width: 14px;
-            height: 14px;
+            font-size: 16px;
+            width: 16px;
+            height: 16px;
+            margin: 0;
           }
         }
       }

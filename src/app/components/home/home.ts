@@ -25,19 +25,19 @@ export class HomeComponent implements OnInit {
       title: 'Theoretical Spectroscopy',
       description: 'Light-Matter interaction for 2D Materials: Real-Time Dynamics',
       image: '/images/theoreticalspectroscopy-abspl.png',
-      link: '/home'
+      link: '/publications'
     },
     {
       title: 'Superconducting DFT',
       description: 'Superconductivity for quantum computing',
       image: '/images/superconductivity-DOS.png',
-      link: '/home'
+      link: '/publications'
     },
     {
       title: 'Topology in Condensed Matter',
       description: 'Geometrical interpretation of electronic and optical properties',
       image: '/images/Devyambopy.webp',
-      link: '/home'
+      link: '/publications'
     }
   ];
 

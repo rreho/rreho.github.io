@@ -1,0 +1,225 @@
+.content-page {
+  padding: 40px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  .header-card {
+    margin-bottom: 30px;
+    background: #2D3436;
+    color: #FFFFFF;
+
+    mat-card-title {
+      color: #FFFFFF;
+    }
+
+    p {
+      color: #E8E8E8;
+      margin: 0;
+    }
+  }
+
+  .thoughts-container {
+    .thoughts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20px;
+
+      .thought-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        transition: box-shadow 0.3s ease;
+
+        &:hover {
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        mat-card-header {
+          margin-bottom: 12px;
+
+          mat-card-title {
+            color: #2D3436;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+          }
+
+          mat-card-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+
+            .label-badge {
+              background-color: #A9A9A9;
+              color: white;
+              padding: 4px 12px;
+              border-radius: 12px;
+              font-size: 0.8rem;
+              font-weight: 500;
+            }
+
+            .date {
+              color: #999;
+              font-size: 0.9rem;
+            }
+          }
+        }
+
+        mat-card-content {
+          flex: 1;
+          color: #212121;
+          line-height: 1.6;
+          padding: 16px !important;
+
+          .thought-image {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 12px;
+          }
+
+          p {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+          }
+        }
+      }
+    }
+
+    .empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+
+      mat-icon {
+        font-size: 48px;
+        width: 48px;
+        height: 48px;
+        color: #ccc;
+        margin-bottom: 16px;
+      }
+
+      p {
+        color: #999;
+        font-size: 1.1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .content-page {
+    padding: 20px 12px;
+
+    .header-card {
+      margin-bottom: 20px;
+    }
+
+    .thoughts-container {
+      .thoughts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 15px;
+
+        .thought-card {
+          mat-card-header {
+            mat-card-title {
+              font-size: 1.05rem;
+            }
+
+            mat-card-subtitle {
+              gap: 8px;
+
+              .label-badge {
+                padding: 3px 10px;
+                font-size: 0.75rem;
+              }
+
+              .date {
+                font-size: 0.85rem;
+              }
+            }
+          }
+
+          mat-card-content {
+            p {
+              font-size: 0.95rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .content-page {
+    padding: 16px 10px;
+
+    .header-card {
+      margin-bottom: 16px;
+
+      mat-card-title {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.9rem;
+      }
+    }
+
+    .thoughts-container {
+      .thoughts-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+
+        .thought-card {
+          mat-card-header {
+            mat-card-title {
+              font-size: 1rem;
+            }
+
+            mat-card-subtitle {
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 4px;
+
+              .label-badge {
+                padding: 3px 8px;
+                font-size: 0.7rem;
+              }
+
+              .date {
+                font-size: 0.8rem;
+              }
+            }
+          }
+
+          mat-card-content {
+            p {
+              font-size: 0.9rem;
+            }
+          }
+        }
+      }
+    }
+
+    .empty-state {
+      padding: 40px 16px;
+
+      mat-icon {
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

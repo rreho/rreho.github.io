@@ -1,31 +1,28 @@
 <mat-toolbar color="primary" class="navbar">
   <div class="nav-container">
     <nav class="nav-menu">
-      <a mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a mat-button routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" title="Home">
         <mat-icon>home</mat-icon> Home
       </a>
-      <a mat-button routerLink="/talks" routerLinkActive="active">
+      <a mat-button routerLink="/talks" routerLinkActive="active" title="Talks">
         <mat-icon>record_voice_over</mat-icon> Talks
       </a>
-      <a mat-button routerLink="/publications" routerLinkActive="active">
+      <a mat-button routerLink="/publications" routerLinkActive="active" title="Publications">
         <mat-icon>article</mat-icon> Publications
       </a>
-      <a mat-button routerLink="/about" routerLinkActive="active">
+      <a mat-button routerLink="/about" routerLinkActive="active" title="About Me">
         <mat-icon>person</mat-icon> About Me
       </a>
       <!-- <a mat-button routerLink="/outreach" routerLinkActive="active">
         <mat-icon>people</mat-icon> Outreach
       </a> -->
-      <a mat-button routerLink="/qa" routerLinkActive="active">
-        <mat-icon>help_center</mat-icon> Q&A
+      <a mat-button routerLink="/thoughts" routerLinkActive="active" title="Thoughts">
+        <mat-icon>lightbulb</mat-icon> Thoughts
       </a>
-      <a mat-button routerLink="/blog" routerLinkActive="active">
-        <mat-icon>notes</mat-icon> Blog
-      </a>
-      <a mat-button href="https://rreho.github.io/QuREX-book/index.html" target="_blank">
+      <a mat-button href="https://rreho.github.io/QuREX-book/index.html" target="_blank" title="QuREX-Book">
         <mat-icon>book</mat-icon> QuREX-Book
       </a>
-      <a mat-button href="/pdfs/PhD_Thesis_RR_definitive.pdf" target="_blank">
+      <a mat-button href="/pdfs/PhD_Thesis_RR_definitive.pdf" target="_blank" title="PhD Thesis">
         <mat-icon>description</mat-icon> PhD Thesis
       </a>
     </nav>
