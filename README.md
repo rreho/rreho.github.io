@@ -1,242 +1,114 @@
-# Riccardo Reho - Personal Portfolio
+# rreho.github.io
 
-A modern, responsive personal portfolio website built with **Angular** and **Angular Material**, featuring interactive Q&A and Blog sections powered by **Firebase**.
+Personal site of Riccardo Reho, built with [Quarto](https://quarto.org).
+Everything on the site is a plain-text `.qmd` (markdown + optional code) or a
+Jupyter notebook. There is no JavaScript framework and no build tooling beyond
+Quarto itself.
 
-## 🌟 Features
+Live at <https://rreho.github.io>.
 
-- **Modern Responsive Design** - Built with Angular Material for a professional look
-- **Q&A Section** - Ask questions about my research (with authentication & approval workflow)
-- **Blog & Thoughts** - Read my reflections on physics and science (with comments)
-- **Contact Information** - Easy access to email, GitHub, LinkedIn, ORCID, and Google Scholar
-- **Project Showcase** - Highlights of my active research projects
-- **Dark/Light Theme Support** - Comfortable viewing experience
-
-## 🏗️ Tech Stack
-
-- **Frontend**: Angular 20, Angular Material, RxJS, SCSS
-- **Backend**: Firebase (Firestore, Authentication)
-- **Deployment**: GitHub Pages
-- **Build Tool**: Angular CLI
-
-## 📋 Project Structure
+## Layout
 
 ```
-src/
-├── app/
-│   ├── components/
-│   │   ├── header/          # Header with profile info
-│   │   ├── navigation/       # Main navigation bar
-│   │   ├── home/            # Home page (about, projects, experience)
-│   │   ├── talks/           # Talks & presentations
-│   │   ├── publications/    # Publications
-│   │   ├── about/           # About me
-│   │   ├── outreach/        # Outreach activities
-│   │   ├── qa/              # Q&A section
-│   │   └── blog/            # Blog & comments
-│   ├── services/
-│   │   ├── auth.ts          # Firebase authentication
-│   │   ├── firestore.ts     # Firestore data management
-│   │   └── firebase.config.ts # Firebase initialization
-│   ├── app.routes.ts        # Routing configuration
-│   ├── app.config.ts        # Application configuration
-│   └── app.ts               # Root component
-├── environments/
-│   ├── environment.ts       # Development config
-│   └── environment.prod.ts  # Production config
-├── styles.scss              # Global styles
-└── main.ts                  # Application bootstrap
+_quarto.yml            site config: navbar, footer, theme  ← edit to change navigation
+index.qmd              home page
+research.qmd           research overview
+publications.qmd       publication list
+talks.qmd              talks, seminars, posters
+about.qmd              biography, education, skills
+notes/                NOT PUBLISHED YET — see "Turning notes on" below
+  index.qmd            auto-generated listing of all notes (no manual updates)
+  _metadata.yml        settings shared by every note
+  _template/           copy this folder to start a new note (never published)
+  <slug>/index.qmd     one folder per note, with its figures/PDFs/data alongside
+theme/light.scss       colours + typography, light mode
+theme/dark.scss        same, dark mode
+images/                shared images
+pdfs/                  thesis and other static PDFs
+docs/                  BUILD OUTPUT — served by GitHub Pages, never edit by hand
 ```
 
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ and npm
-- Firebase project (free tier available)
-- GitHub account (for deployment)
-
-### Installation
+## Daily use
 
 ```bash
-# Clone the repository
-git clone https://github.com/rreho/rreho.github.io.git
-cd rreho.github.io
-
-# Install dependencies
-npm install
-
-# Update Firebase configuration
-# Edit src/environments/environment.ts with your Firebase credentials
+quarto preview          # live-reloading local server, rebuilds as you save
+quarto render           # full build into docs/
 ```
 
-### Development Server
+Publishing is `render` + commit + push:
 
 ```bash
-# Start the dev server
-npm start
-
-# Navigate to http://localhost:4200/
-# The app will automatically reload when you modify files
+quarto render
+git add -A && git commit -m "new note on X" && git push
 ```
 
-### Build for Production
+GitHub Pages serves the `docs/` folder of `main`, so the site updates about a
+minute after the push.
 
-```bash
-# Build for production
-npm run build:prod
+## Turning notes on
 
-# Output is in dist/rreho-portfolio/browser/
-```
+The `notes/` section is written but deliberately not deployed. To publish it,
+uncomment two lines in `_quarto.yml`:
 
-## 🔐 Firebase Setup
+- the `notes/**/*.qmd` and `notes/**/*.ipynb` entries under `project: render:`
+- the `Notes` entry under `website: navbar: left:`
 
-### 1. Create Firebase Project
+Then `quarto render`. Until then the folder is ignored by the build and nothing
+in it reaches the site.
 
-1. Go to [Firebase Console](https://console.firebase.google.com/)
-2. Create a new project
-3. Enable **Authentication** (Email/Password)
-4. Create a **Firestore Database** (production mode)
+## Adding a note
 
-### 2. Configure Environment Variables
+1. `cp -r notes/_template notes/my-new-note`
+2. Edit `notes/my-new-note/index.qmd` — set `title`, `description`, `date`,
+   `categories` in the header, then write.
+3. `quarto preview` to check it, then render, commit, push.
 
-Update your Firebase credentials in:
-- `src/environments/environment.ts` (development)
-- `src/environments/environment.prod.ts` (production)
+The Notes index page picks it up automatically. No list to update.
 
-```typescript
-export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'YOUR_API_KEY',
-    authDomain: 'YOUR_AUTH_DOMAIN',
-    projectId: 'YOUR_PROJECT_ID',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    appId: 'YOUR_APP_ID'
-  }
-};
-```
+### What a note can contain
 
-### 3. Apply Firestore Security Rules
+| Content | How |
+|---|---|
+| Maths | `$inline$` and `$$display$$` LaTeX, rendered by KaTeX |
+| Numbered equations | `$$...$$ {#eq-label}`, referenced with `@eq-label` |
+| Static code | fenced block ` ```python ` |
+| Executed code + output | fenced block ` ```{python} ` (needs Jupyter, below) |
+| Figures | `![Caption](fig.png){#fig-label}`, referenced with `@fig-label` |
+| A whole notebook as a page | drop `analysis.ipynb` in the note folder |
+| A compiled LaTeX PDF | drop `derivation.pdf` in the folder and link it |
+| A PDF version of the note | add `format: [html, pdf]` to the note header |
+| Citations | `bibliography: refs.bib` in the header, cite with `[@key]` |
 
-In Firebase Console → Firestore → Rules, apply the rules from `FIREBASE_SECURITY_RULES.md`
+### Notebooks
 
-## 📝 Database Collections
+Notebooks are rendered **from their stored outputs** — run them locally, save
+with the outputs in place, commit. The build never re-executes them, so heavy
+DFT post-processing never has to run in a rebuild.
 
-### Questions Collection
-- `id` (auto-generated)
-- `authorId` (user ID)
-- `authorEmail` (user email)
-- `title` (string)
-- `content` (string)
-- `approved` (boolean)
-- `createdAt` (timestamp)
+`execute: freeze: auto` in `notes/_metadata.yml` enforces the same rule for
+`{python}` blocks inside `.qmd` notes: they re-run only when you change the
+source. Delete the `_freeze/` folder to force a re-run.
 
-### Blog Posts Collection
-- `id` (auto-generated)
-- `authorId` (user ID)
-- `authorEmail` (user email)
-- `title` (string)
-- `excerpt` (string)
-- `content` (string)
-- `approved` (boolean)
-- `createdAt` (timestamp)
+## Adding a publication or talk
 
-### Comments Collection
-- `id` (auto-generated)
-- `postId` (blog post ID)
-- `authorId` (user ID)
-- `authorEmail` (user email)
-- `content` (string)
-- `approved` (boolean)
-- `createdAt` (timestamp)
+Open `publications.qmd` / `talks.qmd`, copy an existing `::: {.pub} ... :::`
+block, change the four lines. Newest first. Wrap your own name in
+`[R. Reho]{.badge-me}` so it is bold in the list.
 
-## 🌐 Deployment
+## Changing the look
 
-### GitHub Pages Deployment
+- **Navigation, title, footer, social links** → `_quarto.yml`
+- **Colours, fonts, spacing** → `theme/light.scss` and `theme/dark.scss`.
+  The variables at the top (`$accent`, `$ink`, `$rule`, …) drive everything
+  else; change one and the whole site follows.
 
-```bash
-# Install angular-cli-ghpages if not already installed
-npm install -g angular-cli-ghpages
+## Requirements
 
-# Build and deploy
-npm run build:prod
-ngh --dir=dist/rreho-portfolio/browser
-```
-
-### Manual Deployment
-
-1. Build the project: `npm run build:prod`
-2. Copy contents of `dist/rreho-portfolio/browser/` to your GitHub Pages branch
-3. Push to `gh-pages` branch or commit to `main` (depending on your GitHub Pages settings)
-
-## 🔒 Security Considerations
-
-- **API Keys**: Never commit Firebase credentials to version control. Use environment variables.
-- **Data Validation**: All inputs are validated on client AND server side (via Firestore rules)
-- **Authentication**: Required for submitting questions, posts, and comments
-- **Approval Workflow**: All user-generated content requires admin approval before public display
-
-### Best Practices
-
-1. Use environment-specific builds
-2. Never expose secrets in source code
-3. Keep Firestore security rules up-to-date
-4. Implement rate limiting via Cloud Functions (optional)
-5. Monitor Firestore usage and costs
-
-## 🛠️ Development
-
-### Adding New Components
-
-```bash
-ng generate component components/my-component
-```
-
-### Adding New Services
-
-```bash
-ng generate service services/my-service
-```
-
-### Running Tests
-
-```bash
-npm test
-```
-
-### Linting (if configured)
-
-```bash
-ng lint
-```
-
-## 📚 Documentation
-
-- [SETUP_GUIDE.md](./SETUP_GUIDE.md) - Detailed setup and configuration guide
-- [FIREBASE_SECURITY_RULES.md](./FIREBASE_SECURITY_RULES.md) - Firestore security rules
-
-## 🤝 Contributing
-
-This is a personal portfolio, but feel free to fork and customize for your own use!
-
-## 📄 License
-
-This project is open source and available for personal use.
-
-## 📧 Contact
-
-- Email: r.reho@uu.nl
-- GitHub: [rreho](https://github.com/rreho)
-- LinkedIn: [Riccardo Reho](https://www.linkedin.com/in/riccardo-reho-997888245/)
-- ORCID: [0009-0002-3703-1292](https://orcid.org/0009-0002-3703-1292)
-
-## 🙏 Acknowledgments
-
-- Built with [Angular](https://angular.io/)
-- Styled with [Angular Material](https://material.angular.io/)
-- Powered by [Firebase](https://firebase.google.com/)
-- Deployed on [GitHub Pages](https://pages.github.com/)
-
----
-
-Last updated: November 2025
+- [Quarto](https://quarto.org/docs/get-started/) — `brew install --cask quarto`
+- Optional, only for executing Python in notes:
+  ```bash
+  python3 -m venv .venv && source .venv/bin/activate
+  pip install -r requirements.txt
+  ```
+- Optional, only for PDF output of notes: a LaTeX distribution
+  (`quarto install tinytex` installs a minimal one).

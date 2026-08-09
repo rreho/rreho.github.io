@@ -1,0 +1,159 @@
+---
+title: "Talks & Presentations"
+---
+
+Seminars, contributed talks and posters at international conferences.
+
+<!-- TO ADD A TALK: copy one .pub block, keep newest first within its section. -->
+
+## Invited talks
+
+::: {.pub}
+[Excitonic response in TMD heterostructures from first principles: impact of stacking, twisting, and interlayer distance]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, L. Wirtz, Z. Zanolli]{.pub-authors}
+[MRS Fall Meeting, Warsaw, PL · 15–18 Sep 2025]{.pub-venue}
+:::
+
+::: {.pub}
+[Density functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. Kole]{.pub-authors}
+[PSI-K 2025, Lausanne, CH · **Finalist, CECI Award** · 25–28 Aug 2025]{.pub-venue}
+:::
+
+## Invited seminars
+
+::: {.pub}
+[DFT for superconductors: theory and implementation in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[Physics Seminars, Limpertsberg, Luxembourg · 26 Feb 2025]{.pub-venue}
+:::
+
+::: {.pub}
+[DFT for superconductors: theory and implementation in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[Debye Lunch Lecture, Utrecht University, NL · 11 Dec 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[DFT for superconductors: theory and implementation in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[ETSF Webinar, online · 22 Nov 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Optical properties of TMD van der Waals heterostructures]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[KNCV-CTC Seminars, University of Twente, NL · 20 Sep 2023]{.pub-venue}
+:::
+
+::: {.pub}
+[Real-time photoluminescence from first principles: application to van der Waals heterostructures]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[Informal ETSF workshop, Amsterdam, NL · 17 May 2023]{.pub-venue}
+:::
+
+## Contributed oral presentations
+
+::: {.pub}
+[Electronic and optical properties of two-dimensional materials: towards exciton dynamics]{.pub-title}
+[[R. Reho]{.badge-me} (University of Luxembourg)]{.pub-authors}
+[Frascati, IT · 23 Apr 2026]{.pub-venue}
+:::
+
+::: {.pub}
+[From ab initio to tight-binding framework: model exciton interaction in materials]{.pub-title}
+[S. T. Bos, [R. Reho]{.badge-me}, Z. Zanolli]{.pub-authors}
+[TIMES Workshop, Belfast, UK · 7–10 Apr 2025]{.pub-venue}
+:::
+
+::: {.pub}
+[Controlling light–matter interaction in TMD heterostructures]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[NWO Chains, Veldhoven, NL · 3–4 Dec 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Proximity-induced superconductivity in PbTe/Pb via first principles]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, Z. Zanolli]{.pub-authors}
+[QuMaT yearly meeting, Enschede, NL · 11–12 Nov 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[DFT for superconductors: theory and implementation in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[ETSF electron–phonon collaboration team workshop, Louvain-la-Neuve, BE · 23–25 Sep 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Excitonic response in TMD heterostructures from first principles: impact of stacking, twisting and interlayer distance]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[CECAM workshop *Frontiers in many-body excited-state dynamics from first principles*, Lausanne, CH · 15–17 Jul 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Excitonic responses in MoS₂/WS₂ and MoSe₂/WSe₂ heterostructures from first principles: impact of stacking order and interlayer distance]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Optical properties of van der Waals TMD heterostructures from first principles]{.pub-title}
+[[R. Reho]{.badge-me}, Z. Zanolli]{.pub-authors}
+[DPG Spring Meeting, Berlin, DE · 22–26 Mar 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Density functional theory for superconductors: theory and implementation in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[NWO Physics, Veldhoven, NL · 23–24 Jan 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Identification of high-energy excitations in two-dimensional topological Bi₂Se₃ nanoplatelets]{.pub-title}
+[[R. Reho]{.badge-me}, P. M. M. C. de Melo, A. R. Botello-Méndez, M. J. Verstraete, D. Vanmaekelbergh, Z. Zanolli]{.pub-authors}
+[QuMat meeting, Nijmegen, NL · 22–25 Oct 2023]{.pub-venue}
+:::
+
+::: {.pub}
+[Absorption and emission in van der Waals heterostructures from first principles]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[Colloquium HOWDI, Porquerolles, FR · 8–12 May 2023]{.pub-venue}
+:::
+
+::: {.pub}
+[First-principles topological superconductivity]{.pub-title}
+[[R. Reho]{.badge-me}, A. Kole, N. Wittemeier, Z. Zanolli]{.pub-authors}
+[QuMat kick-off meeting, Utrecht, NL · 26 Oct 2022]{.pub-venue}
+:::
+
+::: {.pub}
+[Trions and biexcitons from first principles: questions and future work]{.pub-title}
+[[R. Reho]{.badge-me}, P. M. M. C. de Melo, M. J. Verstraete, H. Stoof, Z. Zanolli]{.pub-authors}
+[Informal ETSF workshop ETSFCoimbra2021, University of Coimbra, PT · 13–15 Dec 2021]{.pub-venue}
+:::
+
+::: {.pub}
+[Quasi-equilibrium states in heterobilayers of transition metal dichalcogenides]{.pub-title}
+[[R. Reho]{.badge-me}, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[ETSF Young Researcher Meeting ETSFYRM2021, Cagliari, IT · 6–10 Sep 2021]{.pub-venue}
+:::
+
+## Posters
+
+::: {.pub}
+[Optical properties of hBN point defects as qubits]{.pub-title}
+[S. T. Bos, [R. Reho]{.badge-me}, A. R. Botello-Méndez, Z. Zanolli]{.pub-authors}
+[27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024]{.pub-venue}
+:::
+
+::: {.pub}
+[Ab initio calculations on the band structure of TMDs]{.pub-title}
+[[R. Reho]{.badge-me}, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[25th Workshop on Electronic Excitations, Leuven, BE · 13–17 Jun 2022]{.pub-venue}
+:::
+
+::: {.pub}
+[Pressure-induced phase transitions in Fe₄N]{.pub-title}
+[S. Barua, B. S. Biswas, A. C. Burgess, J. Dolado, A. Elomrani, W. Heyvaert, Sri K., V. Landgraf, L. MacEnulty, S. Marek, A. R. Mishra, A. A. Nair, [R. Reho]{.badge-me}, A. Subrati, F. Tabatabaei, G. E. Tekneci, S. Van Dyck, A. Vázquez-López, M. Warrier, S. Cottenier]{.pub-authors}
+[20th International Workshop on Computational Physics and Materials Science (ICTP), Trieste, IT · 23–25 Feb 2021]{.pub-venue}
+:::

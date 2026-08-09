@@ -1,0 +1,74 @@
+---
+title: "About"
+---
+
+::: {.lede}
+Physicist from Gallipoli, Italy. General relativity first, quantum materials now.
+:::
+
+## Background
+
+I was born and raised in Gallipoli, Italy. My love for maths has been a constant
+as far back as I can remember. With the encouragement of teachers, parents and
+friends, my interest in science grew — particularly in theoretical physics,
+chemistry and sustainable science.
+
+In high school I took on several science projects and won a chemistry olympiad
+for green science together with two peers. That early success pushed me towards
+Bologna, where I studied theoretical physics. Both my bachelor's and master's
+theses were centred on general relativity, and during my master's I spent three
+months at the Max Planck Institute for Gravitational Physics finalising my
+thesis project.
+
+After my master's I changed field. I moved to Utrecht as a PhD candidate under
+the supervision of Zeila Zanolli. In our group we explore the electronic and
+optical properties of materials for the quantum era using first-principles
+methods, developing new theory and new code along the way. My focus became
+theoretical spectroscopy and superconductivity.
+
+My time at Utrecht University was transformative, professionally and personally
+— a great deal of knowledge, wider academic horizons, and a strong network of
+colleagues and friends.
+
+Outside research I stay active: running and working out are my go-to. I also
+enjoy video games.
+
+## Education
+
+| Degree | Institution | Years |
+|---|---|---|
+| PhD, Physics | Utrecht University | 2020–2025 |
+| MSc, Theoretical Physics | Università di Bologna | 2017–2020 |
+| BSc, Physics | Università di Bologna | 2014–2017 |
+
+: {tbl-colwidths="[32,44,24]"}
+
+## Experience
+
+**PhD candidate — Utrecht University** (2020–2025)
+
+- Developed superconducting density functional theory in **SIESTA**
+- Implemented photoluminescence in the **Yambo** code via non-equilibrium
+  many-body perturbation theory
+- Theoretical spectroscopy of the optical properties of 2D materials
+- Teaching and student supervision
+
+## Skills
+
+**Programming** — Fortran · Python · Git · MPI/OpenMP · Bash
+
+**Codes** — Quantum ESPRESSO · Yambo · yambopy · SIESTA · Wannier90 · AiiDA
+
+**Languages** — Italian (native) · English · Spanish · French
+
+## Contact
+
+I welcome contact about collaborations of any kind — academic projects,
+industry work, and external projects outside academia alike. Email is the
+fastest way to reach me.
+
+- Email — [riccardo.reho@uni.lu](mailto:riccardo.reho@uni.lu)
+- GitHub — [rreho](https://github.com/rreho)
+- ORCID — [0009-0002-3703-1292](https://orcid.org/0009-0002-3703-1292)
+- Google Scholar — [profile](https://scholar.google.com/citations?user=WWjH_vYAAAAJ)
+- LinkedIn — [Riccardo Reho](https://www.linkedin.com/in/riccardo-reho-997888245/)

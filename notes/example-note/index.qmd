@@ -1,0 +1,77 @@
+---
+title: "Example note — what these pages can do"
+description: "Delete or overwrite this once you write a real note. It shows the maths, code, figure and PDF features available to every note."
+date: 2026-08-09
+categories: [meta]
+---
+
+This note exists to show the moving parts. Copy `notes/_template/` to start a
+real one, then delete this folder.
+
+## Maths
+
+Inline: the BCS gap parameter $\Delta_{\mathbf k}$ is determined
+self-consistently. Display, with a reference tag:
+
+$$
+\Delta_{\mathbf k} = -\sum_{\mathbf k'} V_{\mathbf k \mathbf k'}\,
+\frac{\Delta_{\mathbf k'}}{2 E_{\mathbf k'}}
+\tanh\!\left( \frac{E_{\mathbf k'}}{2 k_B T} \right)
+$$ {#eq-gap}
+
+with $E_{\mathbf k} = \sqrt{\xi_{\mathbf k}^2 + |\Delta_{\mathbf k}|^2}$.
+@eq-gap is the standard gap equation; solving it is where the numerics start.
+
+Aligned multi-line derivations work as expected:
+
+$$
+\begin{aligned}
+\mathcal{H}_{\mathrm{BdG}}
+  &= \sum_{\mathbf k} \begin{pmatrix} c^\dagger_{\mathbf k\uparrow} & c_{-\mathbf k\downarrow}\end{pmatrix}
+     \begin{pmatrix} \xi_{\mathbf k} & \Delta_{\mathbf k} \\ \Delta^*_{\mathbf k} & -\xi_{\mathbf k}\end{pmatrix}
+     \begin{pmatrix} c_{\mathbf k\uparrow} \\ c^\dagger_{-\mathbf k\downarrow}\end{pmatrix} \\
+  &= \sum_{\mathbf k} E_{\mathbf k}\left( \gamma^\dagger_{\mathbf k\uparrow}\gamma_{\mathbf k\uparrow}
+     + \gamma^\dagger_{\mathbf k\downarrow}\gamma_{\mathbf k\downarrow} \right) + \mathrm{const.}
+\end{aligned}
+$$
+
+## Callouts
+
+::: {.callout-important}
+## Gotcha worth remembering
+Callouts are for the detail that costs you a day when you forget it.
+Types: `note`, `tip`, `warning`, `important`, `caution`. Add
+`collapse="true"` to fold them.
+:::
+
+## Code
+
+Static code — always renders, no Python needed:
+
+```python
+import numpy as np
+
+def gap_rhs(delta, xi, V, T, kB=8.617333e-5):
+    E = np.sqrt(xi**2 + np.abs(delta) ** 2)
+    return -(V @ (delta / (2 * E) * np.tanh(E / (2 * kB * T))))
+```
+
+To *execute* code and embed its output, use `{python}` instead of `python` in
+the fence. That needs Jupyter installed — see the repo `README.md`.
+
+## Figures
+
+![Absorption and photoluminescence of a TMD heterostructure.](../../images/theoreticalspectroscopy-abspl.png){#fig-abspl width=80%}
+
+Reference figures as @fig-abspl.
+
+## Attachments
+
+Drop any file next to `index.qmd` and link it:
+
+- a compiled LaTeX derivation — `[PDF](derivation.pdf)`
+- a notebook — `[notebook](analysis.ipynb)`
+- input decks, data files, scripts
+
+Whole notebooks can also *be* notes: put `analysis.ipynb` directly in a note
+folder and it gets rendered as its own page with its stored outputs.

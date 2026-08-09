@@ -1,0 +1,84 @@
+# ---------------------------------------------------------------------------
+# Site configuration. Edit this file to change navigation, title, footer.
+# Everything else is plain markdown in the .qmd files.
+# ---------------------------------------------------------------------------
+
+project:
+  type: website
+  output-dir: docs # GitHub Pages serves this folder from the main branch
+  render:
+    - "index.qmd"
+    - "research.qmd"
+    - "publications.qmd"
+    - "talks.qmd"
+    - "about.qmd"
+    # Notes are written but not published yet. Uncomment these two lines
+    # (and the Notes navbar entry below) to put the section live.
+    # - "notes/**/*.qmd"
+    # - "notes/**/*.ipynb"
+  resources:
+    # Only files actually linked from a page get copied into docs/.
+    # QuREX-book/ and unused images stay in the repo but are not published.
+    - ".nojekyll"
+
+website:
+  title: "Riccardo Reho"
+  site-url: "https://rreho.github.io"
+  description: "Computational physicist. Ab initio many-body theory, excitons and superconductivity in quantum materials."
+  favicon: images/favicon.ico
+  open-graph: true
+  twitter-card: true
+
+  navbar:
+    background: light
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: research.qmd
+        text: Research
+      - href: publications.qmd
+        text: Publications
+      - href: talks.qmd
+        text: Talks
+      # - href: notes/index.qmd
+      #   text: Notes
+      - href: about.qmd
+        text: About
+    right:
+      - icon: github
+        href: https://github.com/rreho
+        aria-label: GitHub
+      - icon: linkedin
+        href: https://www.linkedin.com/in/riccardo-reho-997888245/
+        aria-label: LinkedIn
+      - icon: envelope
+        href: mailto:riccardo.reho@uni.lu
+        aria-label: Email
+
+  page-footer:
+    border: true
+    left: "© 2026 Riccardo Reho"
+    center: "Built with [Quarto](https://quarto.org)"
+    right:
+      - icon: github
+        href: https://github.com/rreho
+      - icon: mortarboard-fill
+        href: https://scholar.google.com/citations?user=WWjH_vYAAAAJ
+        aria-label: Google Scholar
+
+format:
+  html:
+    theme:
+      light: [cosmo, theme/light.scss]
+      dark: [darkly, theme/dark.scss]
+    toc: true
+    toc-depth: 3
+    anchor-sections: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    html-math-method: katex
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    fig-align: center

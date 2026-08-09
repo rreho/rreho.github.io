@@ -1,0 +1,27 @@
+---
+title: "Notes"
+subtitle: "Derivations, method notes, notebooks and results"
+listing:
+  contents:
+    - "*/index.qmd"
+    - "*/*.ipynb"
+  type: default
+  sort: "date desc"
+  categories: true
+  sort-ui: [date, title]
+  filter-ui: true
+  fields: [date, title, description, categories, reading-time]
+  feed: true
+toc: false
+---
+
+A working collection: many-body theory derivations, implementation notes,
+notebooks with the code and the plots that came out of them. Written mostly for
+my future self — public in case it helps someone else.
+
+::: {.callout-note collapse="true"}
+## How this is organised
+
+Each note is a folder under `notes/`. Long derivations are also available as
+PDF; notebooks can be downloaded and re-run. Filter by category above.
+:::

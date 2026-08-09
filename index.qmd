@@ -1,0 +1,83 @@
+---
+title: "Riccardo Reho"
+subtitle: "Computational physicist · many-body theory · quantum materials"
+about:
+  template: trestles
+  image: images/RR_chill.jpeg
+  image-shape: rounded
+  image-width: 16em
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:riccardo.reho@uni.lu
+    - icon: github
+      text: GitHub
+      href: https://github.com/rreho
+    - icon: mortarboard-fill
+      text: Google Scholar
+      href: https://scholar.google.com/citations?user=WWjH_vYAAAAJ
+    - icon: person-badge
+      text: ORCID
+      href: https://orcid.org/0009-0002-3703-1292
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/riccardo-reho-997888245/
+    - icon: file-earmark-text
+      text: PhD Thesis
+      href: pdfs/PhD_Thesis_RR.pdf
+toc: false
+---
+
+I develop and apply *ab initio* many-body methods to predict the electronic and
+optical properties of quantum materials. My work spans excitons in van der Waals
+heterostructures, real-time photoluminescence, and density functional theory for
+superconductors — combining theory development with implementations in the
+[Yambo](https://www.yambo-code.eu/) and [SIESTA](https://siesta-project.org/) codes.
+
+[Research →](research.qmd){.btn .btn-outline-primary .btn-sm}
+[Publications →](publications.qmd){.btn .btn-outline-primary .btn-sm}
+[About →](about.qmd){.btn .btn-outline-primary .btn-sm}
+
+## What I work on
+
+::: {.card-grid}
+
+::: {.tile}
+### Theoretical spectroscopy
+Excitons, absorption and photoluminescence in 2D transition metal
+dichalcogenides and topological insulators, from first principles.
+:::
+
+::: {.tile}
+### Superconductivity
+Density functional Bogoliubov–de Gennes theory for conventional and
+unconventional superconductors, implemented in SIESTA.
+:::
+
+::: {.tile}
+### Topology & geometry
+Berry curvature, Chern numbers and the geometric origin of optical response
+in layered materials.
+:::
+
+:::
+
+## Currently
+
+- **Postdoctoral researcher**, University of Luxembourg
+- **PhD in Physics**, Utrecht University, 2020–2025 — supervisor Zeila Zanolli
+- Developer on the **Yambo**/**yambopy** and **SIESTA** ecosystems
+
+## Open to collaboration
+
+I am always open to new collaborations — academic projects as well as
+industry-facing and other external work. If our interests overlap, or you have a
+problem you think first-principles modelling could help with, get in touch at
+[riccardo.reho@uni.lu](mailto:riccardo.reho@uni.lu).
+
+## Recent
+
+- *Proximity-induced superconductivity in PbTe/Pb heterostructures from first
+  principles* — **Phys. Rev. B 113** (2026). [See all publications](publications.qmd)
+- Invited talk at **MRS Fall Meeting 2025**, Warsaw. [See all talks](talks.qmd)
+- Finalist, **CECI Award**, PSI-K 2025, Lausanne.

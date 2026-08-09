@@ -1,0 +1,6 @@
+# Only needed if you execute {python} code blocks or render notebooks.
+jupyter
+nbformat
+nbclient
+numpy
+matplotlib

@@ -1,0 +1,149 @@
+/*-- scss:defaults --*/
+// ---------------------------------------------------------------------------
+// Light theme. Change a colour here and it propagates across the whole site.
+// ---------------------------------------------------------------------------
+
+$font-family-sans-serif: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif !default;
+$font-family-monospace: "JetBrains Mono", "SF Mono", Menlo, monospace !default;
+
+$ink: #16202b;
+$muted: #5b6b7c;
+$accent: #0f6b8c;
+$accent-dark: #0a4f68;
+$rule: #e2e8ee;
+$surface: #ffffff;
+
+$body-color: $ink;
+$body-bg: #fbfcfd;
+$link-color: $accent;
+$link-hover-color: $accent-dark;
+
+$navbar-bg: $surface;
+$navbar-fg: $ink;
+$navbar-hl: $accent;
+
+$headings-font-weight: 600;
+$border-radius: 6px;
+$toc-color: $muted;
+$code-color: #b5316d;
+
+/*-- scss:rules --*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+
+body {
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+}
+
+h2 {
+  border-bottom: 1px solid $rule;
+  padding-bottom: 0.35rem;
+  margin-top: 2.4rem;
+}
+
+.navbar {
+  border-bottom: 1px solid $rule;
+  box-shadow: none;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+// --- Cards used on the home and research pages -----------------------------
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.tile {
+  background: $surface;
+  border: 1px solid $rule;
+  border-radius: 8px;
+  padding: 1.15rem 1.25rem;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+
+  h3 {
+    margin-top: 0;
+    font-size: 1.05rem;
+  }
+
+  p {
+    color: $muted;
+    font-size: 0.94rem;
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    border-color: $accent;
+    transform: translateY(-2px);
+  }
+}
+
+// --- Publication / talk entries --------------------------------------------
+.pub {
+  border-left: 3px solid $rule;
+  padding: 0.15rem 0 0.15rem 1rem;
+  margin-bottom: 1.35rem;
+
+  .pub-title {
+    font-weight: 600;
+  }
+
+  .pub-authors,
+  .pub-venue {
+    display: block;
+    font-size: 0.92rem;
+    color: $muted;
+  }
+
+  .pub-venue em {
+    color: $ink;
+  }
+
+  &:hover {
+    border-left-color: $accent;
+  }
+}
+
+.badge-me {
+  font-weight: 700;
+  color: $ink;
+}
+
+// --- Listing (notes index) -------------------------------------------------
+.quarto-listing {
+  margin-top: 1.5rem;
+}
+
+.quarto-grid-item {
+  border: 1px solid $rule !important;
+  border-radius: 8px;
+}
+
+// --- Misc ------------------------------------------------------------------
+.lede {
+  font-size: 1.12rem;
+  color: $muted;
+}
+
+blockquote {
+  border-left: 3px solid $accent;
+  color: $muted;
+}
+
+table {
+  font-size: 0.94rem;
+}

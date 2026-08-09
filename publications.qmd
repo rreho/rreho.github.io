@@ -1,0 +1,56 @@
+---
+title: "Publications"
+---
+
+Peer-reviewed articles and preprints. Full list on
+[Google Scholar](https://scholar.google.com/citations?user=WWjH_vYAAAAJ) and
+[ORCID](https://orcid.org/0009-0002-3703-1292).
+
+<!--
+TO ADD A PUBLICATION: copy one .pub block below, change the four lines.
+Wrap your own name in <span class="badge-me">R. Reho</span> so it stands out.
+-->
+
+## 2026
+
+::: {.pub}
+[Coherent electron–phonon coupling in two-dimensional Bi₂Se₃ nanoplatelets studied with ultrafast spectroscopy]{.pub-title}
+[A. Baserga, J. F. Vliem, R. Kumar, [R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Vanmaekelbergh, Z. Zanolli, G. Cerullo]{.pub-authors}
+[*J. Phys. Chem. C* **130**, 6213–6220 (2026) · [doi:10.1021/acs.jpcc.6c00732](https://doi.org/10.1021/acs.jpcc.6c00732)]{.pub-venue}
+:::
+
+::: {.pub}
+[Proximity-induced superconductivity in PbTe/Pb heterostructures from first principles]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, Z. Zanolli]{.pub-authors}
+[*Phys. Rev. B* **113** (2026) · [doi:10.1103/r366-j5k6](https://doi.org/10.1103/r366-j5k6) · [arXiv:2412.01749](https://arxiv.org/abs/2412.01749)]{.pub-venue}
+:::
+
+## 2025
+
+::: {.pub}
+[Role of surface bands in the photogeneration, cooling, and recombination of charge carriers in two-dimensional Bi₂Se₃]{.pub-title}
+[J. F. Vliem, S. A. Cayan, [R. Reho]{.badge-me}, A. R. Botello-Méndez, P. Geiregat, Z. Zanolli, D. Vanmaekelbergh]{.pub-authors}
+[*ACS Nano* **19**, 17261–17272 (2025) · [doi:10.1021/acsnano.4c14134](https://doi.org/10.1021/acsnano.4c14134)]{.pub-venue}
+:::
+
+## 2024
+
+::: {.pub}
+[Density functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code]{.pub-title}
+[[R. Reho]{.badge-me}, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli]{.pub-authors}
+[*Phys. Rev. B* **110**, 134505 (2024) · [doi:10.1103/PhysRevB.110.134505](https://doi.org/10.1103/PhysRevB.110.134505) · [arXiv:2406.02022](https://arxiv.org/abs/2406.02022)]{.pub-venue}
+:::
+
+::: {.pub}
+[Excitonic response in transition metal dichalcogenide heterostructures from first principles: impact of stacking, twisting, and interlayer distance]{.pub-title}
+[[R. Reho]{.badge-me}, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli]{.pub-authors}
+[*Phys. Rev. B* **110**, 035118 (2024) · [doi:10.1103/PhysRevB.110.035118](https://doi.org/10.1103/PhysRevB.110.035118) · [arXiv:2404.17182](https://arxiv.org/abs/2404.17182)]{.pub-venue}
+:::
+
+## Thesis
+
+::: {.pub}
+[First-principles computational methods for composite bosons in many-body physics: excitons and Cooper pairs]{.pub-title}
+[[R. Reho]{.badge-me}]{.pub-authors}
+[PhD thesis, Utrecht University (2025) · [PDF](pdfs/PhD_Thesis_RR.pdf)]{.pub-venue}
+:::
