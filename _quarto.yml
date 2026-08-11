@@ -12,6 +12,7 @@ project:
     - "publications.qmd"
     - "talks.qmd"
     - "about.qmd"
+    - "consulting.qmd"
     # Notes are written but not published yet. Uncomment these two lines
     # (and the Notes navbar entry below) to put the section live.
     # - "notes/**/*.qmd"
@@ -45,6 +46,8 @@ website:
       #   text: Notes
       - href: about.qmd
         text: About
+      - href: consulting.qmd
+        text: Collaborate
     right:
       - icon: github
         href: https://github.com/rreho

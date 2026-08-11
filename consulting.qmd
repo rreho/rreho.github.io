@@ -1,0 +1,97 @@
+---
+title: "Working together"
+subtitle: "Projects and collaborations in theoretical & computational physics"
+---
+
+I am always eager to work together on interesting problems. Alongside my
+research I take on a small number of external projects — with research groups,
+R&D teams, or individual researchers who need a physicist for a specific
+question.
+
+The work sits where physics, mathematical modelling and numerical
+implementation meet: deriving the right equations, turning them into a correct
+calculation, and reading what the numbers actually say. I am definitively not a
+software engineer; I solve physics problems, and code is how I do it.
+
+## Things I enjoy working on
+
+::: {.card-grid}
+
+::: {.tile}
+### Implementing a model from a paper
+You have a derivation or a published method and want a working, verified
+numerical implementation — including the steps the paper leaves out.
+:::
+
+::: {.tile}
+### A calculation giving unexpected results
+GW, BSE, DFT or real-time dynamics producing something you cannot explain.
+Convergence, screening, k-sampling, symmetry, or genuine physics — worth
+finding out which.
+:::
+
+::: {.tile}
+### Interpreting numerical or experimental data
+Optical spectra, band structures, exciton and phonon signatures, response
+functions: what the data supports, and what it does not.
+:::
+
+::: {.tile}
+### Deriving and implementing an expression
+Taking an analytical result to a stable, tested numerical form — matrix
+elements, integrals over the Brillouin zone, self-energies, response kernels.
+:::
+
+::: {.tile}
+### Reproducing a published result
+Independent reproduction of a calculation or figure, and understanding where
+methods, parameters or approximations diverge.
+:::
+
+::: {.tile}
+### Debugging and validating scientific code
+Python or Fortran that runs but cannot quite be trusted. Physical sanity
+checks, limiting cases, benchmark systems, and HPC/Slurm issues when they touch
+the science.
+:::
+
+:::
+
+## What I bring
+
+**Theory** — many-body perturbation theory, GW and the Bethe–Salpeter equation,
+excitons and exciton–phonon coupling, optical response, electronic-structure
+theory, superconductivity, condensed-matter theory, quantum mechanics and
+electrodynamics.
+
+**Implementation** — scientific Python, Fortran, numerical methods for
+many-body and electronic-structure problems, HPC on Linux/Slurm clusters,
+analysis and visualisation of simulation data.
+
+**Codes** — Yambo/yambopy, Quantum ESPRESSO, SIESTA, Wannier90, AiiDA. I
+contribute to several of these; see [Research](research.qmd) for the underlying
+work and [Publications](publications.qmd) for the record.
+
+## Who I usually work with
+
+- **Research groups** wanting specialist input for a limited period
+- **R&D and deep-tech teams** in materials, photonics, quantum technologies
+- **Scientific software teams** validating or extending physics codes
+- **Startups** whose product depends on physics simulation being right
+- **AI companies** looking for physics expertise: problem design, evaluation,
+  or review of technical scientific content
+- **Individual researchers** stuck on a derivation, an implementation or a
+  puzzling result
+
+Small, well-defined projects work best. I am equally happy to say when something
+falls outside what I can usefully contribute.
+
+## Get in touch
+
+Send me a short description of the problem — the physics, what you have already
+tried, and what a good outcome would look like. If it looks like a good fit we
+can take it from there.
+
+[Get in touch](mailto:riccardo.reho@uni.lu?subject=Project%20enquiry){.btn .btn-primary}
+
+Or reach me on [LinkedIn](https://www.linkedin.com/in/riccardo-reho-997888245/).

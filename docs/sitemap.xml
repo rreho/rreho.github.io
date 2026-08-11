@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rreho.github.io/about.html</loc>
-    <lastmod>2026-08-09T11:45:23.517Z</lastmod>
+    <loc>https://rreho.github.io/consulting.html</loc>
+    <lastmod>2026-08-11T15:07:21.308Z</lastmod>
   </url>
   <url>
-    <loc>https://rreho.github.io/publications.html</loc>
-    <lastmod>2026-08-09T11:45:06.741Z</lastmod>
-  </url>
-  <url>
-    <loc>https://rreho.github.io/index.html</loc>
-    <lastmod>2026-08-09T11:45:17.640Z</lastmod>
+    <loc>https://rreho.github.io/talks.html</loc>
+    <lastmod>2026-08-09T11:06:46.837Z</lastmod>
   </url>
   <url>
     <loc>https://rreho.github.io/research.html</loc>
     <lastmod>2026-08-09T11:45:06.740Z</lastmod>
   </url>
   <url>
-    <loc>https://rreho.github.io/talks.html</loc>
-    <lastmod>2026-08-09T11:06:46.837Z</lastmod>
+    <loc>https://rreho.github.io/index.html</loc>
+    <lastmod>2026-08-11T15:08:22.864Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rreho.github.io/publications.html</loc>
+    <lastmod>2026-08-09T11:45:06.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://rreho.github.io/about.html</loc>
+    <lastmod>2026-08-11T15:08:22.865Z</lastmod>
   </url>
 </urlset>

@@ -68,12 +68,15 @@ in layered materials.
 - **PhD in Physics**, Utrecht University, 2020–2025 — supervisor Zeila Zanolli
 - Developer on the **Yambo**/**yambopy** and **SIESTA** ecosystems
 
-## Open to collaboration
+## Working together
 
-I am always open to new collaborations — academic projects as well as
-industry-facing and other external work. If our interests overlap, or you have a
-problem you think first-principles modelling could help with, get in touch at
-[riccardo.reho@uni.lu](mailto:riccardo.reho@uni.lu).
+I am always eager to work together on interesting problems — implementing a
+model from a paper, diagnosing a GW/BSE calculation that misbehaves, or making
+sense of simulation and experimental results. Academic collaborations and
+external projects alike.
+
+[What I work on with others →](consulting.qmd){.btn .btn-outline-primary .btn-sm}
+[Get in touch](mailto:riccardo.reho@uni.lu){.btn .btn-outline-primary .btn-sm}
 
 ## Recent
 

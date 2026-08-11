@@ -64,8 +64,9 @@ enjoy video games.
 ## Contact
 
 I welcome contact about collaborations of any kind — academic projects,
-industry work, and external projects outside academia alike. Email is the
-fastest way to reach me.
+industry work, and external projects alike. See
+[Working together](consulting.qmd) for the kind of problems I like to take on.
+Email is the fastest way to reach me.
 
 - Email — [riccardo.reho@uni.lu](mailto:riccardo.reho@uni.lu)
 - GitHub — [rreho](https://github.com/rreho)
