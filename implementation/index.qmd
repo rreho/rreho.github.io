@@ -1,0 +1,95 @@
+---
+title: "Implementation"
+subtitle: "How the theory actually gets computed"
+toc: false
+draft: true # ← flip to false when the first page is ready
+listing:
+  - id: l-yambo
+    contents: "*/index.qmd"
+    include:
+      categories: "yambo"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Page"
+      description: "What it covers"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-siesta
+    contents: "*/index.qmd"
+    include:
+      categories: "siesta"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Page"
+      description: "What it covers"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-dft
+    contents: "*/index.qmd"
+    include:
+      categories: "ground-state"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Page"
+      description: "What it covers"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-numerics
+    contents: "*/index.qmd"
+    include:
+      categories: "numerics"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Page"
+      description: "What it covers"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+---
+
+The companion to [Concepts](../concepts/index.qmd). Those pages ask what an
+object *is*; these ask how it is actually computed — which approximation the
+code makes, which convention it stores things in, and where the equation on
+paper stops matching the array in memory.
+
+Written while doing the work, so it records the parts that no manual states.
+
+## Yambo
+
+GW, BSE, real-time dynamics.
+
+::: {#l-yambo}
+:::
+
+## SIESTA
+
+Density functional Bogoliubov–de Gennes and the localised-orbital basis.
+
+::: {#l-siesta}
+:::
+
+## Ground state, phonons, Wannier functions
+
+Quantum ESPRESSO, Wannier90, and what has to be right before anything else is.
+
+::: {#l-dft}
+:::
+
+## Numerics
+
+Methods that are not tied to one code: integration over the Brillouin zone,
+iterative diagonalisation, convergence, parallel decomposition.
+
+::: {#l-numerics}
+:::

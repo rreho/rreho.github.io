@@ -1,0 +1,34 @@
+---
+title: "Ground-state checklist before GW or BSE"
+description: "What has to be converged, and in what order, before any excited-state step."
+categories: [ground-state]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+What has to be converged, and in what order, before any excited-state step.
+:::
+
+## The equation being solved
+
+*To write.* Link the concept page that explains what it means.
+
+## What the code actually does
+
+*To write.*
+
+## Conventions and factors
+
+| Quantity | In the literature | In the code |
+|---|---|---|
+|  |  |  |
+
+## Convergence and failure modes
+
+- *To write.*
+
+## See also
+
+- [Implementation index](../index.qmd)

@@ -1,0 +1,30 @@
+---
+title: "What is a self-energy physically?"
+description: "Everything the rest of the system does to a particle: a shift of its energy and a finite lifetime."
+categories: [excitations]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+The self-energy is the correction to a particle's propagation caused by its interaction with everything else. Its real part shifts the energy; its imaginary part gives a finite lifetime.
+:::
+
+## Short answer
+
+*To write.* The self-energy is the correction to a particle's propagation caused by its interaction with everything else. Its real part shifts the energy; its imaginary part gives a finite lifetime.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

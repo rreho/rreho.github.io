@@ -13,10 +13,8 @@ project:
     - "talks.qmd"
     - "about.qmd"
     - "consulting.qmd"
-    # Notes are written but not published yet. Uncomment these two lines
-    # (and the Notes navbar entry below) to put the section live.
-    # - "notes/**/*.qmd"
-    # - "notes/**/*.ipynb"
+    - "concepts/**/*.qmd"
+    - "implementation/**/*.qmd"
   resources:
     # Only files actually linked from a page get copied into docs/.
     # QuREX-book/ and unused images stay in the repo but are not published.
@@ -42,10 +40,12 @@ website:
         text: Publications
       - href: talks.qmd
         text: Talks
-      # - href: notes/index.qmd
-      #   text: Notes
       - href: about.qmd
         text: About
+      # - href: concepts/index.qmd
+      #   text: Concepts
+      # - href: implementation/index.qmd
+      #   text: Implementation
       - href: consulting.qmd
         text: Collaborate
     right:
@@ -58,6 +58,10 @@ website:
       - icon: envelope
         href: mailto:riccardo.reho@uni.lu
         aria-label: Email
+
+  # Pages with `draft: true` are left out of the built site completely.
+  # Flip a page's draft flag to false to publish just that page.
+  draft-mode: gone
 
   page-footer:
     border: true

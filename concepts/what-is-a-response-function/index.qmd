@@ -1,0 +1,127 @@
+---
+title: "What is a response function?"
+description: "The kernel that maps a weak perturbation onto the change it induces in an observable."
+categories: [response]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A response function is the linear kernel connecting a weak external
+perturbation to the change it produces in an observable — and its poles are the
+excitations of the system.
+:::
+
+## Short answer
+
+Switch on a weak perturbation $\hat H'(t) = -\hat B\, f(t)$ and ask how the
+expectation value of some observable $\hat A$ changes. To first order in $f$,
+
+$$
+\delta \langle \hat A(t)\rangle
+= \int_{-\infty}^{\infty} dt'\; \chi_{AB}(t-t')\, f(t')
+$$ {#eq-linear-response}
+
+with the retarded response function
+
+$$
+\chi_{AB}(t-t') = -\frac{i}{\hbar}\,\theta(t-t')\,
+\big\langle \big[\hat A_H(t), \hat B_H(t')\big] \big\rangle_0 .
+$$ {#eq-kubo}
+
+Three things are doing all the work in @eq-kubo. The **commutator** is what
+survives at first order in perturbation theory. The **step function** enforces
+causality: no response before the kick. The **average** is taken in the
+*unperturbed* equilibrium state — the response is a property of the system
+alone, not of the probe.
+
+In frequency space $\chi_{AB}(\omega)$ has poles at the excitation energies of
+the system. Measuring a spectrum is measuring where those poles sit and how
+strongly each couples to the probe.
+
+## Why it is set up this way
+
+Linear response is not an approximation about the system — it is an
+approximation about the *probe*. It says the perturbation is weak enough that
+the system's own eigenstates still organise the answer. That is why a response
+function is transferable between experiments: the same $\chi$ appears whatever
+apparatus supplies $f(t)$, as long as it couples through $\hat B$.
+
+::: {.callout-note collapse="true"}
+## Derivation: the Kubo formula
+
+Work in the interaction picture with $\hat H = \hat H_0 + \hat H'(t)$ and
+$\hat H'(t) = -\hat B f(t)$. The state evolves as
+$\lvert\psi(t)\rangle = \hat U(t)\lvert\psi_0\rangle$ with
+
+$$
+\hat U(t) = \mathcal{T}\exp\left[
+-\frac{i}{\hbar}\int_{-\infty}^{t} dt'\, \hat H'_H(t')
+\right]
+\approx 1 + \frac{i}{\hbar}\int_{-\infty}^{t} dt'\, \hat B_H(t') f(t') .
+$$
+
+Then
+
+$$
+\begin{aligned}
+\langle \hat A(t)\rangle
+&= \langle \psi_0 \rvert \hat U^\dagger(t)\, \hat A_H(t)\, \hat U(t) \lvert \psi_0\rangle \\
+&\approx \langle \hat A_H(t)\rangle_0
++ \frac{i}{\hbar}\int_{-\infty}^{t} dt'\, f(t')
+\big\langle \big[\hat B_H(t'), \hat A_H(t)\big] \big\rangle_0 .
+\end{aligned}
+$$
+
+Subtracting the equilibrium value, swapping the commutator order to absorb the
+sign, and extending the upper limit to $+\infty$ with a $\theta(t-t')$ gives
+@eq-kubo. Time-translation invariance of $\hat H_0$ makes $\chi$ depend on
+$t-t'$ only — which is exactly what fails out of equilibrium, and why
+propagators there need
+[two independent times](../why-two-times/index.qmd).
+:::
+
+::: {.callout-note collapse="true"}
+## Aside: causality, analyticity, Kramers–Kronig
+
+The $\theta(t-t')$ makes $\chi(\omega)$ analytic in the upper half plane.
+Closing a contour there relates real and imaginary parts:
+
+$$
+\operatorname{Re}\chi(\omega) = \frac{1}{\pi}\,\mathcal{P}\!\!
+\int_{-\infty}^{\infty} d\omega'\,
+\frac{\operatorname{Im}\chi(\omega')}{\omega' - \omega} .
+$$
+
+This is why refraction and absorption are not independent measurements, and why
+a measured absorption spectrum truncated at finite frequency yields a biased
+refractive index. Causality alone forces it; no model is involved.
+:::
+
+::: {.callout-note collapse="true"}
+## Aside: which $\hat A$ and $\hat B$ for optics
+
+For light–matter coupling in the long-wavelength limit,
+$\hat B = \hat{\mathbf P}$ (polarisation) and $f(t) = \mathbf E(t)$, so
+$\chi$ is the electric susceptibility and
+$\varepsilon(\omega) = 1 + \chi(\omega)$. Beyond dipole, or in the transverse
+gauge, the natural pair is the current–current response, and translating
+between the two conventions is a standard source of stray factors of $\omega$.
+:::
+
+## Common confusions
+
+- **"The response function describes the experiment."** It describes the
+  system. The experiment picks which $\hat A$, $\hat B$ and which $f(t)$.
+- **"Poles of $\chi$ are single-particle energies."** They are energies of
+  *neutral excitations* — differences between many-body states. That is why
+  excitons appear in $\chi$ but not in a band structure.
+- **"Linear response fails for strong fields, so it is a weak theory."** It
+  fails for strong *probes*. It says nothing about how strongly the system's own
+  constituents interact.
+
+## See also
+
+- [Why does spectroscopy measure a response?](../why-spectroscopy-measures-response/index.qmd)
+- [How does an exciton appear in the response?](../exciton-in-the-response/index.qmd)

@@ -1,0 +1,21 @@
+# ---------------------------------------------------------------------------
+# Defaults for every implementation page. Same draft switch as concepts/:
+# `draft: true` keeps a page out of the built site entirely.
+# ---------------------------------------------------------------------------
+
+author: "Riccardo Reho"
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    html-math-method: katex
+    fig-cap-location: bottom
+    code-tools: false
+    code-copy: true
+    link-external-newwindow: true
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false

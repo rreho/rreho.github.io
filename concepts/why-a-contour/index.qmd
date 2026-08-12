@@ -1,0 +1,30 @@
+---
+title: "Why a contour?"
+description: "Because the initial state must be propagated forward and backward in time to compute expectation values, not transition amplitudes."
+categories: [green-functions]
+order: 30
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+Expectation values require evolution operators on both sides of the observable. Ordering them along a single contour that runs forward and then back makes Wick's theorem and the diagrammatic machinery work again.
+:::
+
+## Short answer
+
+*To write.* Expectation values require evolution operators on both sides of the observable. Ordering them along a single contour that runs forward and then back makes Wick's theorem and the diagrammatic machinery work again.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

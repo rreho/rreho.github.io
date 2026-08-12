@@ -1,0 +1,30 @@
+---
+title: "Why does spectroscopy measure a response?"
+description: "Because every probe couples weakly to an operator of the sample, and what is detected is the induced change."
+categories: [response]
+order: 20
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+An experiment supplies a perturbation and records how the sample reacts. Provided the probe is weak, that reaction is linear in the drive, and the proportionality kernel is the response function — regardless of the apparatus.
+:::
+
+## Short answer
+
+*To write.* An experiment supplies a perturbation and records how the sample reacts. Provided the probe is weak, that reaction is linear in the drive, and the proportionality kernel is the response function — regardless of the apparatus.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

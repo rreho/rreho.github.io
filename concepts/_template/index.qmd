@@ -1,0 +1,61 @@
+---
+# ===========================================================================
+# CONCEPT TEMPLATE — copy this folder to concepts/<slug>/ and edit.
+# Folders starting with "_" are ignored by Quarto.
+# ===========================================================================
+title: "The question, phrased as a question?"
+description: "One line that answers it. This is what shows in the index table."
+categories: [response] # fields | response | green-functions | excitations | measurement
+order: 10 # position within its section on the index page
+date: 2026-01-01
+draft: true # ← flip to false to publish this page. Nothing else to change.
+---
+
+::: {.oneline}
+The answer compressed to a single sentence. If a reader stops here, this is
+what they should walk away with.
+:::
+
+## Short answer
+
+Three to six sentences. Plain, direct, no build-up. State the thing, then the
+one caveat that stops the statement from being wrong.
+
+$$
+\chi(\omega) = \dots
+$$
+
+## Why it is set up this way
+
+Optional, short. The motivation a textbook usually assumes you already have.
+
+::: {.callout-note collapse="true"}
+## Derivation: <what is being derived>
+
+The full algebra lives here, folded away. Readers who want the idea never open
+it; readers who want the steps get all of them.
+
+$$
+\begin{aligned}
+A &= B \\
+  &= C .
+\end{aligned}
+$$
+:::
+
+::: {.callout-note collapse="true"}
+## Aside: <a subtlety worth its own box>
+
+Sign conventions, factors of two, adiabatic switching, whichever detail costs
+people an afternoon.
+:::
+
+## Common confusions
+
+- **A plausible wrong statement** — why it is wrong.
+- **Another one** — and the correction.
+
+## See also
+
+- [Another concept page](../some-other-slug/index.qmd)
+- Reference, textbook chapter, or paper.

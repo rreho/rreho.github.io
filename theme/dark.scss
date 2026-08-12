@@ -143,3 +143,33 @@ blockquote {
 table {
   font-size: 0.94rem;
 }
+
+// --- Concept pages: the one-line answer box --------------------------------
+.oneline {
+  border-left: 3px solid $accent;
+  background: rgba(77, 184, 220, 0.08);
+  border-radius: 0 6px 6px 0;
+  padding: 0.9rem 1.1rem;
+  margin: 1.5rem 0 2rem;
+  font-size: 1.08rem;
+  line-height: 1.55;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Collapsed derivations should read as "there is more here", not as a warning
+.callout.callout-style-default > .callout-header {
+  background-color: transparent;
+}
+
+.quarto-listing-table table {
+  a {
+    font-weight: 600;
+  }
+
+  td:last-child {
+    color: $muted;
+  }
+}

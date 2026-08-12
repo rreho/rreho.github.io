@@ -2,6 +2,16 @@
 # notebook/code outputs are never re-executed on another machine)
 /.quarto/
 
+# Private staging area for concept pages that must not reach the public repo
+# (e.g. material derived from unpublished manuscripts). Quarto ignores any
+# folder starting with "_", and git ignores this one.
+/concepts/_drafts/
+/implementation/_drafts/
+
+# Throwaway preview folders: rendered locally, never committed.
+/concepts/preview-*/
+/implementation/preview-*/
+
 # Python
 .venv/
 __pycache__/

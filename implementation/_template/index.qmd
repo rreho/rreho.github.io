@@ -1,0 +1,52 @@
+---
+# ===========================================================================
+# IMPLEMENTATION TEMPLATE — copy this folder to implementation/<slug>/.
+# ===========================================================================
+title: "What this page covers"
+description: "One line for the index table."
+categories: [yambo] # yambo | siesta | ground-state | numerics
+order: 10
+date: 2026-01-01
+draft: true
+---
+
+::: {.oneline}
+The practical statement: what is computed, under what approximation, and the
+one thing that most often goes wrong.
+:::
+
+## The equation being solved
+
+State it, and link the concept page that explains what it means:
+[what a response function is](../../concepts/what-is-a-response-function/index.qmd).
+
+$$
+\chi = \chi_0 + \chi_0 (v + f_{xc}) \chi
+$$
+
+## What the code actually does
+
+Where it lives, what it is called, what it stores. The gap between the equation
+above and the array in memory.
+
+```fortran
+! the loop that matters, or the input block that controls it
+```
+
+## Conventions and factors
+
+The sign, the gauge, the factor of two, the units. What differs from the
+textbook statement and why.
+
+| Quantity | In the literature | In the code |
+|---|---|---|
+|  |  |  |
+
+## Convergence and failure modes
+
+- **Symptom** — likely cause, and the parameter that fixes it.
+
+## See also
+
+- Concept page: [link](../../concepts/index.qmd)
+- Upstream documentation or source file.

@@ -1,0 +1,30 @@
+---
+title: "Why two times?"
+description: "Because out of equilibrium the propagator depends on when the perturbation happened, not only on the elapsed time."
+categories: [green-functions]
+order: 20
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+In equilibrium, time-translation invariance collapses two time arguments into one difference. Out of equilibrium that symmetry is gone, and both times carry physical information.
+:::
+
+## Short answer
+
+*To write.* In equilibrium, time-translation invariance collapses two time arguments into one difference. Out of equilibrium that symmetry is gone, and both times carry physical information.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

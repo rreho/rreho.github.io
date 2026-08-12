@@ -1,0 +1,34 @@
+---
+title: "Brillouin-zone sampling and convergence"
+description: "Why the k-grid that converges the total energy does not converge a spectrum."
+categories: [numerics]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+Why the k-grid that converges the total energy does not converge a spectrum.
+:::
+
+## The equation being solved
+
+*To write.* Link the concept page that explains what it means.
+
+## What the code actually does
+
+*To write.*
+
+## Conventions and factors
+
+| Quantity | In the literature | In the code |
+|---|---|---|
+|  |  |  |
+
+## Convergence and failure modes
+
+- *To write.*
+
+## See also
+
+- [Implementation index](../index.qmd)

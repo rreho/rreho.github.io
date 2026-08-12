@@ -1,0 +1,30 @@
+---
+title: "Why does a classical field require coherence?"
+description: "Because a definite amplitude and phase is only possible in a superposition of many photon numbers."
+categories: [fields]
+order: 30
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A state with sharp photon number has completely undefined phase. A field behaves classically only when it has a well-defined phase, which forces a broad superposition of number states — a coherent state.
+:::
+
+## Short answer
+
+*To write.* A state with sharp photon number has completely undefined phase. A field behaves classically only when it has a well-defined phase, which forces a broad superposition of number states — a coherent state.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

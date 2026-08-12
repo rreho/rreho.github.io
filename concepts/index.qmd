@@ -1,0 +1,128 @@
+---
+title: "Concepts"
+subtitle: "Working answers to the questions underneath spectroscopy"
+toc: false
+draft: true # ← the section index; flip to false when the first page is ready
+listing:
+  - id: l-fields
+    contents: "*/index.qmd"
+    include:
+      categories: "fields"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Question"
+      description: "Short answer"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-striped: false
+    table-hover: true
+  - id: l-response
+    contents: "*/index.qmd"
+    include:
+      categories: "response"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Question"
+      description: "Short answer"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-green
+    contents: "*/index.qmd"
+    include:
+      categories: "green-functions"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Question"
+      description: "Short answer"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-excitations
+    contents: "*/index.qmd"
+    include:
+      categories: "excitations"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Question"
+      description: "Short answer"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+  - id: l-measurement
+    contents: "*/index.qmd"
+    include:
+      categories: "measurement"
+    type: table
+    fields: [title, description]
+    field-display-names:
+      title: "Question"
+      description: "Short answer"
+    sort: "order"
+    sort-ui: false
+    filter-ui: false
+    table-hover: true
+---
+
+A slow attempt to write down the conceptual structure of spectroscopy — from
+what a photon is to what a detector actually records — one question at a time.
+
+Each page opens with a short answer that should be enough on its own. Longer
+derivations sit below it in collapsible sections, so the page stays readable
+whether you want the idea or the algebra.
+
+::: {.callout-note collapse="true"}
+## How to read this
+Answers are written for someone with a physics background who has not
+necessarily worked in many-body theory. Where a statement hides a subtlety, it
+says so rather than smoothing it over. Corrections are welcome —
+[email me](mailto:riccardo.reho@uni.lu).
+:::
+
+## Fields, photons, coherence
+
+What the electromagnetic field is quantum mechanically, and in what sense a
+laser beam is "classical".
+
+::: {#l-fields}
+:::
+
+## Response and spectroscopy
+
+Why nearly every spectroscopy, whatever the apparatus, ends up measuring the
+same mathematical object.
+
+::: {#l-response}
+:::
+
+## Green functions and the contour
+
+The propagator, why it needs two time arguments out of equilibrium, and what
+the contour is really doing.
+
+::: {#l-green}
+:::
+
+## Self-energy and excitations
+
+Where interaction effects live, and how a bound electron–hole pair shows up in
+a measurable spectrum.
+
+::: {#l-excitations}
+:::
+
+## From response to measurement
+
+Closing the loop: induced currents, propagating light, and the number a
+detector reports.
+
+::: {#l-measurement}
+:::

@@ -1,0 +1,30 @@
+---
+title: "What is a Green function?"
+description: "The amplitude for adding a particle at one point in space-time and removing it at another."
+categories: [green-functions]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A propagator: the amplitude to add a particle here and now, and remove it there and later, in the presence of everything else the system is doing.
+:::
+
+## Short answer
+
+*To write.* A propagator: the amplitude to add a particle here and now, and remove it there and later, in the presence of everything else the system is doing.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)

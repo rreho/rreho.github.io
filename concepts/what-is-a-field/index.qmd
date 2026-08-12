@@ -1,0 +1,30 @@
+---
+title: "What is a field?"
+description: "A dynamical system with a degree of freedom at every point in space, whose normal modes are what get quantised."
+categories: [fields]
+order: 20
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A field assigns a dynamical variable to every point in space; its normal modes are independent oscillators, and quantising those modes is what produces particles.
+:::
+
+## Short answer
+
+*To write.* A field assigns a dynamical variable to every point in space; its normal modes are independent oscillators, and quantising those modes is what produces particles.
+
+::: {.callout-note collapse="true"}
+## Derivation
+
+*To write.*
+:::
+
+## Common confusions
+
+- *To write.*
+
+## See also
+
+- [Concepts index](../index.qmd)
