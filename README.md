@@ -16,9 +16,9 @@ research.qmd           research overview
 publications.qmd       publication list
 talks.qmd              talks, seminars, posters
 about.qmd              biography, education, skills
-draft.py              publish/hide switch for concepts/ and implementation/
+draft.py              publish/hide switch for physical-picture/ and implementation/
 import-tex.py         convert one LaTeX section file into a page skeleton
-concepts/             theory: one genuine physics question per page
+physical-picture/     theory: one genuine physics question per page
   index.qmd            curated map, auto-filled from each page's front matter
   _metadata.yml        settings shared by every concept page
   _template/           copy this folder to start a new page (never published)
@@ -56,7 +56,7 @@ minute after the push.
 
 ## Publishing switch: draft.py
 
-Every page under `concepts/` and `notes/` carries a `draft:` flag. Drafts are
+Every page under `physical-picture/` and `notes/` carries a `draft:` flag. Drafts are
 absent from the built site entirely — no content, no listing entry, no search
 hit, no sitemap line. One script flips them:
 
@@ -68,14 +68,30 @@ python draft.py false what-is-a-photon   # publish one page (substring match)
 python draft.py true  what-is-a-photon   # hide it again
 ```
 
-Then `quarto render`. The section index pages (`concepts/index.qmd`,
+Then `quarto render`. The section index pages (`physical-picture/index.qmd`,
 `implementation/index.qmd`) have their own flag — publish one when its first
 page is ready, and uncomment the matching navbar entry in `_quarto.yml`.
 
+## House rule for Physical Picture
+
+Every top-level section of a page is **plain language**: no equations, no
+symbols, no notation. Someone who never opens a folded block must still come
+away with the correct physical picture.
+
+Mathematics lives **only** inside `::: {.callout-note collapse="true"}` blocks.
+The template enforces the layout; the discipline is yours.
+
+Check it before publishing:
+
+```bash
+grep -n '\$' physical-picture/*/index.qmd | grep -v callout
+```
+
 ## Two sections, one split
 
-`concepts/` answers physics questions: what the object is, why it is defined
-that way, what it means. No code.
+`physical-picture/` answers physics questions in words: what the object is, why
+it is defined that way, what it means. No code, and no maths outside the folded
+blocks.
 
 `implementation/` answers the separate question of how it is computed: which
 approximation a code makes, what it stores, which convention it uses, what goes
@@ -91,11 +107,11 @@ Concept pages have their own visibility switch, independent of everything else.
 
 | Stage | Where the file lives | On GitHub? | On the site? |
 |---|---|---|---|
-| 1. Private | `concepts/_drafts/<slug>/index.qmd` | no (gitignored) | no |
-| 2. Written, hidden | `concepts/<slug>/index.qmd` + `draft: true` | yes | no |
-| 3. Live | `concepts/<slug>/index.qmd` + `draft: false` | yes | yes |
+| 1. Private | `physical-picture/_drafts/<slug>/index.qmd` | no (gitignored) | no |
+| 2. Written, hidden | `physical-picture/<slug>/index.qmd` + `draft: true` | yes | no |
+| 3. Live | `physical-picture/<slug>/index.qmd` + `draft: false` | yes | yes |
 
-Stage 1 exists because this repo is public: anything under `concepts/` is
+Stage 1 exists because this repo is public: anything under `physical-picture/` is
 visible on GitHub even when `draft: true` hides it from the website. Material
 derived from unpublished manuscripts belongs in `_drafts/` until the paper is
 out.
@@ -104,13 +120,13 @@ out.
 appears in no listing, no search index and no sitemap. Flipping one page's
 `draft:` flag publishes exactly that page — no other file changes.
 
-The section index `concepts/index.qmd` is itself a draft. Flip it to
+The section index `physical-picture/index.qmd` is itself a draft. Flip it to
 `draft: false` when the first page is ready, and uncomment the `Concepts` entry
 in the `_quarto.yml` navbar.
 
 ### Writing a concept page
 
-1. `cp -r concepts/_template concepts/my-question`
+1. `cp -r physical-picture/_template physical-picture/my-question`
 2. Set `title` (phrased as a question), `description` (the one-line answer that
    shows in the index table), `categories` (one of `fields`, `response`,
    `green-functions`, `excitations`, `measurement`) and `order` (position
@@ -123,7 +139,7 @@ The index page picks it up from the category — no list to edit.
 ### Importing an existing LaTeX note
 
 ```bash
-pandoc paper.tex -o concepts/_drafts/my-question/index.qmd   --wrap=preserve --extract-media=concepts/_drafts/my-question
+pandoc paper.tex -o physical-picture/_drafts/my-question/index.qmd   --wrap=preserve --extract-media=physical-picture/_drafts/my-question
 ```
 
 Then add the Quarto front matter, split the long derivations into collapsible

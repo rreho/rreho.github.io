@@ -58,7 +58,7 @@ listing:
     table-hover: true
 ---
 
-The companion to [Concepts](../concepts/index.qmd). Those pages ask what an
+The companion to [Physical Picture](../physical-picture/index.qmd). Those pages ask what an
 object *is*; these ask how it is actually computed — which approximation the
 code makes, which convention it stores things in, and where the equation on
 paper stops matching the array in memory.
@@ -74,7 +74,7 @@ GW, BSE, real-time dynamics.
 
 ## SIESTA
 
-Density functional Bogoliubov–de Gennes and the localised-orbital basis.
+Density functional Bogoliubov–de Gennes and the localized-orbital basis.
 
 ::: {#l-siesta}
 :::
@@ -89,7 +89,7 @@ Quantum ESPRESSO, Wannier90, and what has to be right before anything else is.
 ## Numerics
 
 Methods that are not tied to one code: integration over the Brillouin zone,
-iterative diagonalisation, convergence, parallel decomposition.
+iterative diagonalization, convergence, parallel decomposition.
 
 ::: {#l-numerics}
 :::

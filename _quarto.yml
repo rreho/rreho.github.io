@@ -13,7 +13,7 @@ project:
     - "talks.qmd"
     - "about.qmd"
     - "consulting.qmd"
-    - "concepts/**/*.qmd"
+    - "physical-picture/**/*.qmd"
     - "implementation/**/*.qmd"
   resources:
     # Only files actually linked from a page get copied into docs/.
@@ -42,8 +42,8 @@ website:
         text: Talks
       - href: about.qmd
         text: About
-      # - href: concepts/index.qmd
-      #   text: Concepts
+      # - href: physical-picture/index.qmd
+      #   text: Physical Picture
       # - href: implementation/index.qmd
       #   text: Implementation
       - href: consulting.qmd

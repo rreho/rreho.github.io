@@ -18,7 +18,7 @@ one thing that most often goes wrong.
 ## The equation being solved
 
 State it, and link the concept page that explains what it means:
-[what a response function is](../../concepts/what-is-a-response-function/index.qmd).
+[what a response function is](../../physical-picture/what-is-a-response-function/index.qmd).
 
 $$
 \chi = \chi_0 + \chi_0 (v + f_{xc}) \chi
@@ -48,5 +48,5 @@ textbook statement and why.
 
 ## See also
 
-- Concept page: [link](../../concepts/index.qmd)
+- Concept page: [link](../../physical-picture/index.qmd)
 - Upstream documentation or source file.
