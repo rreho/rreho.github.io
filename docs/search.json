@@ -1,173 +1,5 @@
 [
   {
-    "objectID": "consulting.html",
-    "href": "consulting.html",
-    "title": "Working together",
-    "section": "",
-    "text": "I am always eager to work together on interesting problems. Alongside my research I take on a small number of external projects — with research groups, R&D teams, or individual researchers who need a physicist for a specific question.\nThe work sits where physics, mathematical modelling and numerical implementation meet: deriving the right equations, turning them into a correct calculation, and reading what the numbers actually say. I am definitively not a software engineer; I solve physics problems, and code is how I do it."
-  },
-  {
-    "objectID": "consulting.html#things-i-enjoy-working-on",
-    "href": "consulting.html#things-i-enjoy-working-on",
-    "title": "Working together",
-    "section": "Things I enjoy working on",
-    "text": "Things I enjoy working on\n\n\nImplementing a model from a paper\nYou have a derivation or a published method and want a working, verified numerical implementation — including the steps the paper leaves out.\n\n\nA calculation giving unexpected results\nGW, BSE, DFT or real-time dynamics producing something you cannot explain. Convergence, screening, k-sampling, symmetry, or genuine physics — worth finding out which.\n\n\nInterpreting numerical or experimental data\nOptical spectra, band structures, exciton and phonon signatures, response functions: what the data supports, and what it does not.\n\n\nDeriving and implementing an expression\nTaking an analytical result to a stable, tested numerical form — matrix elements, integrals over the Brillouin zone, self-energies, response kernels.\n\n\nReproducing a published result\nIndependent reproduction of a calculation or figure, and understanding where methods, parameters or approximations diverge.\n\n\nDebugging and validating scientific code\nPython or Fortran that runs but cannot quite be trusted. Physical sanity checks, limiting cases, benchmark systems, and HPC/Slurm issues when they touch the science."
-  },
-  {
-    "objectID": "consulting.html#my-expertise",
-    "href": "consulting.html#my-expertise",
-    "title": "Working together",
-    "section": "My expertise",
-    "text": "My expertise\nTheory — many-body perturbation theory, GW and the Bethe–Salpeter equation, excitons and exciton–phonon coupling, optical response, electronic-structure theory, superconductivity, condensed-matter theory, quantum mechanics and electrodynamics.\nImplementation — scientific Python, Fortran, numerical methods for many-body and electronic-structure problems, HPC on Linux/Slurm clusters, analysis and visualisation of simulation data.\nCodes — Yambo/yambopy, Quantum ESPRESSO, SIESTA, Wannier90, AiiDA. I contribute to several of these; see Research for the underlying work and Publications for the record."
-  },
-  {
-    "objectID": "consulting.html#get-in-touch",
-    "href": "consulting.html#get-in-touch",
-    "title": "Working together",
-    "section": "Get in touch",
-    "text": "Get in touch\nSend me a short description of the problem — the physics, what you have already tried, and what a good outcome would look like. If it looks like a good fit we can take it from there.\nGet in touch\nOr reach me on LinkedIn."
-  },
-  {
-    "objectID": "talks.html",
-    "href": "talks.html",
-    "title": "Talks & Presentations",
-    "section": "",
-    "text": "Seminars, contributed talks and posters at international conferences."
-  },
-  {
-    "objectID": "talks.html#invited-talks",
-    "href": "talks.html#invited-talks",
-    "title": "Talks & Presentations",
-    "section": "Invited talks",
-    "text": "Invited talks\n\nExcitonic response in TMD heterostructures from first principles: impact of stacking, twisting, and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, L. Wirtz, Z. Zanolli MRS Fall Meeting, Warsaw, PL · 15–18 Sep 2025\n\n\nDensity functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code R. Reho, N. Wittemeier, A. Kole PSI-K 2025, Lausanne, CH · Finalist, CECI Award · 25–28 Aug 2025"
-  },
-  {
-    "objectID": "talks.html#invited-seminars",
-    "href": "talks.html#invited-seminars",
-    "title": "Talks & Presentations",
-    "section": "Invited seminars",
-    "text": "Invited seminars\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Physics Seminars, Limpertsberg, Luxembourg · 26 Feb 2025\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Debye Lunch Lecture, Utrecht University, NL · 11 Dec 2024\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli ETSF Webinar, online · 22 Nov 2024\n\n\nOptical properties of TMD van der Waals heterostructures R. Reho, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli KNCV-CTC Seminars, University of Twente, NL · 20 Sep 2023\n\n\nReal-time photoluminescence from first principles: application to van der Waals heterostructures R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli Informal ETSF workshop, Amsterdam, NL · 17 May 2023"
-  },
-  {
-    "objectID": "talks.html#contributed-oral-presentations",
-    "href": "talks.html#contributed-oral-presentations",
-    "title": "Talks & Presentations",
-    "section": "Contributed oral presentations",
-    "text": "Contributed oral presentations\n\n“Transverse theory of optical absorption and electromagnetic excitonic dressing R. Reho, Andrea Marini, Ludger Wirtz Rome, IT · 7-10 Sept 2026\n\n\nElectronic and optical properties of two-dimensional materials: towards exciton dynamics R. Reho, L. Wirtz, (University of Luxembourg) Frascati, IT · 23 Apr 2026\n\n\nFrom ab initio to tight-binding framework: model exciton interaction in materials S. T. Bos, R. Reho, Z. Zanolli TIMES Workshop, Belfast, UK · 7–10 Apr 2025\n\n\nControlling light–matter interaction in TMD heterostructures R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli NWO Chains, Veldhoven, NL · 3–4 Dec 2024\n\n\nProximity-induced superconductivity in PbTe/Pb via first principles R. Reho, A. R. Botello-Méndez, Z. Zanolli QuMaT yearly meeting, Enschede, NL · 11–12 Nov 2024\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli ETSF electron–phonon collaboration team workshop, Louvain-la-Neuve, BE · 23–25 Sep 2024\n\n\nExcitonic response in TMD heterostructures from first principles: impact of stacking, twisting and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli CECAM workshop Frontiers in many-body excited-state dynamics from first principles, Lausanne, CH · 15–17 Jul 2024\n\n\nExcitonic responses in MoS₂/WS₂ and MoSe₂/WSe₂ heterostructures from first principles: impact of stacking order and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli 27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024\n\n\nOptical properties of van der Waals TMD heterostructures from first principles R. Reho, Z. Zanolli DPG Spring Meeting, Berlin, DE · 22–26 Mar 2024\n\n\nDensity functional theory for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli NWO Physics, Veldhoven, NL · 23–24 Jan 2024\n\n\nIdentification of high-energy excitations in two-dimensional topological Bi₂Se₃ nanoplatelets R. Reho, P. M. M. C. de Melo, A. R. Botello-Méndez, M. J. Verstraete, D. Vanmaekelbergh, Z. Zanolli QuMat meeting, Nijmegen, NL · 22–25 Oct 2023\n\n\nAbsorption and emission in van der Waals heterostructures from first principles R. Reho, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli Colloquium HOWDI, Porquerolles, FR · 8–12 May 2023\n\n\nFirst-principles topological superconductivity R. Reho, A. Kole, N. Wittemeier, Z. Zanolli QuMat kick-off meeting, Utrecht, NL · 26 Oct 2022\n\n\nTrions and biexcitons from first principles: questions and future work R. Reho, P. M. M. C. de Melo, M. J. Verstraete, H. Stoof, Z. Zanolli Informal ETSF workshop ETSFCoimbra2021, University of Coimbra, PT · 13–15 Dec 2021\n\n\nQuasi-equilibrium states in heterobilayers of transition metal dichalcogenides R. Reho, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli ETSF Young Researcher Meeting ETSFYRM2021, Cagliari, IT · 6–10 Sep 2021"
-  },
-  {
-    "objectID": "talks.html#posters",
-    "href": "talks.html#posters",
-    "title": "Talks & Presentations",
-    "section": "Posters",
-    "text": "Posters\n\nOptical properties of hBN point defects as qubits S. T. Bos, R. Reho, A. R. Botello-Méndez, Z. Zanolli 27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024\n\n\nAb initio calculations on the band structure of TMDs R. Reho, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli 25th Workshop on Electronic Excitations, Leuven, BE · 13–17 Jun 2022\n\n\nPressure-induced phase transitions in Fe₄N S. Barua, B. S. Biswas, A. C. Burgess, J. Dolado, A. Elomrani, W. Heyvaert, Sri K., V. Landgraf, L. MacEnulty, S. Marek, A. R. Mishra, A. A. Nair, R. Reho, A. Subrati, F. Tabatabaei, G. E. Tekneci, S. Van Dyck, A. Vázquez-López, M. Warrier, S. Cottenier 20th International Workshop on Computational Physics and Materials Science (ICTP), Trieste, IT · 23–25 Feb 2021"
-  },
-  {
-    "objectID": "research.html",
-    "href": "research.html",
-    "title": "Research",
-    "section": "",
-    "text": "I build theoretical frameworks — and the code that makes them usable — to explain how quantum materials absorb light, emit light, and carry current without resistance. Three threads run through the work."
-  },
-  {
-    "objectID": "research.html#theoretical-spectroscopy",
-    "href": "research.html#theoretical-spectroscopy",
-    "title": "Research",
-    "section": "Theoretical spectroscopy",
-    "text": "Theoretical spectroscopy\n\nI study the optical properties of two-dimensional multilayer structures built from transition metal dichalcogenides (TMDs) and topological insulators such as Bi₂Se₃. Reduced dimensionality and dielectric screening enhance the Coulomb interaction between charge carriers, producing strongly bound electron–hole pairs — excitons — that dominate the optical response.\nConcretely, I work on:\n\nExcitonic response of heterostructures — how stacking order, twist angle and interlayer distance reshape the exciton spectrum (Phys. Rev. B 110, 035118).\nReal-time photoluminescence from non-equilibrium many-body perturbation theory, implemented in the Yambo code.\nUltrafast carrier dynamics in 2D Bi₂Se₃ nanoplatelets, in collaboration with experiment (ACS Nano 19, 17261)."
-  },
-  {
-    "objectID": "research.html#superconductivity",
-    "href": "research.html#superconductivity",
-    "title": "Research",
-    "section": "Superconductivity",
-    "text": "Superconductivity\n\nI combine Bogoliubov–de Gennes theory with density functional theory in a unified approach — density functional Bogoliubov–de Gennes theory (DFT-BdG) — which I extended to unconventional pairing and implemented in the SIESTA code (Phys. Rev. B 110, 134505).\nApplications include proximity-induced superconductivity in semiconductor– superconductor heterostructures such as PbTe/Pb, relevant to topological quantum computing platforms (Phys. Rev. B 113 (2026))."
-  },
-  {
-    "objectID": "research.html#topology-in-condensed-matter",
-    "href": "research.html#topology-in-condensed-matter",
-    "title": "Research",
-    "section": "Topology in condensed matter",
-    "text": "Topology in condensed matter\n\nBerry curvature, Wannier functions and Chern numbers give a geometric reading of electronic and optical response. I use Wannier-based tight-binding models, interfaced with first-principles calculations, to connect microscopic band geometry to measurable spectra."
-  },
-  {
-    "objectID": "research.html#codes-and-tools",
-    "href": "research.html#codes-and-tools",
-    "title": "Research",
-    "section": "Codes and tools",
-    "text": "Codes and tools\n\n\n\n\n\n\n\nCode\nRole\n\n\n\n\nYambo / yambopy\nGW, BSE, real-time dynamics — developer\n\n\nSIESTA\nDFT-BdG for superconductors — developer\n\n\nQuantum ESPRESSO\nGround-state DFT and phonons\n\n\nWannier90\nMaximally localised Wannier functions\n\n\nAiiDA\nHigh-throughput workflow management"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Riccardo Reho",
-    "section": "",
-    "text": "I develop and apply ab initio many-body methods to predict the electronic and optical properties of quantum materials. My work spans excitons in van der Waals heterostructures, real-time photoluminescence, and density functional theory for superconductors — combining theory development with implementations in the Yambo and SIESTA codes.\nResearch → Publications → About →"
-  },
-  {
-    "objectID": "index.html#what-i-work-on",
-    "href": "index.html#what-i-work-on",
-    "title": "Riccardo Reho",
-    "section": "What I work on",
-    "text": "What I work on\n\n\nTheoretical spectroscopy\nExcitons, absorption and photoluminescence in 2D transition metal dichalcogenides and topological insulators, from first principles.\n\n\nSuperconductivity\nDensity functional Bogoliubov–de Gennes theory for conventional and unconventional superconductors, implemented in SIESTA.\n\n\nTopology & geometry\nBerry curvature, Chern numbers and the geometric origin of optical response in layered materials."
-  },
-  {
-    "objectID": "index.html#currently",
-    "href": "index.html#currently",
-    "title": "Riccardo Reho",
-    "section": "Currently",
-    "text": "Currently\n\nPostdoctoral researcher, University of Luxembourg\nPhD in Physics, Utrecht University, 2020–2025 — supervisor Zeila Zanolli\nDeveloper on the Yambo/yambopy and SIESTA ecosystems"
-  },
-  {
-    "objectID": "index.html#working-together",
-    "href": "index.html#working-together",
-    "title": "Riccardo Reho",
-    "section": "Working together",
-    "text": "Working together\nI am always eager to work together on interesting problems — implementing a model from a paper, diagnosing a GW/BSE calculation that misbehaves, or making sense of simulation and experimental results. Academic collaborations and external projects alike.\nWhat I work on with others → Get in touch"
-  },
-  {
-    "objectID": "index.html#recent",
-    "href": "index.html#recent",
-    "title": "Riccardo Reho",
-    "section": "Recent",
-    "text": "Recent\n\nProximity-induced superconductivity in PbTe/Pb heterostructures from first principles — Phys. Rev. B 113 (2026). See all publications\nInvited talk at MRS Fall Meeting 2025, Warsaw. See all talks\nFinalist, CECI Award, PSI-K 2025, Lausanne."
-  },
-  {
-    "objectID": "publications.html",
-    "href": "publications.html",
-    "title": "Publications",
-    "section": "",
-    "text": "Peer-reviewed articles and preprints. Full list on Google Scholar and ORCID."
-  },
-  {
-    "objectID": "publications.html#section",
-    "href": "publications.html#section",
-    "title": "Publications",
-    "section": "2026",
-    "text": "2026\n\nCoherent electron–phonon coupling in two-dimensional Bi₂Se₃ nanoplatelets studied with ultrafast spectroscopy A. Baserga, J. F. Vliem, R. Kumar, R. Reho, A. R. Botello-Méndez, D. Vanmaekelbergh, Z. Zanolli, G. Cerullo J. Phys. Chem. C 130, 6213–6220 (2026) · doi:10.1021/acs.jpcc.6c00732\n\n\nProximity-induced superconductivity in PbTe/Pb heterostructures from first principles R. Reho, A. R. Botello-Méndez, Z. Zanolli Phys. Rev. B 113 (2026) · doi:10.1103/r366-j5k6 · arXiv:2412.01749"
-  },
-  {
-    "objectID": "publications.html#section-1",
-    "href": "publications.html#section-1",
-    "title": "Publications",
-    "section": "2025",
-    "text": "2025\n\nRole of surface bands in the photogeneration, cooling, and recombination of charge carriers in two-dimensional Bi₂Se₃ J. F. Vliem, S. A. Cayan, R. Reho, A. R. Botello-Méndez, P. Geiregat, Z. Zanolli, D. Vanmaekelbergh ACS Nano 19, 17261–17272 (2025) · doi:10.1021/acsnano.4c14134"
-  },
-  {
-    "objectID": "publications.html#section-2",
-    "href": "publications.html#section-2",
-    "title": "Publications",
-    "section": "2024",
-    "text": "2024\n\nDensity functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Phys. Rev. B 110, 134505 (2024) · doi:10.1103/PhysRevB.110.134505 · arXiv:2406.02022\n\n\nExcitonic response in transition metal dichalcogenide heterostructures from first principles: impact of stacking, twisting, and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli Phys. Rev. B 110, 035118 (2024) · doi:10.1103/PhysRevB.110.035118 · arXiv:2404.17182"
-  },
-  {
-    "objectID": "publications.html#thesis",
-    "href": "publications.html#thesis",
-    "title": "Publications",
-    "section": "Thesis",
-    "text": "Thesis\n\nFirst-principles computational methods for composite bosons in many-body physics: excitons and Cooper pairs R. Reho PhD thesis, Utrecht University (2025) · PDF"
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "About",
@@ -208,5 +40,173 @@
     "title": "About",
     "section": "Contact",
     "text": "Contact\nI welcome contact about collaborations of any kind — academic projects, industry work, and external projects alike. See Working together for the kind of problems I like to take on. Email is the fastest way to reach me.\n\nEmail — riccardo.reho@uni.lu\nGitHub — rreho\nORCID — 0009-0002-3703-1292\nGoogle Scholar — profile\nLinkedIn — Riccardo Reho"
+  },
+  {
+    "objectID": "publications.html",
+    "href": "publications.html",
+    "title": "Publications",
+    "section": "",
+    "text": "Peer-reviewed articles and preprints. Full list on Google Scholar and ORCID."
+  },
+  {
+    "objectID": "publications.html#section",
+    "href": "publications.html#section",
+    "title": "Publications",
+    "section": "2026",
+    "text": "2026\n\nCoherent electron–phonon coupling in two-dimensional Bi₂Se₃ nanoplatelets studied with ultrafast spectroscopy A. Baserga, J. F. Vliem, R. Kumar, R. Reho, A. R. Botello-Méndez, D. Vanmaekelbergh, Z. Zanolli, G. Cerullo J. Phys. Chem. C 130, 6213–6220 (2026) · doi:10.1021/acs.jpcc.6c00732\n\n\nProximity-induced superconductivity in PbTe/Pb heterostructures from first principles R. Reho, A. R. Botello-Méndez, Z. Zanolli Phys. Rev. B 113 (2026) · doi:10.1103/r366-j5k6 · arXiv:2412.01749"
+  },
+  {
+    "objectID": "publications.html#section-1",
+    "href": "publications.html#section-1",
+    "title": "Publications",
+    "section": "2025",
+    "text": "2025\n\nRole of surface bands in the photogeneration, cooling, and recombination of charge carriers in two-dimensional Bi₂Se₃ J. F. Vliem, S. A. Cayan, R. Reho, A. R. Botello-Méndez, P. Geiregat, Z. Zanolli, D. Vanmaekelbergh ACS Nano 19, 17261–17272 (2025) · doi:10.1021/acsnano.4c14134"
+  },
+  {
+    "objectID": "publications.html#section-2",
+    "href": "publications.html#section-2",
+    "title": "Publications",
+    "section": "2024",
+    "text": "2024\n\nDensity functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Phys. Rev. B 110, 134505 (2024) · doi:10.1103/PhysRevB.110.134505 · arXiv:2406.02022\n\n\nExcitonic response in transition metal dichalcogenide heterostructures from first principles: impact of stacking, twisting, and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli Phys. Rev. B 110, 035118 (2024) · doi:10.1103/PhysRevB.110.035118 · arXiv:2404.17182"
+  },
+  {
+    "objectID": "publications.html#thesis",
+    "href": "publications.html#thesis",
+    "title": "Publications",
+    "section": "Thesis",
+    "text": "Thesis\n\nFirst-principles computational methods for composite bosons in many-body physics: excitons and Cooper pairs R. Reho PhD thesis, Utrecht University (2025) · PDF"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Riccardo Reho",
+    "section": "",
+    "text": "I develop and apply ab initio many-body methods to predict the electronic and optical properties of quantum materials. My work spans excitons in van der Waals heterostructures, real-time photoluminescence, and density functional theory for superconductors — combining theory development with implementations in the Yambo and SIESTA codes.\nResearch → Publications → About →"
+  },
+  {
+    "objectID": "index.html#what-i-work-on",
+    "href": "index.html#what-i-work-on",
+    "title": "Riccardo Reho",
+    "section": "What I work on",
+    "text": "What I work on\n\n\nTheoretical spectroscopy\nExcitons, absorption and photoluminescence in 2D transition metal dichalcogenides and topological insulators, from first principles.\n\n\nSuperconductivity\nDensity functional Bogoliubov–de Gennes theory for conventional and unconventional superconductors, implemented in SIESTA.\n\n\nTopology & geometry\nBerry curvature, Chern numbers and the geometric origin of optical response in layered materials."
+  },
+  {
+    "objectID": "index.html#currently",
+    "href": "index.html#currently",
+    "title": "Riccardo Reho",
+    "section": "Currently",
+    "text": "Currently\n\nPostdoctoral researcher, University of Luxembourg\nPhD in Physics, Utrecht University, 2020–2025 — supervisor Zeila Zanolli\nDeveloper on the Yambo/yambopy and SIESTA ecosystems"
+  },
+  {
+    "objectID": "index.html#working-together",
+    "href": "index.html#working-together",
+    "title": "Riccardo Reho",
+    "section": "Working together",
+    "text": "Working together\nI am always eager to work together on interesting problems — implementing a model from a paper, diagnosing a GW/BSE calculation that misbehaves, or making sense of simulation and experimental results. Academic collaborations and external projects alike.\nWhat I work on with others → Get in touch"
+  },
+  {
+    "objectID": "index.html#recent",
+    "href": "index.html#recent",
+    "title": "Riccardo Reho",
+    "section": "Recent",
+    "text": "Recent\n\nProximity-induced superconductivity in PbTe/Pb heterostructures from first principles — Phys. Rev. B 113 (2026). See all publications\nInvited talk at MRS Fall Meeting 2025, Warsaw. See all talks\nFinalist, CECI Award, PSI-K 2025, Lausanne."
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "I build theoretical frameworks — and the code that makes them usable — to explain how quantum materials absorb light, emit light, and carry current without resistance. Three threads run through the work."
+  },
+  {
+    "objectID": "research.html#theoretical-spectroscopy",
+    "href": "research.html#theoretical-spectroscopy",
+    "title": "Research",
+    "section": "Theoretical spectroscopy",
+    "text": "Theoretical spectroscopy\n\nI study the optical properties of two-dimensional multilayer structures built from transition metal dichalcogenides (TMDs) and topological insulators such as Bi₂Se₃. Reduced dimensionality and dielectric screening enhance the Coulomb interaction between charge carriers, producing strongly bound electron–hole pairs — excitons — that dominate the optical response.\nConcretely, I work on:\n\nExcitonic response of heterostructures — how stacking order, twist angle and interlayer distance reshape the exciton spectrum (Phys. Rev. B 110, 035118).\nReal-time photoluminescence from non-equilibrium many-body perturbation theory, implemented in the Yambo code.\nUltrafast carrier dynamics in 2D Bi₂Se₃ nanoplatelets, in collaboration with experiment (ACS Nano 19, 17261)."
+  },
+  {
+    "objectID": "research.html#superconductivity",
+    "href": "research.html#superconductivity",
+    "title": "Research",
+    "section": "Superconductivity",
+    "text": "Superconductivity\n\nI combine Bogoliubov–de Gennes theory with density functional theory in a unified approach — density functional Bogoliubov–de Gennes theory (DFT-BdG) — which I extended to unconventional pairing and implemented in the SIESTA code (Phys. Rev. B 110, 134505).\nApplications include proximity-induced superconductivity in semiconductor– superconductor heterostructures such as PbTe/Pb, relevant to topological quantum computing platforms (Phys. Rev. B 113 (2026))."
+  },
+  {
+    "objectID": "research.html#topology-in-condensed-matter",
+    "href": "research.html#topology-in-condensed-matter",
+    "title": "Research",
+    "section": "Topology in condensed matter",
+    "text": "Topology in condensed matter\n\nBerry curvature, Wannier functions and Chern numbers give a geometric reading of electronic and optical response. I use Wannier-based tight-binding models, interfaced with first-principles calculations, to connect microscopic band geometry to measurable spectra."
+  },
+  {
+    "objectID": "research.html#codes-and-tools",
+    "href": "research.html#codes-and-tools",
+    "title": "Research",
+    "section": "Codes and tools",
+    "text": "Codes and tools\n\n\n\n\n\n\n\nCode\nRole\n\n\n\n\nYambo / yambopy\nGW, BSE, real-time dynamics — developer\n\n\nSIESTA\nDFT-BdG for superconductors — developer\n\n\nQuantum ESPRESSO\nGround-state DFT and phonons\n\n\nWannier90\nMaximally localised Wannier functions\n\n\nAiiDA\nHigh-throughput workflow management"
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks & Presentations",
+    "section": "",
+    "text": "Seminars, contributed talks and posters at international conferences."
+  },
+  {
+    "objectID": "talks.html#invited-talks",
+    "href": "talks.html#invited-talks",
+    "title": "Talks & Presentations",
+    "section": "Invited talks",
+    "text": "Invited talks\n\nExcitonic response in TMD heterostructures from first principles: impact of stacking, twisting, and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, L. Wirtz, Z. Zanolli MRS Fall Meeting, Warsaw, PL · 15–18 Sep 2025\n\n\nDensity functional Bogoliubov–de Gennes theory for superconductors implemented in the SIESTA code R. Reho, N. Wittemeier, A. Kole PSI-K 2025, Lausanne, CH · Finalist, CECI Award · 25–28 Aug 2025"
+  },
+  {
+    "objectID": "talks.html#invited-seminars",
+    "href": "talks.html#invited-seminars",
+    "title": "Talks & Presentations",
+    "section": "Invited seminars",
+    "text": "Invited seminars\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Physics Seminars, Limpertsberg, Luxembourg · 26 Feb 2025\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli Debye Lunch Lecture, Utrecht University, NL · 11 Dec 2024\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli ETSF Webinar, online · 22 Nov 2024\n\n\nOptical properties of TMD van der Waals heterostructures R. Reho, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli KNCV-CTC Seminars, University of Twente, NL · 20 Sep 2023\n\n\nReal-time photoluminescence from first principles: application to van der Waals heterostructures R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli Informal ETSF workshop, Amsterdam, NL · 17 May 2023"
+  },
+  {
+    "objectID": "talks.html#contributed-oral-presentations",
+    "href": "talks.html#contributed-oral-presentations",
+    "title": "Talks & Presentations",
+    "section": "Contributed oral presentations",
+    "text": "Contributed oral presentations\n\n“Transverse theory of optical absorption and electromagnetic excitonic dressing R. Reho, Andrea Marini, Ludger Wirtz Rome, IT · 7-10 Sept 2026\n\n\nElectronic and optical properties of two-dimensional materials: towards exciton dynamics R. Reho, L. Wirtz, (University of Luxembourg) Frascati, IT · 23 Apr 2026\n\n\nFrom ab initio to tight-binding framework: model exciton interaction in materials S. T. Bos, R. Reho, Z. Zanolli TIMES Workshop, Belfast, UK · 7–10 Apr 2025\n\n\nControlling light–matter interaction in TMD heterostructures R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli NWO Chains, Veldhoven, NL · 3–4 Dec 2024\n\n\nProximity-induced superconductivity in PbTe/Pb via first principles R. Reho, A. R. Botello-Méndez, Z. Zanolli QuMaT yearly meeting, Enschede, NL · 11–12 Nov 2024\n\n\nDFT for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli ETSF electron–phonon collaboration team workshop, Louvain-la-Neuve, BE · 23–25 Sep 2024\n\n\nExcitonic response in TMD heterostructures from first principles: impact of stacking, twisting and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli CECAM workshop Frontiers in many-body excited-state dynamics from first principles, Lausanne, CH · 15–17 Jul 2024\n\n\nExcitonic responses in MoS₂/WS₂ and MoSe₂/WSe₂ heterostructures from first principles: impact of stacking order and interlayer distance R. Reho, A. R. Botello-Méndez, D. Sangalli, M. J. Verstraete, Z. Zanolli 27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024\n\n\nOptical properties of van der Waals TMD heterostructures from first principles R. Reho, Z. Zanolli DPG Spring Meeting, Berlin, DE · 22–26 Mar 2024\n\n\nDensity functional theory for superconductors: theory and implementation in the SIESTA code R. Reho, N. Wittemeier, A. H. Kole, P. Ordejón, Z. Zanolli NWO Physics, Veldhoven, NL · 23–24 Jan 2024\n\n\nIdentification of high-energy excitations in two-dimensional topological Bi₂Se₃ nanoplatelets R. Reho, P. M. M. C. de Melo, A. R. Botello-Méndez, M. J. Verstraete, D. Vanmaekelbergh, Z. Zanolli QuMat meeting, Nijmegen, NL · 22–25 Oct 2023\n\n\nAbsorption and emission in van der Waals heterostructures from first principles R. Reho, A. R. Botello-Méndez, M. J. Verstraete, Z. Zanolli Colloquium HOWDI, Porquerolles, FR · 8–12 May 2023\n\n\nFirst-principles topological superconductivity R. Reho, A. Kole, N. Wittemeier, Z. Zanolli QuMat kick-off meeting, Utrecht, NL · 26 Oct 2022\n\n\nTrions and biexcitons from first principles: questions and future work R. Reho, P. M. M. C. de Melo, M. J. Verstraete, H. Stoof, Z. Zanolli Informal ETSF workshop ETSFCoimbra2021, University of Coimbra, PT · 13–15 Dec 2021\n\n\nQuasi-equilibrium states in heterobilayers of transition metal dichalcogenides R. Reho, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli ETSF Young Researcher Meeting ETSFYRM2021, Cagliari, IT · 6–10 Sep 2021"
+  },
+  {
+    "objectID": "talks.html#posters",
+    "href": "talks.html#posters",
+    "title": "Talks & Presentations",
+    "section": "Posters",
+    "text": "Posters\n\nOptical properties of hBN point defects as qubits S. T. Bos, R. Reho, A. R. Botello-Méndez, Z. Zanolli 27th ETSF Workshop on Electronic Excitations, Marseille, FR · 3–7 Jun 2024\n\n\nAb initio calculations on the band structure of TMDs R. Reho, P. M. M. C. de Melo, M. J. Verstraete, Z. Zanolli 25th Workshop on Electronic Excitations, Leuven, BE · 13–17 Jun 2022\n\n\nPressure-induced phase transitions in Fe₄N S. Barua, B. S. Biswas, A. C. Burgess, J. Dolado, A. Elomrani, W. Heyvaert, Sri K., V. Landgraf, L. MacEnulty, S. Marek, A. R. Mishra, A. A. Nair, R. Reho, A. Subrati, F. Tabatabaei, G. E. Tekneci, S. Van Dyck, A. Vázquez-López, M. Warrier, S. Cottenier 20th International Workshop on Computational Physics and Materials Science (ICTP), Trieste, IT · 23–25 Feb 2021"
+  },
+  {
+    "objectID": "consulting.html",
+    "href": "consulting.html",
+    "title": "Working together",
+    "section": "",
+    "text": "I am always eager to work together on interesting problems. Alongside my research I take on a small number of external projects — with research groups, R&D teams, or individual researchers who need a physicist for a specific question.\nThe work sits where physics, mathematical modelling and numerical implementation meet: deriving the right equations, turning them into a correct calculation, and reading what the numbers actually say. I am definitively not a software engineer; I solve physics problems, and code is how I do it."
+  },
+  {
+    "objectID": "consulting.html#things-i-enjoy-working-on",
+    "href": "consulting.html#things-i-enjoy-working-on",
+    "title": "Working together",
+    "section": "Things I enjoy working on",
+    "text": "Things I enjoy working on\n\n\nImplementing a model from a paper\nYou have a derivation or a published method and want a working, verified numerical implementation — including the steps the paper leaves out.\n\n\nA calculation giving unexpected results\nGW, BSE, DFT or real-time dynamics producing something you cannot explain. Convergence, screening, k-sampling, symmetry, or genuine physics — worth finding out which.\n\n\nInterpreting numerical or experimental data\nOptical spectra, band structures, exciton and phonon signatures, response functions: what the data supports, and what it does not.\n\n\nDeriving and implementing an expression\nTaking an analytical result to a stable, tested numerical form — matrix elements, integrals over the Brillouin zone, self-energies, response kernels.\n\n\nReproducing a published result\nIndependent reproduction of a calculation or figure, and understanding where methods, parameters or approximations diverge.\n\n\nDebugging and validating scientific code\nPython or Fortran that runs but cannot quite be trusted. Physical sanity checks, limiting cases, benchmark systems, and HPC/Slurm issues when they touch the science."
+  },
+  {
+    "objectID": "consulting.html#my-expertise",
+    "href": "consulting.html#my-expertise",
+    "title": "Working together",
+    "section": "My expertise",
+    "text": "My expertise\nTheory — many-body perturbation theory, GW and the Bethe–Salpeter equation, excitons and exciton–phonon coupling, optical response, electronic-structure theory, superconductivity, condensed-matter theory, quantum mechanics and electrodynamics.\nImplementation — scientific Python, Fortran, numerical methods for many-body and electronic-structure problems, HPC on Linux/Slurm clusters, analysis and visualisation of simulation data.\nCodes — Yambo/yambopy, Quantum ESPRESSO, SIESTA, Wannier90, AiiDA. I contribute to several of these; see Research for the underlying work and Publications for the record."
+  },
+  {
+    "objectID": "consulting.html#get-in-touch",
+    "href": "consulting.html#get-in-touch",
+    "title": "Working together",
+    "section": "Get in touch",
+    "text": "Get in touch\nSend me a short description of the problem — the physics, what you have already tried, and what a good outcome would look like. If it looks like a good fit we can take it from there.\nGet in touch\nOr reach me on LinkedIn."
   }
 ]

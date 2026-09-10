@@ -13,7 +13,9 @@ project:
     - "talks.qmd"
     - "about.qmd"
     - "consulting.qmd"
-    - "physical-picture/**/*.qmd"
+    # physical-picture/ is kept out of the site and the repo for now; restore
+    # this line to publish it again.
+    # - "physical-picture/**/*.qmd"
     - "implementation/**/*.qmd"
   resources:
     # Only files actually linked from a page get copied into docs/.
