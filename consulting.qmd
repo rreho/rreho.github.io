@@ -57,7 +57,7 @@ the science.
 
 :::
 
-## What I bring
+## My expertise
 
 **Theory** — many-body perturbation theory, GW and the Bethe–Salpeter equation,
 excitons and exciton–phonon coupling, optical response, electronic-structure
@@ -72,19 +72,6 @@ analysis and visualisation of simulation data.
 contribute to several of these; see [Research](research.qmd) for the underlying
 work and [Publications](publications.qmd) for the record.
 
-## Who I usually work with
-
-- **Research groups** wanting specialist input for a limited period
-- **R&D and deep-tech teams** in materials, photonics, quantum technologies
-- **Scientific software teams** validating or extending physics codes
-- **Startups** whose product depends on physics simulation being right
-- **AI companies** looking for physics expertise: problem design, evaluation,
-  or review of technical scientific content
-- **Individual researchers** stuck on a derivation, an implementation or a
-  puzzling result
-
-Small, well-defined projects work best. I am equally happy to say when something
-falls outside what I can usefully contribute.
 
 ## Get in touch
 
