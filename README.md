@@ -2,8 +2,7 @@
 
 Personal site of Riccardo Reho, built with [Quarto](https://quarto.org).
 Everything on the site is a plain-text `.qmd` (markdown + optional code) or a
-Jupyter notebook. There is no JavaScript framework and no build tooling beyond
-Quarto itself.
+Jupyter notebook.
 
 Live at <https://rreho.github.io>.
 
@@ -177,12 +176,6 @@ DFT post-processing never has to run in a rebuild.
 `execute: freeze: auto` in `notes/_metadata.yml` enforces the same rule for
 `{python}` blocks inside `.qmd` notes: they re-run only when you change the
 source. Delete the `_freeze/` folder to force a re-run.
-
-## Adding a publication or talk
-
-Open `publications.qmd` / `talks.qmd`, copy an existing `::: {.pub} ... :::`
-block, change the four lines. Newest first. Wrap your own name in
-`[R. Reho]{.badge-me}` so it is bold in the list.
 
 ## Changing the look
 
