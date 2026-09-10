@@ -1,0 +1,101 @@
+---
+title: "What is a self-energy physically?"
+description: "Everything the rest of the system does to a particle: it shifts its energy, shortens its life, and makes it less recognizable."
+categories: [excitations]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+The self-energy is everything the rest of the system does to a particle passing
+through it: it shifts the particle's energy, gives it a finite lifetime, and
+makes it less like the particle you started with.
+:::
+
+## Short answer
+
+A ball bearing falling through honey does not behave like a ball bearing falling
+through air. It responds as though it were heavier (it has to drag the fluid
+along) and it slows down, since it loses energy to the fluid. Neither effect is
+a property of the ball or of the honey taken separately.
+
+An electron moving through a solid is in the same situation. It repels the other
+electrons, so that a region of reduced density travels with it, and this cloud
+has to be carried along. The self-energy is the name we give to the whole
+influence: it is what we must add to the free particle energy in order to
+describe the composite object that actually propagates.
+
+We can therefore expect three effects at once. The energy is shifted (this is
+why a computed band gap moves once interactions are included), the lifetime
+becomes finite, since the added particle can share its energy with other
+excitations and stop being recognizable, and part of the weight is removed from
+the particle-like feature of the spectrum and redistributed into a broad
+background carrying no sharp energy at all.
+
+When the shift is moderate and the lifetime long, the composite object is a
+quasiparticle, and the familiar single-particle language survives with renamed
+parameters. When the lifetime is short there is no particle left to speak of.
+This is not a failure of the calculation, but the physics itself.
+
+## Why it works this way
+
+The self-energy exists because the separation between "the particle" and "the
+medium" is a choice and not a fact. The choice is nevertheless a useful one,
+since it allows us to retain a single-particle vocabulary, and the self-energy
+is the exact price we pay for it, collecting everything that the separation has
+left out.
+
+::: {.callout-note collapse="true"}
+## The algebra: Dyson's equation
+
+The dressed propagator is built from the bare one by repeated insertion of the
+self-energy $\Sigma$:
+
+$$
+G = G_0 + G_0\,\Sigma\,G ,
+\qquad\text{so}\qquad
+G^{-1} = G_0^{-1} - \Sigma .
+$$ {#eq-dyson}
+
+Near a quasiparticle pole, $\operatorname{Re}\Sigma$ shifts the energy,
+$\operatorname{Im}\Sigma$ sets the inverse lifetime, and the derivative of
+$\operatorname{Re}\Sigma$ with respect to frequency gives the quasiparticle
+weight
+
+$$
+Z = \left(1 - \frac{\partial \operatorname{Re}\Sigma}{\partial\omega}\right)^{-1}
+\le 1 ,
+$$ {#eq-quasiparticle-weight}
+
+the fraction of spectral weight still behaving like a single particle. The rest
+is incoherent background.
+:::
+
+::: {.callout-note collapse="true"}
+## The algebra: the GW approximation
+
+Approximating $\Sigma$ as the product of the propagator and the screened
+interaction,
+
+$$
+\Sigma(1,2) = i\, G(1,2)\, W(1^{+},2) ,
+$$ {#eq-gw}
+
+is the standard first step for real materials. Screening is essential: using the
+bare Coulomb interaction instead badly overestimates the gap, because it ignores
+the fact that the other electrons move out of the way.
+:::
+
+## Common confusions
+
+- **"The self-energy is a correction, so it must be small."** In correlated
+  systems it can dominate, and destroy the quasiparticle entirely.
+- **"Its imaginary part is a numerical broadening parameter."** It is a physical
+  decay rate. The artificial broadening we add when plotting a spectrum is a
+  different quantity altogether.
+
+## See also
+
+- [What is a Green function?](../what-is-a-green-function/index.qmd)
+- [How does an exciton appear in the response?](../exciton-in-the-response/index.qmd)

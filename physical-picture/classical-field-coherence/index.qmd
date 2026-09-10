@@ -1,0 +1,83 @@
+---
+title: "Why does a classical field require coherence?"
+description: "A definite wave requires a definite phase, which is only possible when the number of photons is uncertain."
+categories: [fields]
+order: 30
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A field behaves as a classical wave only when its phase is sharp, and a sharp
+phase is possible only if the number of photons is not.
+:::
+
+## Short answer
+
+A classical field is a definite waveform, in the sense that at each moment it
+has a definite strength and a definite point in its cycle. This second property,
+the phase, is what makes interference, beats and antenna physics work.
+
+In quantum mechanics the number of photons in a mode and the phase of that mode
+are complementary, in the same way as position and momentum. If we pin one down,
+the other spreads out. A state with exactly one photon, or with exactly a
+thousand, therefore has a completely undetermined phase, and does not correspond
+to any particular waveform at all.
+
+The classical wave is thus not the state with many photons. It is the state that
+gives up knowing how many, in exchange for knowing where in the cycle the field
+is. A laser produces exactly such a state: the photon number fluctuates from
+measurement to measurement, and the relative size of that fluctuation shrinks as
+the beam becomes brighter. This is what makes a bright laser look classical, and
+not the brightness by itself.
+
+Bright light with no phase relationship, such as the light from a hot filament,
+never becomes classical in this sense, however bright we make it. It has an
+intensity, but not a waveform.
+
+## Why it works this way
+
+The two descriptions have to meet somewhere, and this is where they do. Counting
+photons and describing waves are not competing pictures of one state, but sharp
+descriptions of different states. Asking whether light really is a wave or a
+particle is therefore asking which of the two the source happened to prepare.
+
+::: {.callout-note collapse="true"}
+## The algebra: coherent states
+
+A coherent state is an eigenstate of the annihilation operator,
+$\hat a\lvert\alpha\rangle = \alpha\lvert\alpha\rangle$, and expands over
+number states as
+
+$$
+\lvert\alpha\rangle = e^{-|\alpha|^2/2}
+\sum_{n=0}^{\infty} \frac{\alpha^{n}}{\sqrt{n!}} \lvert n\rangle .
+$$ {#eq-coherent-state}
+
+Photon number is Poissonian with mean $\bar n = |\alpha|^2$, so the relative
+number fluctuation is $\Delta n/\bar n = 1/\sqrt{\bar n}$ and shrinks with
+brightness. The field expectation value oscillates as a classical wave of
+amplitude $|\alpha|$ and phase $\arg\alpha$, and the number–phase uncertainty
+relation $\Delta n\,\Delta\phi \gtrsim 1/2$ is saturated.
+
+Thermal light has the same mean intensity but number fluctuations
+$\Delta n^2 = \bar n^2 + \bar n$, which do not become relatively small at any
+brightness, and no preferred phase at all.
+:::
+
+## Common confusions
+
+- **"Classical means many photons."** This is necessary but not sufficient,
+  since a thermal source with the same photon flux as a laser is not a classical
+  field.
+- **"A coherent state has an uncertain energy, which is unphysical."** So does
+  every state produced by a source that is not perfectly isolated from the
+  outside world, which is to say every source.
+- **"Coherence is a property of the beam alone."** It is a statement about the
+  relationship between the field at different times or places, and thus depends
+  on which two we compare.
+
+## See also
+
+- [What is a photon?](../what-is-a-photon/index.qmd)
+- [What is a field?](../what-is-a-field/index.qmd)

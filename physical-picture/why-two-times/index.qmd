@@ -1,0 +1,78 @@
+---
+title: "Why two times?"
+description: "In equilibrium only the elapsed time matters, whereas after a pump pulse the moment at which we look matters as well."
+categories: [green-functions]
+order: 20
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+In equilibrium only the gap between two moments matters, so that one time
+variable suffices, whereas once something has disturbed the system, when we look
+matters as much as how long we waited.
+:::
+
+## Short answer
+
+A system sitting in equilibrium has no clock. An experiment performed today and
+the same experiment performed tomorrow give the same answer, so that the only
+quantity which can matter is the interval between injecting a particle and
+looking for it. One variable is therefore enough.
+
+If we hit the system with a pump pulse, it acquires a clock. One hundred
+femtoseconds after injection now means something different depending on whether
+injection happened during the pulse, just after it, or long after the system has
+relaxed. We consequently need two independent times, namely when the process
+started and how long it ran.
+
+It is convenient to reorganize these two into a different pair, that is, their
+difference and their average. The difference behaves as it always did, since it
+is what turns into a spectrum. The average carries the new physics, since it
+tells us which spectrum, at which moment of the evolution of the sample. The
+natural object out of equilibrium is thus not a spectrum, but a spectrum that is
+itself slowly changing.
+
+This separation only works when the two timescales are genuinely different, with
+fast internal dynamics and slow evolution of the state. When the pump is as fast
+as the dynamics it drives, an instantaneous spectrum is no longer well defined,
+and the two times must be kept as they are.
+
+## Why it works this way
+
+The structure is the same as that of a spectrogram in acoustics. A steady tone
+has a frequency, whereas a piece of music has a frequency changing with time,
+which we describe with a sliding window. The window has to be long enough to
+resolve pitch and short enough to follow the melody, and the tension between the
+two is not a technical annoyance but the physics of the problem.
+
+::: {.callout-note collapse="true"}
+## The algebra: Wigner coordinates
+
+Writing $t_1 = T + \tau/2$ and $t_2 = T - \tau/2$ and Fourier transforming on the
+relative time $\tau$ only,
+
+$$
+G(T, \omega) = \int d\tau\; e^{i\omega\tau}\,
+G\!\left(T + \tfrac{\tau}{2},\, T - \tfrac{\tau}{2}\right).
+$$ {#eq-wigner}
+
+In equilibrium the $T$ dependence drops out and @eq-wigner reduces to the
+ordinary spectral function. Out of equilibrium, a gradient expansion in $T$
+produces quantum kinetic equations of Boltzmann type, whose validity is exactly
+the timescale separation described above.
+:::
+
+## Common confusions
+
+- **"Two times is a technical complication of the formalism."** It is a
+  statement about the system, since the loss of time-translation invariance is
+  physical and not notational.
+- **"The instantaneous spectrum is always meaningful."** Only when the state
+  evolves slowly compared with the dynamics being resolved, since otherwise the
+  transform can even go negative in places.
+
+## See also
+
+- [What is a Green function?](../what-is-a-green-function/index.qmd)
+- [Why a contour?](../why-a-contour/index.qmd)

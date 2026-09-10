@@ -1,0 +1,85 @@
+---
+title: "What is a Green function?"
+description: "The amplitude for adding a particle in one place and finding it in another later, with the rest of the system reacting."
+categories: [green-functions]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A Green function is the amplitude for putting a particle into the system at one
+place and time and finding it at another, with everything else in the system
+free to react while it travels.
+:::
+
+## Short answer
+
+Suppose we drop an extra electron into a metal and ask what happens next. It
+moves, but it also pushes the other electrons out of its way, and they push
+back. What travels onwards is therefore not the bare electron we injected, but
+the electron together with the disturbance it drags along.
+
+The Green function is the amplitude for this whole process, that is, inject
+here and look there later. It answers two questions at once: where the particle
+can go, and for how long it remains recognizable as a particle before its energy
+is shared out among everything else.
+
+Read in terms of energy rather than time, the same object shows sharp features
+at the energies for which an added particle is long lived, and broad features
+where it decays quickly. These are the quasiparticles, which are not the
+original electrons but the composite objects that actually propagate. A band
+structure is thus what the sharp features look like when the system is
+well-behaved enough for them to be sharp.
+
+This is also the point at which the single-particle picture is derived rather
+than assumed. Bands are not a starting assumption about materials, but what the
+Green function looks like in a regime where a dressed electron survives long
+enough to be called a particle.
+
+## Why it works this way
+
+Interacting systems have far too many states to describe individually, but most
+experiments do not need them. Photoemission removes an electron and tunnelling
+adds one, so that both ask what happens when the particle number changes by one.
+The Green function is precisely the answer to that question, with everything
+else summarized rather than enumerated.
+
+::: {.callout-note collapse="true"}
+## The algebra: definition and poles
+
+The time-ordered single-particle Green function is
+
+$$
+G(\mathbf r t, \mathbf r' t') = -\frac{i}{\hbar}
+\big\langle \mathcal{T}\, \hat\psi(\mathbf r t)\,
+\hat\psi^\dagger(\mathbf r' t') \big\rangle .
+$$ {#eq-green-definition}
+
+Its Lehmann representation shows poles at the exact energies for adding or
+removing one particle, weighted by the overlap of the resulting state with a
+single-particle excitation:
+
+$$
+G(\omega) = \sum_n \frac{|\langle n \rvert \hat\psi^\dagger \lvert 0\rangle|^2}
+{\omega - (E_n - E_0) + i\eta} + \dots
+$$ {#eq-lehmann}
+
+The spectral function $A(\omega) = -\frac{1}{\pi}\operatorname{Im} G(\omega)$ is
+what photoemission measures, up to matrix elements and geometry.
+:::
+
+## Common confusions
+
+- **"The Green function describes an electron."** It describes an electron
+  together with the rearrangement it causes, and in a strongly correlated system
+  these can be very different objects.
+- **"Its poles are the excitation energies of the system."** They are *charged*
+  excitation energies, obtained by adding or removing a particle. Neutral
+  excitations such as excitons live in the
+  [response function](../what-is-a-response-function/index.qmd) instead.
+
+## See also
+
+- [Why two times?](../why-two-times/index.qmd)
+- [What is a self-energy physically?](../what-is-a-self-energy/index.qmd)

@@ -1,0 +1,79 @@
+---
+title: "Why a contour?"
+description: "Expectation values require the state to be evolved forwards and then backwards, so that the time axis has to double back on itself."
+categories: [green-functions]
+order: 30
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+Since an expectation value evolves the state forwards and then back again, the
+time ordering that makes diagrams work has to run along a path doubling back on
+itself.
+:::
+
+## Short answer
+
+Scattering theory asks a question with a beginning and an end, in which
+something comes in from far away and something goes out. We only ever need to
+propagate forwards, from the initial state to the final one, and the whole
+diagrammatic machinery is built on this.
+
+Condensed matter usually asks a different question. There is no out state, since
+we want the value of an observable in the state the system is in right now. We
+must therefore start from the known state, evolve forwards to the moment of
+measurement, apply the observable, and then evolve *back* to where we started.
+The evolution appears twice, once in each direction.
+
+If we insist on ordering operators along an ordinary time axis, this breaks the
+bookkeeping that allows a complicated expectation value to be expanded into
+diagrams. The repair is to stop thinking of a single axis and to use instead a
+path running forward to late times and then returning. Ordering along that path
+restores the structure, and the diagram rules come back essentially unchanged.
+
+The price we pay is that a single time argument now carries an extra label,
+namely which branch of the path it sits on. This is indeed where the several
+different Green functions come from (retarded, advanced, and those describing
+occupation). They are not independent objects, but the same function read off
+different combinations of branches.
+
+## Why it works this way
+
+In equilibrium there is a shortcut. The state we must return to is the ground
+state, and adiabatic arguments guarantee that it is the same one we started
+from, up to a phase, so that the backward branch can be absorbed. Out of
+equilibrium this guarantee is lost, since the system genuinely does not return,
+and the contour is therefore no longer optional.
+
+::: {.callout-note collapse="true"}
+## The algebra: contour ordering and components
+
+Expectation values take the form
+
+$$
+\langle \hat O(t) \rangle = \Big\langle\,
+\mathcal{T}_{\mathcal C} \exp\!\left[-\frac{i}{\hbar}\oint_{\mathcal C} d\bar t\;
+\hat H(\bar t)\right] \hat O(t) \,\Big\rangle ,
+$$ {#eq-contour-ordering}
+
+with $\mathcal{T}_{\mathcal C}$ ordering along the contour $\mathcal C$ rather
+than along real time. Placing the two arguments on the forward or backward
+branch generates the components $G^{<}, G^{>}, G^{R}, G^{A}$, subject to
+$G^{R} - G^{A} = G^{>} - G^{<}$, so that only two are independent. Perturbation
+theory, Wick's theorem and Dyson's equation all survive with real time replaced
+by contour time.
+:::
+
+## Common confusions
+
+- **"The contour is a mathematical trick with no physical content."** It encodes
+  the physical difference between asking for a transition amplitude and asking
+  for an expectation value.
+- **"Keldysh is only for driven systems."** It also covers steady-state
+  transport, in which the state is stationary but not an equilibrium one.
+
+## See also
+
+- [Why two times?](../why-two-times/index.qmd)
+- [What is a self-energy physically?](../what-is-a-self-energy/index.qmd)

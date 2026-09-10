@@ -1,0 +1,50 @@
+---
+# ===========================================================================
+# TEMPLATE — copy this folder to physical-picture/<slug>/ and edit.
+#
+# HOUSE RULE, no exceptions:
+#   * The .oneline box and every top-level section are PLAIN LANGUAGE.
+#     No equations, no symbols, no notation. A curious experimentalist or a
+#     first-year student must be able to read the whole page top to bottom.
+#   * Mathematics lives ONLY inside collapsed callout blocks. A reader who
+#     never opens one should still have the correct physical picture.
+# ===========================================================================
+title: "The question, phrased as a question?"
+description: "One plain sentence answering it. Shown in the index table."
+categories: [response] # fields | response | green-functions | excitations | measurement
+order: 10
+date: 2026-01-01
+draft: true
+---
+
+::: {.oneline}
+The answer in one sentence, in words. If a reader stops here, this is what they
+should walk away with.
+:::
+
+## Short answer
+
+Three to six sentences of plain prose. Say the thing, then the one caveat that
+stops the statement from being wrong. No equations in this section.
+
+## Why it works this way
+
+Optional. The motivation a textbook assumes you already have. Still prose.
+
+::: {.callout-note collapse="true"}
+## The algebra
+
+Everything with symbols in it goes inside a block like this one, folded away.
+
+$$
+A = B
+$$
+:::
+
+## Common confusions
+
+- **A plausible wrong statement** — why it is wrong.
+
+## See also
+
+- [Physical Picture index](../index.qmd)

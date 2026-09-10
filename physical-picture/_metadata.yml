@@ -1,0 +1,25 @@
+# ---------------------------------------------------------------------------
+# Defaults for every concept page. Override any of them in a page's own header.
+#
+# PUBLISHING: every page carries `draft: true` until you decide otherwise.
+# Drafts are absent from the built site entirely (draft-mode: gone in
+# _quarto.yml) and never appear in a listing. Flip to `draft: false` to publish
+# that single page — nothing else needs changing.
+# ---------------------------------------------------------------------------
+
+author: "Riccardo Reho"
+
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    html-math-method: katex
+    fig-cap-location: bottom
+    code-tools: false
+    citations-hover: true
+    link-external-newwindow: true
+
+execute:
+  freeze: auto
+  echo: true
+  warning: false

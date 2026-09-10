@@ -1,0 +1,114 @@
+---
+title: "What is a response function?"
+description: "The rule converting a gentle push on a system into the change it produces in something measurable."
+categories: [response]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+A response function is the rule turning a gentle push on a system into the
+change it produces in something we can measure, and the frequencies at which it
+becomes large are the excitations of the system itself.
+:::
+
+## Short answer
+
+We push a system gently and watch something change. If the push is gentle
+enough, the change is proportional to it (twice the push gives twice the
+change), and this proportionality is the response function.
+
+Two properties make it more than bookkeeping. First, it depends on the system
+alone and not on whatever did the pushing. The same object appears whether the
+push came from a laser, an electron beam or a varying magnetic field, provided
+that each couples to the same property of the sample. This is why results
+obtained with very different instruments can be compared at all.
+
+Second, it respects cause and effect, since nothing changes before the push
+arrives. This single fact is surprisingly powerful, since it forces the in-phase
+and out-of-phase parts of the response to be tied to one another. Absorption and
+refraction are therefore not independent measurements, and knowing one of them
+at all frequencies determines the other.
+
+If we push at a frequency the system likes, the response grows dramatically.
+These preferred frequencies are the excitation energies of the system, and
+measuring a spectrum means finding where they lie and how strongly each of them
+couples to our particular kind of push.
+
+## Why it works this way
+
+Linear response is not an assumption about the system being simple, since the
+electrons inside can interact as strongly as they like. It is an assumption
+about the probe being weak enough that the excitations of the system still
+organize the answer, rather than the probe reshaping the system while measuring
+it.
+
+::: {.callout-note collapse="true"}
+## The algebra: the Kubo formula
+
+For a perturbation $\hat H'(t) = -\hat B f(t)$ and an observable $\hat A$,
+first-order perturbation theory gives
+
+$$
+\delta \langle \hat A(t)\rangle
+= \int_{-\infty}^{\infty} dt'\; \chi_{AB}(t-t')\, f(t')
+$$ {#eq-linear-response}
+
+with the retarded response function
+
+$$
+\chi_{AB}(t-t') = -\frac{i}{\hbar}\,\theta(t-t')\,
+\big\langle \big[\hat A_H(t), \hat B_H(t')\big] \big\rangle_0 .
+$$ {#eq-kubo}
+
+The commutator is what survives at first order, the step function is causality,
+and the average is taken in the *unperturbed* state, which is why @eq-kubo is a
+property of the system alone. Time-translation invariance of the unperturbed
+Hamiltonian is what allows $\chi$ to depend on $t-t'$ only, and it is exactly
+what fails out of equilibrium.
+:::
+
+::: {.callout-note collapse="true"}
+## The algebra: causality and Kramers–Kronig
+
+The step function makes $\chi(\omega)$ analytic in the upper half plane, and
+contour integration then relates its real and imaginary parts,
+
+$$
+\operatorname{Re}\chi(\omega) = \frac{1}{\pi}\,\mathcal{P}\!\!
+\int_{-\infty}^{\infty} d\omega'\,
+\frac{\operatorname{Im}\chi(\omega')}{\omega' - \omega} ,
+$$ {#eq-kramers-kronig}
+
+with no model input whatsoever. As a practical consequence, an absorption
+spectrum measured only up to some cutoff yields a systematically biased
+refractive index.
+:::
+
+::: {.callout-note collapse="true"}
+## The algebra: which operators, for optics
+
+In the long-wavelength limit the natural pair is polarization and electric
+field, so that $\chi$ is the electric susceptibility and
+$\varepsilon(\omega) = 1 + \chi(\omega)$. Beyond dipole, or in the transverse
+gauge, the current–current response is the natural object instead, and
+translating between the two conventions is a standard source of stray factors
+of $\omega$.
+:::
+
+## Common confusions
+
+- **"The response function describes the experiment."** It describes the sample.
+  The experiment only chooses which property is pushed, which one is watched,
+  and with what time dependence.
+- **"Its resonances are single-particle energies."** They are energies of
+  *neutral* excitations, that is, differences between whole many-body states.
+  This is exactly why excitons appear here and not in a band structure.
+- **"Linear response is a weak-coupling theory."** It is a weak-probe theory,
+  and says nothing about how strongly the constituents interact with each other.
+
+## See also
+
+- [Why does spectroscopy measure a response?](../why-spectroscopy-measures-response/index.qmd)
+- [How does an exciton appear in the response?](../exciton-in-the-response/index.qmd)

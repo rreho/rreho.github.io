@@ -1,0 +1,103 @@
+---
+title: "How does that response become transmitted or reflected light?"
+description: "The disturbed charges radiate, and what leaves the sample is the sum of that radiation and the original beam."
+categories: [measurement]
+order: 10
+date: 2026-08-12
+draft: true
+---
+
+::: {.oneline}
+The charges set in motion by the incident light radiate light of their own, and
+what leaves the sample is the sum of this radiation and the original beam.
+:::
+
+## Short answer
+
+Nothing absorbs light by swallowing it. The incident field shakes the charges in
+the material, accelerating charges radiate, and the radiated field adds to the
+incident one everywhere in space. Everything we call reflection, refraction,
+transmission or absorption is the outcome of this single sum.
+
+Behind the sample the radiated field is largely out of phase with the incident
+one, so that the two partly cancel. This is a reduction in transmission, which
+we call absorption. In front of the sample the radiation adds up in a different
+direction and becomes the reflected beam, while inside the material the same
+interference slows the apparent progress of the wave, which is refraction. One
+mechanism thus carries three names.
+
+This is why a susceptibility is not yet an observable. It tells us how strongly
+the charges respond, but turning this into a measured intensity requires solving
+Maxwell's equations with those charges as the source, subject to the boundaries
+where the sample begins and ends. Geometry enters here and never leaves, since a
+monolayer, the same monolayer on a substrate, and a thick crystal of the same
+material give different spectra with identical response functions.
+
+There is a further subtlety in a real solid. The field felt by a given atom is
+not the applied field, but the applied field together with everything the
+neighbouring charges are radiating. In strongly inhomogeneous materials this
+feedback noticeably reshapes the spectrum.
+
+## Why it works this way
+
+The separation into material response and field propagation is a choice made for
+convenience, since the microscopic problem is one coupled system of charges and
+field. Splitting it allows the response to be computed once and reused for any
+geometry, which is a considerable practical advantage, at the price of
+remembering that comparison with experiment is not complete until the second
+half has been done.
+
+::: {.callout-note collapse="true"}
+## The algebra: from susceptibility to Fresnel coefficients
+
+For a bulk isotropic medium, $\varepsilon(\omega) = 1 + \chi(\omega)$ and
+$n(\omega) = \sqrt{\varepsilon(\omega)}$, with normal-incidence coefficients
+
+$$
+r = \frac{1-n}{1+n} ,
+\qquad
+t = \frac{2}{1+n} ,
+\qquad
+\alpha(\omega) = \frac{2\omega}{c}\operatorname{Im} n(\omega) .
+$$ {#eq-fresnel}
+
+For a two-dimensional sheet of conductivity $\sigma(\omega)$ between media of
+index $n_1$ and $n_2$, the boundary condition changes and the absorbance becomes
+
+$$
+A(\omega) = \frac{4\,\operatorname{Re}\sigma(\omega)/\varepsilon_0 c}
+{|n_1 + n_2 + \sigma(\omega)/\varepsilon_0 c|^{2}} ,
+$$ {#eq-sheet-absorbance}
+
+which is why a supported monolayer and a freestanding one are not directly
+comparable.
+:::
+
+::: {.callout-note collapse="true"}
+## The algebra: local field effects
+
+Working in reciprocal space, the macroscopic dielectric function is obtained by
+inverting the full microscopic matrix and taking one element,
+
+$$
+\varepsilon_M(\omega) =
+\frac{1}{\left[\varepsilon^{-1}_{\mathbf G \mathbf G'}(\omega)\right]_{\mathbf 0 \mathbf 0}} ,
+$$ {#eq-macroscopic-epsilon}
+
+which is not the same as taking the head of $\varepsilon$ directly. The
+difference is exactly the local field effect, and it is large in layered and
+porous systems.
+:::
+
+## Common confusions
+
+- **"Absorption means photons are destroyed inside the sample."** The measured
+  reduction is interference between the incident and the radiated fields, and
+  where the energy ends up is a separate question.
+- **"The dielectric function is the head of the microscopic matrix."** Only when
+  local field effects are negligible.
+
+## See also
+
+- [What is a response function?](../what-is-a-response-function/index.qmd)
+- [What does the experimentalist actually measure?](../what-the-experimentalist-measures/index.qmd)
