@@ -55,8 +55,14 @@ Seminars, contributed talks and posters at international conferences.
 ## Contributed oral presentations
 
 ::: {.pub}
+[“Transverse theory of optical absorption and electromagnetic excitonic dressing]{.pub-title}
+[[R. Reho]{.badge-me}, Andrea Marini, Ludger Wirtz]{.pub-authors}
+[Rome, IT · 7-10 Sept 2026]{.pub-venue}
+:::
+
+::: {.pub}
 [Electronic and optical properties of two-dimensional materials: towards exciton dynamics]{.pub-title}
-[[R. Reho]{.badge-me} (University of Luxembourg)]{.pub-authors}
+[[R. Reho]{.badge-me}, L. Wirtz, (University of Luxembourg)]{.pub-authors}
 [Frascati, IT · 23 Apr 2026]{.pub-venue}
 :::
 
