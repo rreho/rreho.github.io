@@ -82,17 +82,17 @@ ul.task-list li input[type="checkbox"] {
 
 <meta property="og:title" content="Research – Riccardo Reho">
 <meta property="og:description" content="Formulating and implementing theory for quantum phenomena in materials">
-<meta property="og:image" content="https://rreho.github.io/images/theoreticalspectroscopy-abspl.png">
+<meta property="og:image" content="https://rreho.github.io/images/superconductivity-DOS.png">
 <meta property="og:site_name" content="Riccardo Reho">
-<meta property="og:image:alt" content="Absorption and photoluminescence spectra">
-<meta property="og:image:height" content="1468">
-<meta property="og:image:width" content="1524">
+<meta property="og:image:alt" content="Superconducting density of states">
+<meta property="og:image:height" content="1466">
+<meta property="og:image:width" content="1512">
 <meta name="twitter:title" content="Research – Riccardo Reho">
 <meta name="twitter:description" content="Formulating and implementing theory for quantum phenomena in materials">
-<meta name="twitter:image" content="https://rreho.github.io/images/theoreticalspectroscopy-abspl.png">
-<meta name="twitter:image:alt" content="Absorption and photoluminescence spectra">
-<meta name="twitter:image-height" content="1468">
-<meta name="twitter:image-width" content="1524">
+<meta name="twitter:image" content="https://rreho.github.io/images/superconductivity-DOS.png">
+<meta name="twitter:image:alt" content="Superconducting density of states">
+<meta name="twitter:image-height" content="1466">
+<meta name="twitter:image-width" content="1512">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -333,9 +333,12 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#theoretical-spectroscopy" id="toc-theoretical-spectroscopy" class="nav-link active" data-scroll-target="#theoretical-spectroscopy">Theoretical spectroscopy</a></li>
+  <li><a href="#theoretical-spectroscopy" id="toc-theoretical-spectroscopy" class="nav-link active" data-scroll-target="#theoretical-spectroscopy">Theoretical spectroscopy</a>
+  <ul class="collapse">
+  <li><a href="#light-and-matter-on-the-same-footing" id="toc-light-and-matter-on-the-same-footing" class="nav-link" data-scroll-target="#light-and-matter-on-the-same-footing">Light and matter on the same footing</a></li>
+  </ul></li>
   <li><a href="#superconductivity" id="toc-superconductivity" class="nav-link" data-scroll-target="#superconductivity">Superconductivity</a></li>
-  <li><a href="#topology-in-condensed-matter" id="toc-topology-in-condensed-matter" class="nav-link" data-scroll-target="#topology-in-condensed-matter">Topology in condensed matter</a></li>
+  <li><a href="#gauges-and-topology" id="toc-gauges-and-topology" class="nav-link" data-scroll-target="#gauges-and-topology">Gauges and topology</a></li>
   <li><a href="#codes-and-tools" id="toc-codes-and-tools" class="nav-link" data-scroll-target="#codes-and-tools">Codes and tools</a></li>
   </ul>
 </nav>
@@ -367,7 +370,11 @@ ul.task-list li input[type="checkbox"] {
 <p>I build theoretical frameworks — and the code that makes them usable — to explain how quantum materials absorb light, emit light, and carry current without resistance. Three threads run through the work.</p>
 <section id="theoretical-spectroscopy" class="level2">
 <h2 class="anchored" data-anchor-id="theoretical-spectroscopy">Theoretical spectroscopy</h2>
-<p><img src="images/theoreticalspectroscopy-abspl.png" class="img-fluid" style="width:100.0%" alt="Absorption and photoluminescence spectra"></p>
+<figure class="figure">
+<video src="images/partition-coherent.mp4" poster="images/partition-coherent.png" autoplay="" loop="" muted="" playsinline="" style="width:100%;border-radius:8px" aria-label="Animated partition of an optical experiment: classical source and detector, quantized crystal, induced transverse current"></video>
+<figcaption><a href="interactive/partition.html" target="_blank" rel="noopener">Open the interactive version →</a>
+switch representation, turn the source off, and click any region for its equations.</figcaption>
+</figure>
 <p>I study the optical properties of two-dimensional multilayer structures built from transition metal dichalcogenides (TMDs) and topological insulators such as Bi₂Se₃. Reduced dimensionality and dielectric screening enhance the Coulomb interaction between charge carriers, producing strongly bound electron–hole pairs — excitons — that dominate the optical response.</p>
 <p>Concretely, I work on:</p>
 <ul>
@@ -375,6 +382,11 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Real-time photoluminescence</strong> from non-equilibrium many-body perturbation theory, implemented in the <a href="https://www.yambo-code.eu/">Yambo</a> code.</li>
 <li><strong>Ultrafast carrier dynamics</strong> in 2D Bi₂Se₃ nanoplatelets, in collaboration with experiment (<a href="https://doi.org/10.1021/acsnano.4c14134">ACS Nano <strong>19</strong>, 17261</a>).</li>
 </ul>
+<section id="light-and-matter-on-the-same-footing" class="level3">
+<h3 class="anchored" data-anchor-id="light-and-matter-on-the-same-footing">Light and matter on the same footing</h3>
+<p>An optical experiment splits the Universe in two. The laser and the detector form a classical external world, which enters only through prescribed potentials. The crystal is quantized: electrons, nuclei and transverse photons, described by quantum electrodynamics in a Born–von Kármán volume. The laser’s transverse field drives a transverse current in the crystal. That current radiates, and the detector records the total field, source plus induced.</p>
+<p>The exact ground state of this system is a dressed photon state that is orthogonal to the free photon vacuum in the thermodynamic limit, so perturbation theory built on the vacuum fails. A canonical transformation absorbs the photon dressing and leaves a purely fermionic <a href="https://arxiv.org/abs/2608.21211"><em>transverse matter Hamiltonian</em></a>, where photons are replaced by an instantaneous, screened current–current interaction. Absorption then follows from the transverse current–current response, the photon self-energy, and the macroscopic dielectric function comes out in a form where every excitation line has positive weight.</p>
+</section>
 </section>
 <section id="superconductivity" class="level2">
 <h2 class="anchored" data-anchor-id="superconductivity">Superconductivity</h2>
@@ -382,10 +394,11 @@ ul.task-list li input[type="checkbox"] {
 <p>I combine Bogoliubov–de Gennes theory with density functional theory in a unified approach — density functional Bogoliubov–de Gennes theory (DFT-BdG) — which I extended to unconventional pairing and implemented in the <a href="https://siesta-project.org/">SIESTA</a> code (<a href="https://doi.org/10.1103/PhysRevB.110.134505">Phys. Rev.&nbsp;B <strong>110</strong>, 134505</a>).</p>
 <p>Applications include proximity-induced superconductivity in semiconductor– superconductor heterostructures such as PbTe/Pb, relevant to topological quantum computing platforms (<a href="https://doi.org/10.1103/r366-j5k6">Phys. Rev.&nbsp;B <strong>113</strong> (2026)</a>).</p>
 </section>
-<section id="topology-in-condensed-matter" class="level2">
-<h2 class="anchored" data-anchor-id="topology-in-condensed-matter">Topology in condensed matter</h2>
+<section id="gauges-and-topology" class="level2">
+<h2 class="anchored" data-anchor-id="gauges-and-topology">Gauges and topology</h2>
 <p><img src="images/Devyambopy.webp" class="img-fluid" style="width:100.0%" alt="Wannier and topology workflow"></p>
-<p>Berry curvature, Wannier functions and Chern numbers give a geometric reading of electronic and optical response. I use Wannier-based tight-binding models, interfaced with first-principles calculations, to connect microscopic band geometry to measurable spectra.</p>
+<p>Many quantities in physics depend on a choice nobody can measure: the gauge of the electromagnetic potentials, or the phases of Bloch states across the Brillouin zone. Observables cannot depend on that choice, and working out what survives it is often where the physics is. Fixing a gauge well (Coulomb, velocity or length gauge for light–matter coupling, or smooth Bloch phases for Wannier functions) makes a theory tractable and its approximations controlled. When a smooth, global gauge does not exist, the obstruction is itself physical: Berry phases, Berry curvature and Chern numbers are topological invariants that fix quantized responses and protected boundary states.</p>
+<p>I use this language in two directions: to choose representations of the light–matter problem in which approximations stay gauge-invariant, and, through Wannier-based tight-binding models interfaced with first-principles calculations, to connect band geometry and topology to measurable spectra.</p>
 </section>
 <section id="codes-and-tools" class="level2">
 <h2 class="anchored" data-anchor-id="codes-and-tools">Codes and tools</h2>

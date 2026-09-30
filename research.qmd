@@ -9,7 +9,15 @@ resistance. Three threads run through the work.
 
 ## Theoretical spectroscopy
 
-![](images/theoreticalspectroscopy-abspl.png){width=100% fig-alt="Absorption and photoluminescence spectra"}
+```{=html}
+<figure class="figure">
+<video src="images/partition-coherent.mp4" poster="images/partition-coherent.png"
+       autoplay loop muted playsinline style="width:100%;border-radius:8px"
+       aria-label="Animated partition of an optical experiment: classical source and detector, quantized crystal, induced transverse current"></video>
+<figcaption><a href="interactive/partition.html" target="_blank" rel="noopener">Open the interactive version →</a>
+switch representation, turn the source off, and click any region for its equations.</figcaption>
+</figure>
+```
 
 I study the optical properties of two-dimensional multilayer structures built
 from transition metal dichalcogenides (TMDs) and topological insulators such as
@@ -27,6 +35,25 @@ Concretely, I work on:
 - **Ultrafast carrier dynamics** in 2D Bi₂Se₃ nanoplatelets, in collaboration
   with experiment ([ACS Nano **19**, 17261](https://doi.org/10.1021/acsnano.4c14134)).
 
+### Light and matter on the same footing
+
+An optical experiment splits the Universe in two. The laser and the detector
+form a classical external world, which enters only through prescribed
+potentials. The crystal is quantized: electrons, nuclei and transverse photons,
+described by quantum electrodynamics in a Born–von Kármán volume. The laser's
+transverse field drives a transverse current in the crystal. That current
+radiates, and the detector records the total field, source plus induced.
+
+The exact ground state of this system is a dressed photon state that is
+orthogonal to the free photon vacuum in the thermodynamic limit, so
+perturbation theory built on the vacuum fails. A canonical transformation
+absorbs the photon dressing and leaves a purely fermionic [*transverse matter
+Hamiltonian*](https://arxiv.org/abs/2608.21211), where photons are replaced by an instantaneous, screened
+current–current interaction. Absorption then follows from the transverse
+current–current response, the photon self-energy, and the macroscopic
+dielectric function comes out in a form where every excitation line has
+positive weight.
+
 ## Superconductivity
 
 ![](images/superconductivity-DOS.png){width=100% fig-alt="Superconducting density of states"}
@@ -42,14 +69,24 @@ superconductor heterostructures such as PbTe/Pb, relevant to topological
 quantum computing platforms
 ([Phys. Rev. B **113** (2026)](https://doi.org/10.1103/r366-j5k6)).
 
-## Topology in condensed matter
+## Gauges and topology
 
 ![](images/Devyambopy.webp){width=100% fig-alt="Wannier and topology workflow"}
 
-Berry curvature, Wannier functions and Chern numbers give a geometric reading of
-electronic and optical response. I use Wannier-based tight-binding models,
-interfaced with first-principles calculations, to connect microscopic band
-geometry to measurable spectra.
+Many quantities in physics depend on a choice nobody can measure: the gauge of
+the electromagnetic potentials, or the phases of Bloch states across the
+Brillouin zone. Observables cannot depend on that choice, and working out what
+survives it is often where the physics is. Fixing a gauge well (Coulomb,
+velocity or length gauge for light–matter coupling, or smooth Bloch phases for
+Wannier functions) makes a theory tractable and its approximations controlled.
+When a smooth, global gauge does not exist, the obstruction is itself physical:
+Berry phases, Berry curvature and Chern numbers are topological invariants that
+fix quantized responses and protected boundary states.
+
+I use this language in two directions: to choose representations of the
+light–matter problem in which approximations stay gauge-invariant, and, through
+Wannier-based tight-binding models interfaced with first-principles
+calculations, to connect band geometry and topology to measurable spectra.
 
 ## Codes and tools
 

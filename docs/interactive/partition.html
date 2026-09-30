@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Transverse Partition Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&display=swap">
+<script>
+window.MathJax = { tex: { inlineMath: [["\\(", "\\)"]], displayMath: [["\\[", "\\]"]], packages: { "[+]": ["boldsymbol"] } },
+  svg: { fontCache: "global" }, startup: { typeset: false } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg-full.js"></script>
+<style>
+/* Layout: one working canvas (partition diagram) + a reading panel that explains the region you touch. */
+:root {
+  --bg: #FBFBFC; --surface: #FFFFFF; --fg: #16191D; --muted: #5F6672; --faint: #9AA1AB; --line: #D9DDE3;
+  --lon: #2F5DA8; --tra: #D9582B; --tra-soft: #F7DDD2;
+  --cls: #EEF0F2; --qtm: #E7ECF6; --qtm-line: #9FB2D6; --ok: #2E7D5B; --warn: #A86A12;
+  --display: "STIX Two Text", "Cambria", "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #111317; --surface: #171A1F; --fg: #E8EAED; --muted: #A2A9B4; --faint: #6C7380; --line: #2B3038;
+  --lon: #7FA6E8; --tra: #F08A5D; --tra-soft: #4A2B20;
+  --cls: #1C2026; --qtm: #1A2233; --qtm-line: #4E6694; --ok: #5DBB8E; --warn: #E0A64A; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #111317; --surface: #171A1F; --fg: #E8EAED; --muted: #A2A9B4; --faint: #6C7380; --line: #2B3038;
+  --lon: #7FA6E8; --tra: #F08A5D; --tra-soft: #4A2B20;
+  --cls: #1C2026; --qtm: #1A2233; --qtm-line: #4E6694; --ok: #5DBB8E; --warn: #E0A64A; color-scheme: dark }
+
+html, body { background: var(--bg); color: var(--fg); }
+body { font-family: var(--body); font-size: 15px; line-height: 1.5; padding-inline: 20px; padding-block: 24px 40px; }
+.wrap { max-width: 1320px; margin: 0 auto; display: grid; gap: 18px; }
+header { display: grid; gap: 4px; }
+.eyebrow { font-family: var(--mono); font-size: 12px; color: var(--tra); letter-spacing: .04em; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(26px, 3.2vw, 38px); line-height: 1.15; margin: 0; text-wrap: balance; }
+.lede { color: var(--muted); max-width: 72ch; margin: 0; }
+
+.controls { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; font-size: 13px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; background: var(--surface); }
+.seg button { font: 500 13px var(--body); color: var(--muted); background: none; border: 0; padding: 6px 12px; border-radius: 999px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--fg); color: var(--bg); }
+.ctl { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }
+.ctl label { font-family: var(--mono); font-size: 12px; }
+input[type="range"] { accent-color: var(--tra); width: 150px; }
+.btn { font: 500 13px var(--body); border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--tra); outline-offset: 2px; }
+.readout { font-family: var(--mono); font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.main { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 18px; align-items: start; }
+@media (max-width: 1080px) { .main { grid-template-columns: minmax(0, 1fr); } }
+.stage-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+.stage { position: relative; min-width: 760px; aspect-ratio: 1000 / 560; }
+.stage > svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lbl { position: absolute; transform: translate(-50%, -50%); font-size: 13px; white-space: nowrap; pointer-events: none; text-align: center; line-height: 1.25; }
+.lbl.left { transform: translate(0, -50%); text-align: left; }
+.lbl .k { display: block; font-family: var(--mono); font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.lbl .t { font-family: var(--display); font-size: 16px; }
+.lbl.tra .t, .lbl.tra .k { color: var(--tra); }
+.lbl.qtm .k { color: var(--lon); }
+mjx-container { color: inherit; }
+
+.hit { cursor: pointer; }
+.hit:hover .hl, .hit.active .hl { stroke: var(--tra); stroke-width: 2.5; }
+.hl { fill: transparent; stroke: transparent; }
+
+aside.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; display: grid; gap: 12px; min-width: 0; }
+.panel .kick { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.pill { font: 500 11px var(--mono); letter-spacing: .05em; text-transform: uppercase; border-radius: 999px; padding: 3px 9px; border: 1px solid currentColor; }
+.pill.cls { color: var(--muted); }
+.pill.qtm { color: var(--lon); }
+.pill.int { color: var(--tra); }
+.pill.pub { color: var(--ok); }
+.pill.prep { color: var(--warn); }
+.panel h2 { font-family: var(--display); font-weight: 400; font-size: 26px; margin: 0; line-height: 1.2; }
+.panel p { margin: 0; color: var(--fg); }
+.panel .eqs { display: grid; gap: 10px; }
+.eq { background: var(--bg); border-radius: 10px; padding: 10px 12px; overflow-x: auto; font-size: 13.5px; }
+.eq .cap { font-family: var(--mono); font-size: 11px; color: var(--muted); display: block; margin-bottom: 2px; }
+.panel .ref { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.panel ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 12.5px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+.sw { width: 18px; height: 12px; border-radius: 3px; display: inline-block; border: 1px solid var(--line); }
+.hint { font-family: var(--mono); font-size: 12px; color: var(--faint); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">// optical experiment · partition of the Universe</div>
+    <h1>External world, classical fields, quantized matter</h1>
+    <p class="lede">Click any region to see what it contains, whether it is treated classically or quantum-mechanically, and the equations that define it. Switch the matter representation with the canonical transformation Ĉ.</p>
+  </header>
+
+  <div class="controls">
+    <div class="seg" role="group" aria-label="Matter representation">
+      <button id="rep-conv" aria-pressed="true">Conventional · Ĥ<sub>QED</sub></button>
+      <button id="rep-coh" aria-pressed="false">Coherent · 𝔥<sub>M</sub> = Ĉ†Ĥ<sub>QED</sub>Ĉ</button>
+    </div>
+    <div class="seg" role="group" aria-label="External source">
+      <button id="src-on" aria-pressed="true">Source on</button>
+      <button id="src-off" aria-pressed="false">𝒜<sub>S</sub> → 0</button>
+    </div>
+    <div class="ctl">
+      <label for="ncell">cells per side N</label>
+      <input id="ncell" type="range" min="1" max="7" step="1" value="2">
+      <span class="readout" id="nread"></span>
+    </div>
+    <button class="btn" id="play" aria-pressed="true">Pause</button>
+  </div>
+
+  <div class="main">
+    <div>
+      <div class="stage-scroll">
+        <div class="stage" id="stage">
+          <svg id="svg" viewBox="0 0 1000 560" aria-label="Partition diagram of an optical experiment"></svg>
+          <div id="labels"></div>
+        </div>
+      </div>
+      <div class="legend" style="margin-top:10px">
+        <span><i class="sw" style="background:var(--cls)"></i>classical, prescribed</span>
+        <span><i class="sw" style="background:var(--qtm);border-color:var(--qtm-line)"></i>quantized (BvK volume V<sub>c</sub> = N V<sub>0</sub>)</span>
+        <span><i class="sw" style="background:var(--tra)"></i>transverse fields and currents (⊥)</span>
+        <span><i class="sw" style="background:var(--lon)"></i>longitudinal / Coulomb (∥)</span>
+      </div>
+    </div>
+    <aside class="panel" id="panel" aria-live="polite"></aside>
+  </div>
+  <div class="hint">Keyboard: Tab to a region, Enter to open it.</div>
+</div>
+
+<script>
+(function () {
+const NS = "http://www.w3.org/2000/svg";
+const svg = document.getElementById("svg");
+const labels = document.getElementById("labels");
+const panel = document.getElementById("panel");
+const S = { rep: "conv", src: true, N: 2, playing: !matchMedia("(prefers-reduced-motion: reduce)").matches, t: 0, active: "universe" };
+
+// ---------- geometry ----------
+const X = { src: [44, 190, 150, 180], det: [820, 190, 140, 180], box: [372, 108, 276, 344] };
+const [bx, by, bw, bh] = X.box;
+const yMid = by + bh / 2;
+
+function el(name, attrs, parent) { const e = document.createElementNS(NS, name); for (const k in attrs) e.setAttribute(k, attrs[k]); (parent || svg).appendChild(e); return e; }
+function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+
+// ---------- static scene ----------
+function hitGroup(id, name) {
+  const g = el("g", { class: "hit", "data-id": id, tabindex: 0, role: "button", "aria-label": name });
+  g.addEventListener("click", e => { e.stopPropagation(); select(id); });
+  g.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(id); } });
+  return g;
+}
+let dyn; // dynamic layer
+function build() {
+  svg.innerHTML = "";
+  // Universe frame
+  const gU = hitGroup("universe", "Universe");
+  el("rect", { x: 6, y: 6, width: 988, height: 548, rx: 18, fill: "none", stroke: "var(--faint)", "stroke-width": 1.5, "stroke-dasharray": "6 6" }, gU);
+  el("rect", { x: 6, y: 6, width: 988, height: 548, rx: 18, fill: "none", stroke: "transparent", "pointer-events": "stroke", "stroke-width": 14 }, gU);
+  el("rect", { x: 6, y: 6, width: 988, height: 548, rx: 18, class: "hl", fill: "none", "pointer-events": "none" }, gU);
+  el("rect", { x: 20, y: 18, width: 130, height: 34, rx: 17, fill: "var(--surface)", stroke: "var(--line)" }, gU);
+  el("rect", { x: 20, y: 18, width: 130, height: 34, rx: 17, class: "hl" }, gU);
+  // External world (everything classical outside the crystal)
+  const gE = hitGroup("external", "External world");
+  el("path", { d: `M24,66 H976 V540 H24 Z M${bx - 16},${by - 16} V${by + bh + 16} H${bx + bw + 16} V${by - 16} Z`, "fill-rule": "evenodd", fill: "var(--cls)", class: "", rx: 12 }, gE);
+  el("path", { d: `M24,66 H976 V540 H24 Z`, class: "hl", fill: "none", "pointer-events": "none" }, gE);
+  // Source (laser)
+  const gS = hitGroup("external", "Laser source");
+  el("rect", { x: X.src[0], y: X.src[1], width: X.src[2], height: X.src[3], rx: 14, fill: "var(--surface)", stroke: "var(--faint)", "stroke-width": 1.2 }, gS);
+  el("rect", { x: X.src[0], y: X.src[1], width: X.src[2], height: X.src[3], rx: 14, class: "hl" }, gS);
+  el("rect", { x: X.src[0] + 96, y: yMid - 16, width: 40, height: 32, rx: 5, fill: "var(--fg)" }, gS);
+  el("circle", { cx: X.src[0] + 136, cy: yMid, r: 6, fill: "var(--tra)" }, gS);
+  // Detector
+  const gD = hitGroup("detector", "Detector");
+  el("rect", { x: X.det[0], y: X.det[1], width: X.det[2], height: X.det[3], rx: 14, fill: "var(--surface)", stroke: "var(--faint)", "stroke-width": 1.2 }, gD);
+  el("rect", { x: X.det[0], y: X.det[1], width: X.det[2], height: X.det[3], rx: 14, class: "hl" }, gD);
+  el("path", { d: `M${X.det[0] + 18},${yMid} L${X.det[0] + 78},${yMid - 44} L${X.det[0] + 78},${yMid + 44} Z`, fill: "var(--bg)", stroke: "var(--faint)" }, gD);
+  el("circle", { cx: X.det[0] + 100, cy: yMid, r: 13, fill: "var(--fg)" }, gD);
+  // Incoming band
+  const gI = hitGroup("incoming", "Incoming classical fields");
+  el("rect", { x: X.src[0] + X.src[2] + 6, y: yMid - 58, width: bx - 22 - (X.src[0] + X.src[2] + 6), height: 116, rx: 10, fill: "transparent" }, gI);
+  el("rect", { x: X.src[0] + X.src[2] + 6, y: yMid - 58, width: bx - 22 - (X.src[0] + X.src[2] + 6), height: 116, rx: 10, class: "hl" }, gI);
+  // Outgoing band
+  const gO = hitGroup("radiated", "Dressed transverse photon");
+  el("rect", { x: bx + bw + 22, y: yMid - 58, width: X.det[0] - 6 - (bx + bw + 22), height: 116, rx: 10, fill: "transparent" }, gO);
+  el("rect", { x: bx + bw + 22, y: yMid - 58, width: X.det[0] - 6 - (bx + bw + 22), height: 116, rx: 10, class: "hl" }, gO);
+  // Matter box
+  const gM = hitGroup("matter", "Quantized matter");
+  el("rect", { x: bx, y: by, width: bw, height: bh, rx: 16, fill: "var(--qtm)", stroke: "var(--qtm-line)", "stroke-width": 1.5 }, gM);
+  el("rect", { x: bx, y: by, width: bw, height: bh, rx: 16, class: "hl" }, gM);
+  // Coupling interface (boundary strip)
+  const gC = hitGroup("coupling", "Coupling at the boundary");
+  el("rect", { x: bx - 16, y: by - 16, width: bw + 32, height: bh + 32, rx: 24, fill: "none", stroke: "var(--tra)", "stroke-width": 2, "stroke-dasharray": "2 7", "stroke-linecap": "round" }, gC);
+  el("rect", { x: bx - 16, y: by - 16, width: bw + 32, height: bh + 32, rx: 24, fill: "none", stroke: "transparent", "pointer-events": "stroke", "stroke-width": 14 }, gC);
+  // Dynamic layer (non-interactive drawing), then response hit on top
+  dyn = el("g", { "pointer-events": "none" });
+  const gR = hitGroup("response", "Induced transverse current");
+  el("rect", { x: bx + 70, y: yMid - 34, width: bw - 140, height: 68, rx: 12, fill: "transparent" }, gR);
+  el("rect", { x: bx + 70, y: yMid - 34, width: bw - 140, height: 68, rx: 12, class: "hl" }, gR);
+  svg.addEventListener("click", () => select("external"));
+  markActive();
+  buildLabels();
+}
+
+// ---------- labels (HTML overlay, MathJax) ----------
+function pos(x, y) { return `left:${x / 10}%;top:${y / 5.6}%`; }
+function buildLabels() {
+  const coh = S.rep === "coh";
+  labels.innerHTML = `
+    <div class="lbl left" style="${pos(34, 35)}"><span class="t" style="font-size:15px">Universe \\(\\,\\mathcal U\\)</span></div>
+    <div class="lbl" style="${pos(500, 80)}"><span class="k">external world · classical · prescribed</span></div>
+    <div class="lbl" style="${pos(119, 160)}"><span class="k">laser</span><span class="t">source</span></div>
+    <div class="lbl" style="${pos(890, 160)}"><span class="k">detector</span><span class="t">total field</span></div>
+    <div class="lbl tra" style="${pos(280, 190)}"><span class="k">incoming · classical</span><span class="t">\\(\\boldsymbol{\\mathcal A}^{\\perp}_S,\\ \\boldsymbol{\\mathcal E}^{\\perp}_S\\)</span></div>
+    <div class="lbl tra" style="${pos(733, 190)}"><span class="k">dressed photon</span><span class="t">\\(\\boldsymbol{\\mathcal A}^{\\perp}_{tot}\\)</span></div>
+    <div class="lbl qtm" style="${pos(510, 132)}"><span class="k">matter · quantized · \\(V_c=NV_0\\)</span></div>
+    <div class="lbl" style="${pos(510, 408)}"><span class="t" style="font-size:14px">${coh ? "\\(\\hat{\\mathfrak H}_M=\\hat T+\\hat H_a+\\hat H^{\\parallel}_{e-e}+\\hat H^{\\perp}_{e-e}\\)" : "\\(\\hat H_{QED}=\\hat H_a+\\hat H_{kin}+\\hat H^{\\parallel}_{e-e}+\\hat H^{\\perp}_{\\gamma}\\)"}</span></div>
+    <div class="lbl" style="${pos(510, 432)}"><span class="k">${coh ? "fermions only · |Ψ⟩ coherent" : "electrons ψ̂ · photons Â⊥"}</span></div>
+    <div class="lbl tra" style="${pos(510, 500)}"><span class="k">coupling at the boundary</span><span class="t" style="font-size:14px">${coh ? "\\(\\hat{\\mathfrak H}_{M-S}(t)=-\\!\\int\\!\\hat{\\mathfrak J}^{\\perp}\\!\\cdot\\boldsymbol{\\mathcal A}^{\\perp}_S+\\int\\!\\hat\\rho\\,\\phi_S\\)" : "\\(\\hat H_{QED-S}(t)\\)"}</span></div>
+    <div class="lbl tra" style="${pos(510, yMid - 34)}"><span class="k">induced</span><span class="t" style="font-size:15px">\\(\\mathfrak J^{\\perp}\\)</span></div>`;
+  typeset(labels);
+}
+let mjq = null;
+function typeset(node) {
+  if (!(window.MathJax && MathJax.startup && MathJax.startup.promise)) { setTimeout(() => typeset(node), 200); return; }
+  if (!mjq) mjq = MathJax.startup.promise;
+  mjq = mjq.then(() => { if (!node.isConnected) return; MathJax.typesetClear([node]); return MathJax.typesetPromise([node]); }).catch(() => {});
+}
+
+// ---------- panel content ----------
+const TH = "Marini, Wu, Reho — The transverse matter Hamiltonian (published)";
+const OPT = ""; // in-preparation reference kept off the public site
+const P = {
+  universe: () => ({ tags: [["int", "partition"]], title: "The Universe", body: `<p>Everything that takes part in the experiment, split into two sectors that are treated differently. The system is a finite crystal described by quantum electrodynamics. The rest of the Universe is the external world, which only enters through prescribed classical potentials: nothing in it reacts back on the laser.</p>`,
+    eqs: [["partition", "\\mathcal U=\\underbrace{\\text{system}}_{\\text{quantum, BvK}}\\ \\oplus\\ \\underbrace{\\text{external world}}_{\\text{classical}}"],
+          ["time-dependent Hamiltonian of the system", "\\hat H(t)=\\hat H_{QED}+\\hat H_{QED-S}(t)"],
+          ["what is measured", "\\Big\\langle\\frac{dW}{dt}\\Big\\rangle_T\\ \\text{ through the total transverse field}"]],
+    ref: OPT, status: "prep" }),
+  external: () => ({ tags: [["cls", "classical"]], title: "External world", body: `<p>The laser and the detector. Its fields are c-numbers (calligraphic symbols) with no quantum fluctuations. Although the outside world is not periodic, the fields must be Born–von Kármán compatible with the crystal. For a macroscopic source this selects the longest allowed wavelength.</p>`,
+    eqs: [["BvK-compatible source momentum", "|\\mathbf q_s|\\sim\\frac{2\\pi}{\\sqrt[3]{V_c}}"],
+          ["source potentials", "\\boldsymbol{\\mathcal A}^{\\perp}_S(\\mathbf x,t)\\approx\\sum_{\\eta=\\pm1}e^{i\\eta\\mathbf q_s\\cdot\\mathbf x}\\,\\boldsymbol{\\mathcal A}^{S\\perp}_{\\eta\\mathbf q_s}(t),\\qquad \\phi_S(\\mathbf x,t)\\approx\\sum_{\\eta=\\pm1}e^{i\\eta\\mathbf q_s\\cdot\\mathbf x}\\,\\phi^{S}_{\\eta\\mathbf q_s}(t)"]],
+    ref: OPT + " · Eqs. (6)–(7)", status: "prep" }),
+  incoming: () => ({ tags: [["cls", "classical"], ["int", "transverse"]], title: "Incoming classical fields", body: `<p>The field that reaches the sample. At finite volume it has a longitudinal part (from φ<sub>S</sub>) and a transverse part (from 𝒜<sub>S</sub>). In the thermodynamic limit q<sub>s</sub> → 0 only the transverse part survives, and it is uniform on the scale of a unit cell. This optical limit follows from the experimental setup. Use the N slider to see it.</p>`,
+    eqs: [["total source field", "\\boldsymbol{\\mathcal E}_S=-\\nabla\\phi_S-\\partial_t\\boldsymbol{\\mathcal A}_S=-\\sum_\\eta e^{i\\eta\\mathbf q_s\\cdot\\mathbf x}\\big[\\underbrace{\\partial_t\\boldsymbol{\\mathcal A}^{S\\perp}_{\\mathbf q_s}}_{\\perp\\mathbf q_s}+\\underbrace{i\\eta\\mathbf q_s\\phi^{S}_{\\mathbf q_s}}_{\\parallel\\mathbf q_s}\\big]"],
+          ["optical limit", "\\lim_{V\\to\\infty}\\boldsymbol{\\mathcal E}_S(\\mathbf x,t)=\\boldsymbol{\\mathcal E}^{\\perp}_S(t)=-\\frac{1}{V_c}\\sum_\\eta\\partial_t\\boldsymbol{\\mathcal A}^{S\\perp}_{\\eta\\mathbf q_s}(t)"]],
+    ref: OPT + " · Eqs. (8)–(10)", status: "prep" }),
+  coupling: () => S.rep === "coh" ? ({ tags: [["int", "interface"], ["qtm", "coherent space"]], title: "Coupling: one displacement", body: `<p>In the coherent space the external vector potential is absorbed into an external current. The source then couples only to the charge density and to the fermionic transverse current. Reaching the driven state takes a single displacement of the coherent ground state, instead of two displacements starting from the photon vacuum.</p>`,
+    eqs: [["external current", "\\boldsymbol{\\mathcal A}^{\\perp}_S(\\mathbf x,t)=\\frac{1}{c^2}\\int d\\mathbf y\\,v_\\perp(\\mathbf x-\\mathbf y)\\,\\boldsymbol{\\mathcal J}^{\\perp}_S(\\mathbf y,t)"],
+          ["source Hamiltonian", "\\hat{\\mathfrak H}_{M-S}(t)=i\\mathcal Q\\int d\\mathbf x\\,\\boldsymbol{\\mathcal A}^{\\perp}_S(\\mathbf x,t)\\cdot\\big[\\hat\\psi^\\dagger\\nabla\\hat\\psi\\big]\\ \\ (+\\textstyle\\int\\hat\\rho\\,\\phi_S)"]],
+    ref: OPT + " · Eqs. (25)–(27)", status: "prep" })
+    : ({ tags: [["int", "interface"], ["cls", "conventional space"]], title: "Coupling: shift the photon field", body: `<p>The external field enters by shifting the quantized transverse photon operators by the classical source. Three terms are linear in the perturbation. The diamagnetic one is kept because Â⊥ is an operator whose size cannot be assumed small.</p>`,
+    eqs: [["substitution", "\\hat{\\mathbf A}^{\\perp}\\to\\hat{\\mathbf A}^{\\perp}+\\boldsymbol{\\mathcal A}^{\\perp}_S,\\qquad \\hat{\\mathbf E}^{\\perp}\\to\\hat{\\mathbf E}^{\\perp}-\\partial_t\\boldsymbol{\\mathcal A}^{\\perp}_S"],
+          ["source Hamiltonian", "\\hat H_{QED-S}(t)=\\frac{1}{4\\pi}\\int d\\mathbf x\\,\\hat{\\mathbf E}^{\\perp}\\cdot\\boldsymbol{\\mathcal E}^{\\perp}_S-\\int d\\mathbf x\\,\\big[\\hat{\\mathbf J}^{\\perp}+\\mathcal Q\\hat{\\mathbf A}^{\\perp}\\hat n\\big]\\cdot\\boldsymbol{\\mathcal A}^{\\perp}_S"]],
+    ref: OPT + " · Eqs. (13)–(14)", status: "prep" }),
+  matter: () => S.rep === "coh" ? ({ tags: [["qtm", "quantized"], ["pub", "coherent space"]], title: "Matter in the coherent space", body: `<p>The canonical transformation Ĉ absorbs the photon dressing: the diamagnetic squeezing and the paramagnetic displacement. What is left is a purely fermionic Hamiltonian. Photons are replaced by an instantaneous, Yukawa-screened current–current interaction, and the ground state |Ψ⟩ is a coherent photon state that satisfies Maxwell's equations by construction.</p>`,
+    eqs: [["canonical transformation", "\\hat C=e^{i\\hat S},\\qquad \\hat S=\\frac{1}{4\\pi c^2}\\int d\\mathbf x_1d\\mathbf x_2\\,\\hat{\\mathbf E}^{\\perp}(\\mathbf x_1)\\cdot\\hat{\\mathfrak J}^{\\perp}(\\mathbf x_2)\\,v_\\perp(\\mathbf x_1-\\mathbf x_2)"],
+          ["transverse Hamiltonian", "\\hat{\\mathfrak H}_M=\\hat C^\\dagger\\hat H_{QED}\\hat C=\\hat T+\\hat H_a+\\hat H^{\\parallel}_{e-e}+\\hat H^{\\perp}_{e-e}"],
+          ["current–current kernel", "\\hat H^{\\perp}_{e-e}\\ni-\\frac{1}{2c^2}\\int\\hat{\\mathfrak J}^{\\perp\\dagger}(\\mathbf x_1)\\cdot\\hat{\\mathfrak J}^{\\perp}(\\mathbf x_2)\\,v_\\perp(\\mathbf x_1-\\mathbf x_2),\\quad v_\\perp(\\mathbf x)=\\frac{e^{-\\Omega_p|\\mathbf x|/c}}{|\\mathbf x|}"]],
+    ref: TH + " · " + OPT + " · Eqs. (22)–(23)", status: "pub" })
+    : ({ tags: [["qtm", "quantized"], ["cls", "conventional space"]], title: "Matter with quantized photons", body: `<p>Electrons, nuclei and transverse photons in the Coulomb gauge. The longitudinal field has already been eliminated in favour of the Coulomb interaction, following Fermi's procedure. The exact ground state is a displaced, squeezed photon state that is orthogonal to the free vacuum in the thermodynamic limit (Haag), so perturbation theory built on |0⟩ fails.</p>`,
+    eqs: [["QED Hamiltonian", "\\hat H_{QED}=\\hat H_a+\\hat H_{kin}+\\hat H^{\\parallel}_{e-e}+\\hat H^{\\perp}_{\\gamma}"],
+          ["minimal coupling", "\\hat H_{kin}=\\frac12\\int d\\mathbf x\\,\\hat\\psi^\\dagger(\\mathbf x)\\big(-i\\nabla-\\mathcal Q\\hat{\\mathbf A}^{\\perp}(\\mathbf x)\\big)^2\\hat\\psi(\\mathbf x)"],
+          ["free photons", "\\hat H^{\\perp}_{\\gamma}=\\frac{1}{8\\pi}\\int d\\mathbf x\\,\\big[|\\hat{\\mathbf E}^{\\perp}|^2+c^2|\\hat{\\mathbf B}^{\\perp}|^2\\big]"],
+          ["orthogonality", "\\langle0|0'\\rangle=e^{-\\eta V}\\xrightarrow[V\\to\\infty]{}0"]],
+    ref: TH + " · " + OPT + " · Eq. (11)", status: "pub" }),
+  response: () => ({ tags: [["qtm", "linear response"], ["int", "transverse"]], title: "Matter response", body: S.src ? `<p>The source drives a transverse current. In linear response it is set by the transverse photon self-energy, a current–current correlation function evaluated on the coherent ground state. The macroscopic longitudinal current vanishes, so the two channels decouple at the macroscopic level. Microscopic G ≠ 0 components can still appear.</p>` : `<p>With 𝒜<sub>S</sub> → 0 there is no induced current. The system stays in its equilibrium state |Ψ⟩, and Π describes its fluctuations only.</p>`,
+    eqs: [["photon self-energy", "\\Pi^{\\perp\\perp}(1,2)=i\\big\\langle\\big[\\Delta\\hat{\\mathfrak J}^{\\perp}(1),\\Delta\\hat{\\mathfrak J}^{\\perp}(2)\\big]\\big\\rangle\\,\\theta(t_1-t_2)"],
+          ["induced current", "\\partial_{t_1}\\langle\\mathfrak J^{\\perp}(t_1)\\rangle_M=-\\int dt_2\\,\\langle\\Pi^{\\perp\\perp}(1,2)\\rangle_M\\cdot\\boldsymbol{\\mathcal E}^{\\perp}_S(t_2),\\qquad \\langle\\mathfrak J^{\\parallel}\\rangle_M=0"],
+          ["induced field", "\\boldsymbol{\\mathcal A}^{\\perp}_{ind}(\\mathbf x,t)=\\frac{1}{c^2}\\int d\\mathbf y\\,v_\\perp(\\mathbf x-\\mathbf y)\\,\\langle\\hat{\\mathfrak J}^{\\perp}(\\mathbf y,t)\\rangle"]],
+    ref: OPT + " · Eqs. (17), (42), (71)", status: "prep" }),
+  radiated: () => ({ tags: [["int", "transverse"], ["qtm", "dressed"]], title: "Dressed transverse photon", body: `<p>The induced current radiates. Macroscopically the matter responds to the total field (source plus induced), which defines the proper self-energy Π̄ and a Dyson equation for the photon. Mapped back through Ĉ<sup>−1</sup>, the fermionic current–current response is the dressed photon propagator. Electron–hole pairs enter only as virtual intermediate states.</p>`,
+    eqs: [["Dyson equation", "\\boldsymbol{\\mathcal A}^{tot,\\perp}=\\boldsymbol{\\mathcal A}^{\\perp}_S+D^{\\perp}_0\\,\\bar\\Pi\\,\\boldsymbol{\\mathcal A}^{tot,\\perp},\\qquad D=D^{\\perp}_0+D^{\\perp}_0\\bar\\Pi D"],
+          ["self-energy ↔ propagator", "\\Pi^{\\perp\\perp}_{\\mathbf q}(1,2)=\\Big(\\frac{V\\Omega_q^2}{4\\pi}\\Big)^{2}D_{\\mathbf q}(1,2)"],
+          ["optical limit (q → 0)", "\\frac{4\\pi}{c^2}\\mathfrak J^{ind,\\perp}(t)+\\frac{1}{c^2}\\partial_t\\mathbf E^{ind,\\perp}(t)=0"]],
+    ref: OPT + " · Eqs. (20), (56), (79)", status: "prep" }),
+  detector: () => ({ tags: [["cls", "classical"], ["int", "observable"]], title: "Detector and observable", body: `<p>The detector sees the sum of the incoming and radiated fields. The measured quantity is the absorbed power, averaged over a period of the drive. Its spectral content gives the macroscopic transverse dielectric function in Lehmann form: one line per transverse excitation.</p>`,
+    eqs: [["absorbed power", "\\Big\\langle\\frac{dW}{dt}\\Big\\rangle_T=\\frac{1}{2T}\\sum_\\eta\\int_{-T}^{+T}\\!dt\\,\\big\\langle\\mathfrak J^{\\perp}_{\\eta\\mathbf q_s}(t)\\big\\rangle_M\\cdot\\boldsymbol{\\mathcal E}^{S,\\perp}_{\\eta\\mathbf q_s}(t)"],
+          ["dielectric function", "\\langle\\epsilon_M(\\omega)\\rangle_M=1+\\sum_\\alpha\\frac{f_\\alpha}{E_\\alpha^2-(\\omega+i0^+)^2},\\qquad f_\\alpha\\ge0"],
+          ["spectrum", "\\mathrm{Im}\\,\\langle\\epsilon_M(\\omega)\\rangle_M=\\frac{\\pi}{2}\\sum_\\alpha\\frac{f_\\alpha}{E_\\alpha}\\,\\delta(\\omega-E_\\alpha)"]],
+    ref: OPT + " · Eqs. (54), (59)–(60)", status: "prep" }),
+};
+const TAGNAME = { cls: "cls", qtm: "qtm", int: "int", pub: "pub" };
+function renderPanel() {
+  const d = P[S.active]();
+  // Equation numbers refer to OPT, so drop them together with it.
+  const ref = d.ref.split(" · ").filter(r => r && !r.startsWith("Eq")).join(" · ");
+  const status = d.status === "pub" ? `<span class="pill pub">published</span>` : `<span class="pill prep">in preparation</span>`;
+  panel.innerHTML = `
+    <div class="kick">${d.tags.map(t => `<span class="pill ${TAGNAME[t[0]]}">${t[1]}</span>`).join("")}${status}</div>
+    <h2>${d.title}</h2>${d.body}
+    <div class="eqs">${d.eqs.map(e => `<div class="eq"><span class="cap">${e[0]}</span>\\[${e[1]}\\]</div>`).join("")}</div>
+    ${ref ? `<div class="ref">${ref}</div>` : ""}`;
+  typeset(panel);
+}
+function markActive() { svg.querySelectorAll(".hit").forEach(g => g.classList.toggle("active", g.dataset.id === S.active)); }
+function select(id) { S.active = id; markActive(); renderPanel(); }
+
+// ---------- dynamic drawing ----------
+function wavePath(x0, x1, y, amp, k, phase) {
+  let d = ""; for (let x = x0; x <= x1; x += 3) { const yy = y - amp * Math.sin(k * (x - x0) - phase); d += (d ? "L" : "M") + x.toFixed(1) + "," + yy.toFixed(1); } return d;
+}
+function lattice() { // positions of lattice points inside the box
+  const pts = [], cols = 6, ys = [by + 52, by + 96, by + 226, by + 270];
+  for (let i = 0; i < cols; i++) ys.forEach(y => pts.push([bx + 34 + i * (bw - 68) / (cols - 1), y]));
+  return pts;
+}
+const PTS = lattice();
+function draw() {
+  dyn.innerHTML = "";
+  const t = S.t, w = 2.2, on = S.src;
+  const x0 = X.src[0] + X.src[2] + 10, x1 = bx - 26;
+  // incoming wave
+  if (on) el("path", { d: wavePath(x0, x1, yMid + 18, 16, 0.075, w * t * 3), fill: "none", stroke: "var(--tra)", "stroke-width": 2.6, "stroke-linecap": "round" }, dyn);
+  else el("line", { x1: x0, y1: yMid + 18, x2: x1, y2: yMid + 18, stroke: "var(--faint)", "stroke-width": 1.5, "stroke-dasharray": "3 6" }, dyn);
+  // matter interior
+  const coh = S.rep === "coh";
+  if (!coh) { // photon lines between neighbours (quantized field present)
+    for (let k = 0; k < PTS.length; k += 3) { const a = PTS[k], b = PTS[(k + 7) % PTS.length]; if (Math.abs(a[0] - b[0]) < 90 && Math.abs(a[1] - b[1]) < 90) el("path", { d: wavePath(Math.min(a[0], b[0]), Math.max(a[0], b[0]), (a[1] + b[1]) / 2, 3.5, 0.5, t * 4 + k), fill: "none", stroke: "var(--tra)", "stroke-width": 1.1, opacity: 0.55 }, dyn); }
+  } else { // instantaneous current–current links
+    for (let k = 0; k < PTS.length; k += 4) { const a = PTS[k], b = PTS[(k + 11) % PTS.length]; const mx = (a[0] + b[0]) / 2, my = (a[1] + b[1]) / 2 - 22; el("path", { d: `M${a[0]},${a[1]} Q${mx},${my} ${b[0]},${b[1]}`, fill: "none", stroke: "var(--tra)", "stroke-width": 1.1, "stroke-dasharray": "3 4", opacity: 0.6 }, dyn); }
+  }
+  // lattice + field arrows at each column: E_S ∝ cos(q_s x − ωt), one BvK wavelength across the box
+  const qs = 2 * Math.PI / (bw - 68);
+  PTS.forEach(p => {
+    el("circle", { cx: p[0], cy: p[1], r: 3.6, fill: "var(--fg)" }, dyn);
+    if (on) { const a = 13 * Math.cos(qs * (p[0] - bx - 34) - w * t); el("line", { x1: p[0] + 8, y1: p[1], x2: p[0] + 8, y2: p[1] - a, stroke: "var(--tra)", "stroke-width": 1.6, opacity: 0.8 }, dyn); }
+  });
+  // induced current (macroscopic, uniform, lagging)
+  const J = on ? Math.sin(w * t - 0.9) : 0;
+  const len = 70 * J;
+  if (on) {
+    el("line", { x1: bx + bw / 2 - len, y1: yMid, x2: bx + bw / 2 + len, y2: yMid, stroke: "var(--tra)", "stroke-width": 4, "stroke-linecap": "round" }, dyn);
+    const tip = bx + bw / 2 + len, dir = Math.sign(len) || 1;
+    if (Math.abs(len) > 8) el("path", { d: `M${tip},${yMid} l${-12 * dir},-7 l0,14 z`, fill: "var(--tra)" }, dyn);
+  }
+  // radiated / total field to detector
+  const r0 = bx + bw + 26, r1 = X.det[0] - 10;
+  if (on) {
+    el("path", { d: wavePath(r0, r1, yMid + 18, 16, 0.075, w * t * 3), fill: "none", stroke: "var(--tra)", "stroke-width": 1.2, opacity: 0.35 }, dyn); // source part
+    el("path", { d: wavePath(r0, r1, yMid + 18, 11, 0.075, w * t * 3 + 0.9), fill: "none", stroke: "var(--tra)", "stroke-width": 2.6, "stroke-linecap": "round" }, dyn); // total, damped and shifted
+  } else el("line", { x1: r0, y1: yMid + 18, x2: r1, y2: yMid + 18, stroke: "var(--faint)", "stroke-width": 1.5, "stroke-dasharray": "3 6" }, dyn);
+  // unit-cell inset: phase change across one cell = 2π/N
+  const ix = X.src[0] + X.src[2] + 42, iy = yMid + 84, iw = 96;
+  el("rect", { x: ix - 12, y: iy - 18, width: iw + 24, height: 52, rx: 8, fill: "var(--surface)", stroke: "var(--line)" }, dyn);
+  const n = 5; for (let i = 0; i < n; i++) { const xx = ix + i * iw / (n - 1); const a = on ? 9 * Math.cos((2 * Math.PI / S.N) * (i / (n - 1)) - w * t) : 0; el("line", { x1: xx, y1: iy + 4, x2: xx, y2: iy + 4 - a, stroke: "var(--tra)", "stroke-width": 1.6 }, dyn); }
+  const it = el("text", { x: ix + iw / 2, y: iy + 28, "text-anchor": "middle", "font-size": 9.5, "font-family": "IBM Plex Mono, monospace", fill: "var(--muted)" }, dyn); it.textContent = "field across one cell";
+}
+function updN() { const N = +document.getElementById("ncell").value; S.N = N === 7 ? 1e6 : Math.pow(4, N - 1); document.getElementById("nread").textContent = N === 7 ? "N → ∞ : 𝓔ₛ → 𝓔ₛ⊥(t)" : `N = ${S.N}, Δφ/cell = ${(360 / S.N).toFixed(S.N > 60 ? 2 : 0)}°`; draw(); }
+
+// ---------- controls ----------
+function seg(a, b, fn) { const A = document.getElementById(a), B = document.getElementById(b);
+  A.onclick = () => { A.setAttribute("aria-pressed", "true"); B.setAttribute("aria-pressed", "false"); fn(true); };
+  B.onclick = () => { B.setAttribute("aria-pressed", "true"); A.setAttribute("aria-pressed", "false"); fn(false); }; }
+seg("rep-conv", "rep-coh", v => { S.rep = v ? "conv" : "coh"; buildLabels(); draw(); if (["matter", "coupling"].includes(S.active)) renderPanel(); });
+seg("src-on", "src-off", v => { S.src = v; draw(); if (S.active === "response") renderPanel(); });
+document.getElementById("ncell").addEventListener("input", updN);
+const playBtn = document.getElementById("play");
+function setPlay(v) { S.playing = v; playBtn.textContent = v ? "Pause" : "Play"; playBtn.setAttribute("aria-pressed", String(v)); }
+playBtn.onclick = () => setPlay(!S.playing);
+let last = performance.now();
+function loop(now) { const dt = Math.min(0.05, (now - last) / 1000); last = now; if (S.playing) { S.t += dt; draw(); } requestAnimationFrame(loop); }
+
+build(); updN(); setPlay(S.playing); S.t = 0.6; draw(); renderPanel(); requestAnimationFrame(loop);
+})();
+</script>
+
+</body>
+</html>
