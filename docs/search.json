@@ -4,14 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Physicist from Gallipoli, Italy. General relativity first, quantum materials now."
+    "text": "Physicist from Gallipoli, Italy. Abiabatically transitioning from general relativity to quantum materials."
   },
   {
     "objectID": "about.html#background",
     "href": "about.html#background",
     "title": "About",
     "section": "Background",
-    "text": "Background\nI was born and raised in Gallipoli, Italy. My love for maths has been a constant as far back as I can remember. With the encouragement of teachers, parents and friends, my interest in science grew — particularly in theoretical physics, chemistry and sustainable science.\nIn high school I took on several science projects and won a chemistry olympiad for green science together with two peers. That early success pushed me towards Bologna, where I studied theoretical physics. Both my bachelor’s and master’s theses were centred on general relativity, and during my master’s I spent three months at the Max Planck Institute for Gravitational Physics finalising my thesis project.\nAfter my master’s I changed field. I moved to Utrecht as a PhD candidate under the supervision of Zeila Zanolli. In our group we explore the electronic and optical properties of materials for the quantum era using first-principles methods, developing new theory and new code along the way. My focus became theoretical spectroscopy and superconductivity.\nMy time at Utrecht University was transformative, professionally and personally — a great deal of knowledge, wider academic horizons, and a strong network of colleagues and friends.\nOutside research I stay active: running and working out are my go-to. I also enjoy video games."
+    "text": "Background\nI was born and raised in Gallipoli, Italy. My love for maths has been a constant as far back as I can remember. With the encouragement of teachers, parents and friends, my interest in science grew, particularly in theoretical physics, chemistry and sustainable science.\nIn high school I took on several science projects and chemistry olympiads. That early success pushed me towards Bologna, where I studied theoretical physics. Both my bachelor’s and master’s theses were centred on general relativity, and during my master’s I spent three months at the Max Planck Institute for Gravitational Physics finalising my thesis project.\nAfter my master’s I changed field. I moved to Utrecht as a PhD candidate under the supervision of Zeila Zanolli. In our group we explore the electronic and optical properties of materials for the quantum era using first-principles methods, developing new theory and new code along the way. My focus became theoretical spectroscopy and superconductivity.\nMy time at Utrecht University was transformative both professionally and personally. Now, I am a postdoctoral researcher at the University of Luxembourg in the group of Ludger Wirtz where I focus on fundamental aspects of light-matter interaction in many body systems.\nOutside research I stay active: running and working out are my go-to. I also enjoy video-games (even though I am not active playing anymore) and the comics community."
   },
   {
     "objectID": "about.html#education",
@@ -25,7 +25,7 @@
     "href": "about.html#experience",
     "title": "About",
     "section": "Experience",
-    "text": "Experience\nPhD candidate — Utrecht University (2020–2025)\n\nDeveloped superconducting density functional theory in SIESTA\nImplemented photoluminescence in the Yambo code via non-equilibrium many-body perturbation theory\nTheoretical spectroscopy of the optical properties of 2D materials\nTeaching and student supervision"
+    "text": "Experience\nPostdoctoral Researcher - University of Luxembourg (2025-*) - Developing theoretical methods for light-matter interaction in quantum materials - Developing the Yambo code and mantaining LetzElPhC - Teaching activities at UniLu.\nPhD candidate — Utrecht University (2020–2025)\n\nDeveloped superconducting density functional theory in SIESTA\nImplemented photoluminescence in the Yambo code via non-equilibrium many-body perturbation theory\nTheoretical spectroscopy of the optical properties of 2D materials\nTeaching and student supervision"
   },
   {
     "objectID": "about.html#skills",

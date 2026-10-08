@@ -3,18 +3,17 @@ title: "About"
 ---
 
 ::: {.lede}
-Physicist from Gallipoli, Italy. General relativity first, quantum materials now.
+Physicist from Gallipoli, Italy. Abiabatically transitioning from general relativity to quantum materials.
 :::
 
 ## Background
 
 I was born and raised in Gallipoli, Italy. My love for maths has been a constant
 as far back as I can remember. With the encouragement of teachers, parents and
-friends, my interest in science grew — particularly in theoretical physics,
+friends, my interest in science grew, particularly in theoretical physics,
 chemistry and sustainable science.
 
-In high school I took on several science projects and won a chemistry olympiad
-for green science together with two peers. That early success pushed me towards
+In high school I took on several science projects and chemistry olympiads. That early success pushed me towards
 Bologna, where I studied theoretical physics. Both my bachelor's and master's
 theses were centred on general relativity, and during my master's I spent three
 months at the Max Planck Institute for Gravitational Physics finalising my
@@ -26,12 +25,13 @@ optical properties of materials for the quantum era using first-principles
 methods, developing new theory and new code along the way. My focus became
 theoretical spectroscopy and superconductivity.
 
-My time at Utrecht University was transformative, professionally and personally
-— a great deal of knowledge, wider academic horizons, and a strong network of
-colleagues and friends.
+My time at Utrecht University was transformative both professionally and personally.
+Now, I am a postdoctoral researcher at the University of Luxembourg in the group of 
+Ludger Wirtz where I focus on fundamental aspects of light-matter interaction in many body
+systems.
 
-Outside research I stay active: running and working out are my go-to. I also
-enjoy video games.
+Outside research I stay active: running and working out are my go-to. I also enjoy
+video-games (even though I am not active playing anymore) and the comics community.
 
 ## Education
 
@@ -44,6 +44,11 @@ enjoy video games.
 : {tbl-colwidths="[32,44,24]"}
 
 ## Experience
+
+**Postdoctoral Researcher - University of Luxembourg** (2025-*)
+- Developing theoretical methods for light-matter interaction in quantum materials
+- Developing the Yambo code and mantaining LetzElPhC
+- Teaching activities at UniLu.
 
 **PhD candidate — Utrecht University** (2020–2025)
 
