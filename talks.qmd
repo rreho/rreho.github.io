@@ -7,6 +7,11 @@ Seminars, contributed talks and posters at international conferences.
 <!-- TO ADD A TALK: copy one .pub block, keep newest first within its section. -->
 
 ## Invited talks
+::: {.pub}
+[A transverse world: a matter Hamiltonian and a quantum theory of optical absorption]    {.pub-title}
+ [[R. Reho]{.badge-me}, A. Marini, L. Wirtz]{.pub-authors}
+ [SISSA, Trieste, Italy · 15 October 2026]{.pub-venue}
+:::
 
 ::: {.pub}
 [Excitonic response in TMD heterostructures from first principles: impact of stacking, twisting, and interlayer distance]{.pub-title}
