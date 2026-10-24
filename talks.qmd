@@ -8,7 +8,7 @@ Seminars, contributed talks and posters at international conferences.
 
 ## Invited talks
 ::: {.pub}
-[A transverse world: a matter Hamiltonian and a quantum theory of optical absorption]    {.pub-title}
+[A transverse world: a matter Hamiltonian and a quantum theory of optical absorption]{.pub-title}
  [[R. Reho]{.badge-me}, A. Marini, L. Wirtz]{.pub-authors}
  [SISSA, Trieste, Italy · 15 October 2026]{.pub-venue}
 :::
